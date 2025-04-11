@@ -1,0 +1,11 @@
+{
+    "translation":{
+        "signinTitle":"Iniciar sesión",
+        "signinUser":"Usuario",
+        "signinPass":"Contraseña",
+        "signinButton":"Confirmar",
+        "signinRedirect":"Todavía no tienes una cuenta? Regístrate ahora",
+        "signupTitle":"Registrarse",
+        "signupRedirect": "Ya tienes una cuenta? Inicia sesión ahora"
+    }
+}
