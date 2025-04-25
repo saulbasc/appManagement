@@ -1,3 +1,4 @@
+import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SignInScreen from '../../screens/login/signinScreen';
 import SignupScreen from '../../screens/login/signupScreen';
@@ -9,32 +10,46 @@ import AdminScreen from '../../screens/app/adminScreen';
 
 const Stack = createNativeStackNavigator();
 
-const AppStackNavigator = () => {
-    return (
-      <Stack.Navigator initialRouteName='Signin'>
-         <Stack.Screen name='Signin' component={SignInScreen}
-            options={{ headerShown: false}}
-          />
-          <Stack.Screen name='Signup' component={SignupScreen}
-            options={{ headerShown: false}}
-          />
-          <Stack.Screen name='CourseList' component={CourseListScreen}
-            options={{ headerShown: false}}
-          />
-          <Stack.Screen name='CourseHistoric' component={CourseHistoricScreen}
-            options={{ headerShown: false}}
-          />
-          <Stack.Screen name='CourseDetail' component={CourseDetailScreen}
-            options={{ headerShown: false}}
-          />
-          <Stack.Screen name='UserProfile' component={UserProfileScreen}
-            options={{ headerShown: false}}
-          />
-          <Stack.Screen name='Admin' component={AdminScreen}
-            options={{ headerShown: false}}
-          />
-      </Stack.Navigator>
-    )
+function AppStackNavigator() {
+  return (
+    <Stack.Navigator initialRouteName="Signin">
+      <Stack.Screen
+        name="Signin"
+        component={SignInScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Signup"
+        component={SignupScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="CourseList"
+        component={CourseListScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="CourseHistoric"
+        component={CourseHistoricScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="CourseDetail"
+        component={CourseDetailScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="UserProfile"
+        component={UserProfileScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Admin"
+        component={AdminScreen}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
+  );
 }
 
 export default AppStackNavigator;

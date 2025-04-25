@@ -1,13 +1,13 @@
-import { useTranslation } from "react-i18next";
+import useTranslation from '../translation/translation';
 
 const useStartTranslation = () => {
-    const { t } = useTranslation();
-    return t;
-}
+  const { t } = useTranslation;
+  return t;
+};
 
-const tr = ( type : string ) => {
-    const t = useStartTranslation();
-    return t(type)
-}
+const tr = (type : string) => {
+  const t = useStartTranslation();
+  return t(type);
+};
 
 export default tr;

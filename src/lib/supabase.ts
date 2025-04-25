@@ -6,7 +6,7 @@ import { AppState } from 'react-native';
 const supabaseUrl = 'https://nddsimyqvhxixfdmlwna.supabase.co';
 const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5kZHNpbXlxdmh4aXhmZG1sd25hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNzAxMDIsImV4cCI6MjA1OTg0NjEwMn0.8fkbooMvFa7RQJwlRlb0VU9sAZ-nLpTAI0C3DiAuWE4';
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   auth: {
     storage: AsyncStorage,
     autoRefreshToken: true,
@@ -17,8 +17,10 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
 
 AppState.addEventListener('change', (state) => {
   if (state === 'active') {
-    supabase.auth.startAutoRefresh()
+    supabase.auth.startAutoRefresh();
   } else {
-    supabase.auth.stopAutoRefresh()
+    supabase.auth.stopAutoRefresh();
   }
-})
+});
+
+export default supabase;

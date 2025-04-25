@@ -1,7 +1,7 @@
 {
-    "translation":{
-        "loginTitle":"HALLO",
-        "loginUser":"USER",
-        "loginPass":"PASSWORD"
-    }
+  "translation":{
+    "loginTitle":"HALLO",
+    "loginUser":"USER",
+    "loginPass":"PASSWORD"
+  }
 }

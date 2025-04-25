@@ -1,17 +1,17 @@
-import React from "react";
-import tr from "../../manager/TranslationManager";
-import { signInEmail } from "../../manager/AuthManager";
-import LoginView from "../../components/login/LoginView";
+import React from 'react';
+import tr from '../../manager/TranslationManager';
+import { signInEmail } from '../../manager/AuthManager';
+import LoginView from '../../components/login/LoginView';
 
-const SignInScreen = () => {
-    return (
-        <LoginView 
-            route = {'Signup'}
-            loginTitle = {tr('loginTitle')}
-            loginRedirect = {tr('loginRedirect')}
-            onSubmit = { signInEmail }
-        />
-    );
+function SignInScreen() {
+  return (
+    <LoginView
+      route="Signup"
+      loginTitle={tr('signinTitle')}
+      loginRedirect={tr('signinRedirect')}
+      onSubmit={signInEmail}
+    />
+  );
 }
 
 export default SignInScreen;
