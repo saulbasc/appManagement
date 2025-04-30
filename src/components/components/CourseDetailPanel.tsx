@@ -29,25 +29,23 @@ const styles = StyleSheet.create({
   },
 });
 
-function CourseDetailPanel(data : any, onPress : any) {
-  const completeData = data;
-  const courseData = completeData.data;
+function CourseDetailPanel({ data, suscribed, onPress }: any) {
   return (
     <View style={styles.view}>
-      <Text style={styles.title}>{courseData[0].titulo}</Text>
+      <Text style={styles.title}>{data?.title}</Text>
       <MediumSpacer />
-      <Text style={styles.category}>{courseData[0].categoria}</Text>
+      <Text style={styles.category}>{data?.category}</Text>
       <SmallSpacer />
-      <Text style={styles.defaultFont}>{courseData[0].descripcion}</Text>
+      <Text style={styles.defaultFont}>{data?.description}</Text>
       <SmallSpacer />
-      <Text style={styles.defaultFont}>{courseData[0].instructor}</Text>
+      <Text style={styles.defaultFont}>{data?.instructor}</Text>
       <SmallSpacer />
-      <Text style={styles.defaultFont}>{courseData[0].duracion}</Text>
+      <Text style={styles.defaultFont}>{data?.duration}</Text>
       <SmallSpacer />
-      <Text style={styles.defaultFont}>{courseData[0].fecha_creacion}</Text>
+      <Text style={styles.defaultFont}>{data?.startDate}</Text>
       <MediumSpacer />
       <Button
-        title={tr('suscribeCourseButton')}
+        title={suscribed ? tr('suscribeCourseButton') : tr('unsuscribeCourseButton')}
         buttonStyle={styles.button}
         onPress={onPress}
       />

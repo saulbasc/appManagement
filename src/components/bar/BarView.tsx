@@ -3,6 +3,7 @@ import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Icon } from '@rneui/base';
 import BarDropDown from './BarDropDown';
 import { navigate } from '../../navigationRef';
+import { LogOut } from '../../core/supabaseActions';
 
 const BLUE_COLOR = '#32356b';
 
@@ -22,7 +23,10 @@ function BarView() {
     <View style={styles.content}>
       <BarDropDown />
       <TouchableOpacity
-        onPress={() => navigate('Signin')}
+        onPress={() => {
+          navigate('Signin');
+          LogOut();
+        }}
       >
         <Icon name="logout" />
       </TouchableOpacity>

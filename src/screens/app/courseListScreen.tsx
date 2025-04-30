@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
 import SearchBar from '../../components/bar/SearchBar';
 import CourseListPanel from '../../components/components/CourseListPanel';
 import { navigate } from '../../navigationRef';
-import { FetchData } from '../../core/supabaseActions';
+import { Context as CourseContext } from '../../context/CourseDaoContext';
+import { GetID } from '../../core/supabaseActions';
 
 const styles = StyleSheet.create({
   view: {
@@ -14,26 +15,26 @@ const styles = StyleSheet.create({
 });
 
 function CourseListScreen() {
+  const { state, selectAll } = useContext(CourseContext);
   const [courses, setCourses] = useState<any[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const { data } = await FetchData('curso');
-      if (data) setCourses(data);
-    };
-
-    fetchData();
+    selectAll();
   }, []);
+  useEffect(() => {
+    if (state.courses) setCourses(state.courses);
+  }, [state.courses]);
 
   return (
     <View style={styles.view}>
       <SearchBar />
       <FlatList
-        showsVerticalScrollIndicator={false}
-        data={courses}
+        data={courses ?? []}
         renderItem={({ item }) => (
           <CourseListPanel
-            onPress={() => navigate('CourseDetail', { courseId: item.ID })}
+            onPress={async () => {
+              navigate('CourseDetail', { courseId: item.id, userId: await GetID() });
+            }}
             item={item}
           />
         )}

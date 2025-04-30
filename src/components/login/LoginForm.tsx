@@ -36,6 +36,7 @@ function AuthForm({ onSubmit } : any) {
         placeholder={tr('loginPass')}
         style={styles.loginInput}
         onChangeText={setPassword}
+        secureTextEntry
       />
       <Button
         onPress={() => onSubmit({ email, password })}

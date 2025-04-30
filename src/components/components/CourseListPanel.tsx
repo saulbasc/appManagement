@@ -25,9 +25,9 @@ const styles = StyleSheet.create({
 function CourseListPanel({ item, onPress }: any) {
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
-      <Text style={styles.title}>{item.titulo}</Text>
+      <Text style={styles.title}>{item.title}</Text>
       <MediumSpacer />
-      <Text style={styles.category}>{item.categoria}</Text>
+      <Text style={styles.category}>{item.category}</Text>
     </TouchableOpacity>
   );
 }

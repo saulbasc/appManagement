@@ -7,6 +7,7 @@
     "signinRedirect":"Todavía no tienes una cuenta? Regístrate ahora",
     "signupTitle":"Registrarse",
     "signupRedirect": "Ya tienes una cuenta? Inicia sesión ahora",
-    "suscribeCourseButton": "Suscríbete al curso"
+    "suscribeCourseButton": "Suscribirse al curso",
+    "unsuscribeCourseButton": "Desuscribirse"
   }
 }

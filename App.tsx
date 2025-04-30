@@ -4,14 +4,22 @@ import { NavigationContainer } from '@react-navigation/native';
 import BarView from './src/components/bar/BarView';
 import { navigationRef } from './src/navigationRef';
 import AppStackNavigator from './src/components/app/AppStackNavigator';
+import InitManager from './src/core/initManager';
+import { Provider as CourseProvider } from './src/context/CourseDaoContext';
+import { Provider as InscriptionProvider } from './src/context/InscriptionDaoContext';
 
 export default function App() {
+  InitManager();
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <BarView />
-      <NavigationContainer ref={navigationRef}>
-        <AppStackNavigator />
-      </NavigationContainer>
-    </SafeAreaView>
+    <InscriptionProvider>
+      <CourseProvider>
+        <SafeAreaView style={{ flex: 1 }}>
+          <BarView />
+          <NavigationContainer ref={navigationRef}>
+            <AppStackNavigator />
+          </NavigationContainer>
+        </SafeAreaView>
+      </CourseProvider>
+    </InscriptionProvider>
   );
 }

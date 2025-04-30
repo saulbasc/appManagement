@@ -1,0 +1,85 @@
+import InscriptionDAO from '../core/dao/InscriptionDAO';
+import createDataContext from './createDataContext';
+
+const inscriptionDao = new InscriptionDAO();
+
+const inscriptionReducer = (state, action) => {
+  switch (action.type) {
+    case 'insert':
+      return { ...state, error: null };
+    case 'update':
+      return { ...state, error: null };
+    case 'delete':
+      return { ...state, error: null };
+    case 'select':
+      return { ...state, inscription: action.payload, error: null };
+    case 'selectAll':
+      return { ...state, inscriptions: action.payload, error: null };
+    case 'error':
+      return { ...state, error: action.payload };
+    case 'isSuscribed':
+      return { ...state, suscribed: action.payload, error: null };
+    default:
+      return state;
+  }
+};
+
+const insert = (dispatch) => async (inscription) => {
+  const error = await inscriptionDao.insert(inscription);
+  if (error) {
+    dispatch({ type: 'error', payload: error });
+  } else {
+    dispatch({ type: 'insert', payload: error });
+  }
+};
+
+const select = (dispatch) => async (id) => {
+  const inscription = await inscriptionDao.select(id);
+  dispatch({ type: 'select', payload: inscription });
+};
+
+const selectAll = (dispatch) => async () => {
+  const inscriptions = await inscriptionDao.selectAll();
+  dispatch({ type: 'selectAll', payload: inscriptions });
+};
+
+const update = (dispatch) => async (inscription) => {
+  const error = await inscriptionDao.update(inscription);
+  if (error) {
+    dispatch({ type: 'error', payload: error });
+  } else {
+    dispatch({ type: 'update', payload: error });
+  }
+};
+
+const deleted = (dispatch) => async (id) => {
+  const error = await inscriptionDao.delete(id);
+  if (error) {
+    dispatch({ type: 'error', payload: error });
+  } else {
+    dispatch({ type: 'delete', payload: error });
+  }
+};
+
+const isSuscribed = (dispatch) => async (courseId, userId) => {
+  const suscribed = await inscriptionDao.isSuscribed(courseId, userId);
+  dispatch({ type: 'isSuscribed', payload: suscribed });
+};
+
+export const { Provider, Context } = createDataContext(
+  inscriptionReducer,
+  {
+    insert,
+    select,
+    selectAll,
+    update,
+    deleted,
+    isSuscribed,
+  },
+  {
+    error: null,
+    user: null,
+    users: [],
+    suscribed: null,
+  },
+);

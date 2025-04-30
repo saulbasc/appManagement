@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { FetchDataWithFilter, Insert } from '../../core/supabaseActions';
 import CourseDetailPanel from '../../components/components/CourseDetailPanel';
+import { Context as CourseContext } from '../../context/CourseDaoContext';
+import { Context as InscriptionContext } from '../../context/InscriptionDaoContext';
 
 const styles = StyleSheet.create({
   view: {
@@ -13,33 +14,30 @@ const styles = StyleSheet.create({
   },
 });
 
-async function insert(courseID : string) {
-  const { error } = await Insert('inscripcion', {
-    ID_curso: courseID,
-    ID_usuario: '1',
-  });
-  console.log(error);
-}
-
 function CourseDetailScreen(props: any) {
+  const { state: courseState, select } = useContext(CourseContext);
+  const { state: inscriptionState, isSuscribed } = useContext(InscriptionContext);
+
   const [courseData, setCourseData] = useState<any>();
+  const [suscribed, setSuscribed] = useState<boolean | null>(null);
   const prop = props;
-  const id = prop.route.params.courseId;
+  const courseId = prop.route.params.courseId;
+  const userId = prop.route.params.userId;
 
   useEffect(() => {
-    const fetchData = async () => {
-      const { data } = await FetchDataWithFilter('curso', id);
-      if (data) setCourseData(data);
-    };
-    fetchData();
-  }, []);
+    select(courseId);
+    isSuscribed(courseId, userId);
+    if (courseState) setCourseData(courseState.course);
+    if (inscriptionState) setSuscribed(inscriptionState.suscribed);
+  }, [courseState.course, inscriptionState.isSuscribed]);
 
   return (
     <View style={styles.view}>
-      {courseData != null && (
+      {courseData && suscribed !== null && (
         <CourseDetailPanel
           data={courseData}
-          onPress={() => { insert(id); }}
+          suscribed={suscribed}
+          onPress={() => {}}
         />
       )}
     </View>

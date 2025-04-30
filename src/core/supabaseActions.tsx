@@ -16,28 +16,28 @@ async function SignUpEmail({ email, password }: any) {
   return { data, error };
 }
 
-async function FetchData(tableName: string) {
-  const { data, error } = await supabase
-    .from(tableName)
-    .select();
-  return { data, error };
-}
-
-async function FetchDataWithFilter(tableName: string, filter: string) {
+async function SearchByText(tableName: string, column: string, text: string) {
   const { data, error } = await supabase
     .from(tableName)
     .select()
-    .eq('ID', filter);
+    .ilike(column, `%${text}%`);
   return { data, error };
 }
 
-async function Insert(tableName: string, data: any) {
-  const { error } = await supabase
-    .from(tableName)
-    .insert(data);
+async function LogOut() {
+  const { error } = await supabase.auth.signOut();
   return { error };
 }
 
+async function GetID() {
+  const id = (await supabase.auth.getUser()).data.user?.id;
+  return id;
+}
+
 export {
-  SignInEmail, SignUpEmail, FetchData, FetchDataWithFilter, Insert,
+  SignInEmail,
+  SignUpEmail,
+  LogOut,
+  SearchByText,
+  GetID,
 };

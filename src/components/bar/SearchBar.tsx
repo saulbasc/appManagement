@@ -1,6 +1,6 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Input, Icon } from '@rneui/base';
+import React, { useState } from 'react';
+import { View, StyleSheet, TextInput } from 'react-native';
+import { Icon } from '@rneui/base';
 
 const styles = StyleSheet.create({
   searchBar: {
@@ -22,13 +22,19 @@ const styles = StyleSheet.create({
 });
 
 function SearchBar() {
+  const [text, setText] = useState('');
+
   return (
     <View style={styles.searchBar}>
       <Icon
         name="search"
         size={35}
       />
-      <Input />
+      <TextInput
+        onChangeText={setText}
+        value={text}
+        style={{ fontSize: 20 }}
+      />
     </View>
   );
 }

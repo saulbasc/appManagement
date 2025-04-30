@@ -7,7 +7,7 @@ const signInEmail = async ({ email, password } : any) => {
   if (error) {
     Alert.alert(error.message);
   } else {
-    navigate('CourseList');
+    navigate('BottomTab');
   }
 };
 
@@ -17,7 +17,7 @@ const signUpEmail = async ({ email, password }: any) => {
     Alert.alert(error.message);
   } else {
     Insert('Usuario', { ID: data.user?.id, email: data.user?.email, rol: 'User' });
-    navigate('CourseList');
+    navigate('BottomTab');
   }
 };
 
