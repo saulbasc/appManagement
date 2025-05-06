@@ -38,8 +38,8 @@ const select = (dispatch) => async (id) => {
   dispatch({ type: 'select', payload: inscription });
 };
 
-const selectAll = (dispatch) => async () => {
-  const inscriptions = await inscriptionDao.selectAll();
+const selectAll = (dispatch) => async (userId) => {
+  const inscriptions = await inscriptionDao.selectAllWithID(userId);
   dispatch({ type: 'selectAll', payload: inscriptions });
 };
 
@@ -52,8 +52,8 @@ const update = (dispatch) => async (inscription) => {
   }
 };
 
-const deleted = (dispatch) => async (id) => {
-  const error = await inscriptionDao.delete(id);
+const remove = (dispatch) => async (courseId, userId) => {
+  const error = await inscriptionDao.remove([courseId, userId]);
   if (error) {
     dispatch({ type: 'error', payload: error });
   } else {
@@ -73,7 +73,7 @@ export const { Provider, Context } = createDataContext(
     select,
     selectAll,
     update,
-    deleted,
+    remove,
     isSuscribed,
   },
   {

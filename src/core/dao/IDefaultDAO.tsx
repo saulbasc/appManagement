@@ -4,7 +4,7 @@ interface IDefaultDAO <T, O>{
   select(id: T) : Promise<O | null>;
   selectAll() : Promise<O[]>;
   update(object: O) : Promise<boolean>;
-  delete(id: T) : Promise<boolean>;
+  remove(id: T) : Promise<boolean>;
 }
 
 export default IDefaultDAO;

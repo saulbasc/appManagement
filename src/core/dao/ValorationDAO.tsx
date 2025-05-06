@@ -9,11 +9,11 @@ export default class ValorationDAO implements IDefaultDAO<[number, string], Valo
   async insert(object: Valoration): Promise<boolean> {
     const { error } = await supabase
       .from(tableName)
-      .insert({
-        course_id: object.courseId,
-        user_id: object.userId,
-        coment: object.coment,
-        rating: object.rating,
+      .upsert({
+        ID_curso: object.courseId,
+        ID_usuario: object.userId,
+        comentario: object.comment,
+        calificacion: object.rating,
       });
     return !error;
   }
@@ -31,21 +31,32 @@ export default class ValorationDAO implements IDefaultDAO<[number, string], Valo
   }
 
   async select(ids: [number, string]): Promise<Valoration | null> {
-    const [courseId, userId] = ids;
-    const { data } = await supabase
-      .from(tableName)
-      .select()
-      .eq('course_id', courseId)
-      .eq('user_id', userId)
-      .single();
-    return data ? new Valoration(data.course_id, data.user_id, data.coment, data.rating) : null;
+    try {
+      const [courseId, userId] = ids;
+      const { data } = await supabase
+        .from(tableName)
+        .select()
+        .eq('ID_curso', courseId)
+        .eq('ID_usuario', userId)
+        .single();
+      return data
+        ? new Valoration(
+          data.ID_curso,
+          data.ID_usuario,
+          data.comentario,
+          data.calificacion,
+        )
+        : null;
+    } catch (error) {
+      throw new Error(`Error selecting valoration: ${(error as Error).message}`);
+    }
   }
 
   async update(object: Valoration): Promise<boolean> {
     const { error } = await supabase
       .from(tableName)
       .update({
-        coment: object.coment,
+        comment: object.comment,
         rating: object.rating,
       })
       .eq('course_id', object.courseId)
@@ -53,7 +64,7 @@ export default class ValorationDAO implements IDefaultDAO<[number, string], Valo
     return !error;
   }
 
-  async delete(ids: [number, string]): Promise<boolean> {
+  async remove(ids: [number, string]): Promise<boolean> {
     const [courseId, userId] = ids;
     const { error } = await supabase
       .from(tableName)

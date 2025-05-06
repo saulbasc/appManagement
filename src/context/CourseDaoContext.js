@@ -15,11 +15,19 @@ const courseReducer = (state, action) => {
       return { ...state, course: action.payload, error: null };
     case 'selectAll':
       return { ...state, courses: action.payload, error: null };
+    case 'selectAllWithID':
+      return { ...state, selectedCourses: action.payload, error: null };
     case 'error':
       return { ...state, error: action.payload };
+    case 'resetCourse':
+      return { ...state, course: null };
     default:
       return state;
   }
+};
+
+const resetCourse = (dispatch) => () => {
+  dispatch({ type: 'resetCourse' });
 };
 
 const insert = (dispatch) => async (course) => {
@@ -39,6 +47,11 @@ const select = (dispatch) => async (id) => {
 const selectAll = (dispatch) => async () => {
   const courses = await courseDao.selectAll();
   dispatch({ type: 'selectAll', payload: courses });
+};
+
+const selectAllWithID = (dispatch) => async (userID) => {
+  const courses = await courseDao.selectAllWithID(userID);
+  dispatch({ type: 'selectAllWithID', payload: courses });
 };
 
 const update = (dispatch) => async (course) => {
@@ -65,12 +78,15 @@ export const { Provider, Context } = createDataContext(
     insert,
     select,
     selectAll,
+    selectAllWithID,
     update,
     deleted,
+    resetCourse,
   },
   {
     error: null,
-    user: null,
-    users: [],
+    course: null,
+    courses: [],
+    selectedCourses: [],
   },
 );

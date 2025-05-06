@@ -3,19 +3,19 @@ class Valoration {
 
   userId: string;
 
-  coment: string;
+  comment: string;
 
   rating: number;
 
   constructor(
     courseId: number,
     userId: string,
-    coment: string,
+    comment: string,
     rating: number,
   ) {
     this.courseId = courseId;
     this.userId = userId;
-    this.coment = coment;
+    this.comment = comment;
     this.rating = rating;
   }
 }

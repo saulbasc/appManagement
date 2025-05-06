@@ -28,7 +28,7 @@ class Course {
     this.category = category ?? new Date();
     this.duration = duration ?? 0;
     this.instructor = instructor ?? '';
-    this.startDate = startDate ?? new Date();
+    this.startDate = startDate ? new Date(startDate) : new Date();
   }
 }
 

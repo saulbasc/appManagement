@@ -5,6 +5,8 @@ const valorationDao = new ValorationDAO();
 
 const valorationReducer = (state, action) => {
   switch (action.type) {
+    case 'clear':
+      return { ...state, valoration: null, valorations: [] };
     case 'insert':
       return { ...state, error: null };
     case 'update':
@@ -22,6 +24,10 @@ const valorationReducer = (state, action) => {
   }
 };
 
+const clearValoration = (dispatch) => () => {
+  dispatch({ type: 'clear' });
+};
+
 const insert = (dispatch) => async (valoration) => {
   const error = await valorationDao.insert(valoration);
   if (error) {
@@ -31,8 +37,8 @@ const insert = (dispatch) => async (valoration) => {
   }
 };
 
-const select = (dispatch) => async (id) => {
-  const valoration = await valorationDao.select(id);
+const select = (dispatch) => async (userId, courseId) => {
+  const valoration = await valorationDao.select([courseId, userId]);
   dispatch({ type: 'select', payload: valoration });
 };
 
@@ -62,6 +68,7 @@ const deleted = (dispatch) => async (id) => {
 export const { Provider, Context } = createDataContext(
   valorationReducer,
   {
+    clearValoration,
     insert,
     select,
     selectAll,

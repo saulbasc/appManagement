@@ -8,6 +8,10 @@
     "signupTitle":"Registrarse",
     "signupRedirect": "Ya tienes una cuenta? Inicia sesión ahora",
     "suscribeCourseButton": "Suscribirse al curso",
-    "unsuscribeCourseButton": "Desuscribirse"
+    "unsuscribeCourseButton": "Desuscribirse",
+    "profileSaveButton": "Guardar",
+    "profileUpgradeButton": "Convertirse en administrador",
+    "profileDowngradeButton": "Desuscribirse de administrador",
+    "profileListButton": "Ver los cursos inscritos"
   }
 }

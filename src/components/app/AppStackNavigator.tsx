@@ -4,10 +4,13 @@ import BottomTabNavigator from './BottomTabNavigator';
 import SignInScreen from '../../screens/login/signinScreen';
 import SignupScreen from '../../screens/login/signupScreen';
 import CourseListScreen from '../../screens/app/courseListScreen';
-import CourseHistoricScreen from '../../screens/app/courseHistoricScreen';
 import CourseDetailScreen from '../../screens/app/courseDetailScreen';
 import UserProfileScreen from '../../screens/app/userProfileScreen';
 import AdminScreen from '../../screens/app/adminScreen';
+import SuscribedCoursesScreen from '../../screens/app/suscribedCoursesScreen';
+import AdminStatsScreen from '../../screens/app/adminStatsScreen';
+import AdminCourseEditScreen from '../../screens/app/adminCourseEditScreen';
+import AdminCourseCreationScreen from '../../screens/app/adminCourseCreationScene';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,18 +38,33 @@ function AppStackNavigator() {
         options={{ headerShown: false }}
       />
       <Stack.Screen
+        name="SuscribedCourses"
+        component={SuscribedCoursesScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
         name="CourseList"
         component={CourseListScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="CourseHistoric"
-        component={CourseHistoricScreen}
+        name="UserProfile"
+        component={UserProfileScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="UserProfile"
-        component={UserProfileScreen}
+        name="AdminEdit"
+        component={AdminCourseEditScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="AdminStats"
+        component={AdminStatsScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="AdminCreation"
+        component={AdminCourseCreationScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen

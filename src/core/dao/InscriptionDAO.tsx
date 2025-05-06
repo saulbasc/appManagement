@@ -10,8 +10,8 @@ export default class InscriptionDAO implements IDefaultDAO<[number, string], Ins
     const { error } = await supabase
       .from(tableName)
       .insert({
-        course_id: object.courseId,
-        user_id: object.userId,
+        id_curso: object.courseId,
+        id_usuario: object.userId,
       });
     return !error;
   }
@@ -23,6 +23,17 @@ export default class InscriptionDAO implements IDefaultDAO<[number, string], Ins
     return data?.map((item) => new Inscription(
       item.course_id,
       item.user_id,
+    )) ?? [];
+  }
+
+  async selectAllWithID(userID: string): Promise<Inscription[]> {
+    const { data } = await supabase
+      .from(tableName)
+      .select()
+      .eq('id_usuario', userID);
+    return data?.map((item) => new Inscription(
+      item.course_id,
+      userID,
     )) ?? [];
   }
 
@@ -42,21 +53,22 @@ export default class InscriptionDAO implements IDefaultDAO<[number, string], Ins
     throw new Error('Method not implemented.');
   }
 
-  async delete(ids: [number, string]): Promise<boolean> {
+  async remove(ids: [number, string]): Promise<boolean> {
     const [courseId, userId] = ids;
     const { error } = await supabase
       .from(tableName)
       .delete()
-      .eq('course_id', courseId)
-      .eq('user_id', userId);
+      .eq('id_curso', courseId)
+      .eq('id_usuario', userId);
     return !error;
   }
 
-  async isSuscribed(courseId: string, userId: string) {
+  async isSuscribed(courseId: number, userId: string) {
     const { data } = await supabase
       .from(tableName)
       .select()
       .eq('id_curso', courseId).eq('id_usuario', userId);
+    console.log(`Data? en InscriptionDAO => ${data && data.length > 0}`);
     if (!data) {
       return false;
     }

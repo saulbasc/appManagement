@@ -39,6 +39,38 @@ export default class CourseDAO implements IDefaultDAO<number, Course> {
   }
 
   // eslint-disable-next-line class-methods-use-this
+  async selectAllWithID(userID : string): Promise<Course[]> {
+    const courses: Course[] = [];
+    const { data } = await supabase
+      .from('inscripcion')
+      .select('*, curso:id_curso(*)')
+      .eq('id_usuario', userID);
+
+    if (!data) return [];
+    data.forEach((singleData) => {
+      const course = singleData.curso;
+      const id = course.ID;
+      const title = course.titulo;
+      const description = course.descripcion;
+      const category = course.categoria;
+      const duration = course.duracion;
+      const { instructor } = course;
+      const creationDate = course.fecha_creacion;
+      const courseObject = new Course(
+        id,
+        title,
+        description,
+        category,
+        duration,
+        instructor,
+        creationDate,
+      );
+      courses.push(courseObject);
+    });
+    return courses;
+  }
+
+  // eslint-disable-next-line class-methods-use-this
   async select(id: number): Promise<Course | null> {
     const { data } = await supabase
       .from(tableName)
@@ -46,7 +78,7 @@ export default class CourseDAO implements IDefaultDAO<number, Course> {
       .eq(idColumn, id)
       .single();
     const course = new Course(
-      data?.id,
+      id,
       data?.titulo,
       data?.descripcion,
       data?.categoria,
@@ -66,7 +98,7 @@ export default class CourseDAO implements IDefaultDAO<number, Course> {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  async delete(id: number): Promise<boolean> {
+  async remove(id: number): Promise<boolean> {
     const { error } = await supabase
       .from(tableName)
       .delete()

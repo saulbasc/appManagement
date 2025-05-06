@@ -4,7 +4,7 @@ import User from '../../types/User';
 import IDefaultDAO from './IDefaultDAO';
 
 const tableName = 'usuario';
-const idColumn = 'id';
+const idColumn = 'ID';
 
 export default class UserDAO implements IDefaultDAO<string, User> {
   async insert(object: User): Promise<boolean> {
@@ -37,14 +37,14 @@ export default class UserDAO implements IDefaultDAO<string, User> {
       .select()
       .eq(idColumn, id)
       .single();
-    return data ? new User(data.id, data.name, data.email, data.rol) : null;
+    return data ? new User(id, data.nombre, data.email, data.rol) : null;
   }
 
   async update(object: User): Promise<boolean> {
     const { error } = await supabase
       .from(tableName)
       .update({
-        name: object.name,
+        nombre: object.name,
         email: object.email,
         rol: object.rol,
       })
@@ -52,7 +52,7 @@ export default class UserDAO implements IDefaultDAO<string, User> {
     return !error;
   }
 
-  async delete(id: string): Promise<boolean> {
+  async remove(id: string): Promise<boolean> {
     const { error } = await supabase
       .from(tableName)
       .delete()
