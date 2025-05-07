@@ -1,10 +1,18 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import CourseForm from '../../components/components/courses/CourseForm';
+
+const styles = StyleSheet.create({
+  content: {
+    marginHorizontal: 10,
+    marginVertical: 20,
+  },
+});
 
 function AdminCourseCreationScreen() {
   return (
-    <View>
-      <Text>Admin Course Creation</Text>
+    <View style={styles.content}>
+      <CourseForm />
     </View>
   );
 }

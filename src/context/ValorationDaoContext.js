@@ -17,6 +17,10 @@ const valorationReducer = (state, action) => {
       return { ...state, valoration: action.payload, error: null };
     case 'selectAll':
       return { ...state, valorations: action.payload, error: null };
+    case 'valorationsForUsers':
+      return { ...state, valorationsForUsers: action.payload };
+    case 'valorationsOfCourse':
+      return { ...state, valorationsOfCourse: action.payload };
     case 'error':
       return { ...state, error: action.payload };
     default:
@@ -65,6 +69,16 @@ const deleted = (dispatch) => async (id) => {
   }
 };
 
+const valorationsForUsers = (dispatch) => async () => {
+  const data = await valorationDao.valorationsForUsers();
+  dispatch({ type: 'valorationsForUsers', payload: data });
+};
+
+const valorationsOfCourse = (dispatch) => async (courseId) => {
+  const data = await valorationDao.valorationsOfCourse(courseId);
+  dispatch({ type: 'valorationsOfCourse', payload: data });
+};
+
 export const { Provider, Context } = createDataContext(
   valorationReducer,
   {
@@ -74,10 +88,14 @@ export const { Provider, Context } = createDataContext(
     selectAll,
     update,
     deleted,
+    valorationsForUsers,
+    valorationsOfCourse,
   },
   {
     error: null,
     valoration: null,
     valorations: [],
+    valorationsForUsers: [],
+    valorationsOfCourse: [],
   },
 );

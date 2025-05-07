@@ -12,6 +12,17 @@
     "profileSaveButton": "Guardar",
     "profileUpgradeButton": "Convertirse en administrador",
     "profileDowngradeButton": "Desuscribirse de administrador",
-    "profileListButton": "Ver los cursos inscritos"
+    "profileListButton": "Ver los cursos inscritos",
+    "totalInscriptionsText": "Inscripciones totales: ",
+    "courseCreationDates": "Creación de cursos",
+    "usersForRating": "Usuarios por valoración",
+    "title": "TÍTULO",
+    "category": "CATEGORÍA",
+    "description": "DESCRIPCIÓN",
+    "duration": "DURACIÓN",
+    "instructor": "INSTRUCTOR",
+    "createCourse": "Crear curso",
+    "editCourse": "Editar course",
+    "hours": "horas"
   }
 }

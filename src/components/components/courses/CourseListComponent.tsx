@@ -1,31 +1,36 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
-import SearchBar from '../bar/SearchBar';
+import SearchBar from '../../bar/SearchBar';
 import CourseListPanel from './CourseListPanel';
-import { Context as UserContext } from '../../context/CourseDaoContext';
+import { Context as UserContext } from '../../../context/CourseDaoContext';
+import AppColors from '../../../util/globalColors';
 
 const styles = StyleSheet.create({
   view: {
     flex: 1,
     paddingTop: 10,
     paddingHorizontal: 5,
-    backgroundColor: '#f2e2e2',
+    backgroundColor: AppColors.white,
   },
 });
 
 function CourseListComponent({ courses, onPress }: any) {
   const { state, resetCourse } = useContext(UserContext);
+  const [text, setText] = useState('');
 
   useEffect(() => {
     resetCourse();
-  }, [state.course]);
+  }, [state.courses]);
+
+  const filteredCourses = courses?.filter((course: any) => course
+    .title.toLowerCase().includes(text.toLocaleLowerCase()));
 
   return (
     <View style={styles.view}>
-      <SearchBar />
+      <SearchBar value={text} onChangeText={setText} />
       <FlatList
         showsVerticalScrollIndicator={false}
-        data={courses ?? []}
+        data={filteredCourses ?? []}
         renderItem={({ item }) => (
           <CourseListPanel
             onPress={() => onPress(item)}

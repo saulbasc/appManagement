@@ -1,7 +1,11 @@
 /* eslint-disable class-methods-use-this */
 import supabase from '../../lib/supabase';
+import tr from '../../manager/TranslationManager';
 import Valoration from '../../types/Valoration';
+import ValorationComment from '../../types/ValorationComment';
+import { GetID } from '../supabaseActions';
 import IDefaultDAO from './IDefaultDAO';
+import UserDAO from './UserDAO';
 
 const tableName = 'valoracion';
 
@@ -72,5 +76,51 @@ export default class ValorationDAO implements IDefaultDAO<[number, string], Valo
       .eq('course_id', courseId)
       .eq('user_id', userId);
     return !error;
+  }
+
+  async valorationsForUsers() {
+    const votosPorRating = [0, 0, 0, 0, 0];
+    const { data, error } = await supabase
+      .from(tableName)
+      .select('calificacion');
+
+    if (!error) {
+      data.forEach(({ calificacion }: any) => {
+        if (calificacion >= 1 && calificacion <= 5) {
+          votosPorRating[calificacion - 1] += 1;
+        }
+      });
+    }
+    return votosPorRating;
+  }
+
+  async valorationsOfCourse(courseID: number) {
+    const { data } = await supabase
+      .from(tableName)
+      .select()
+      .eq('ID_curso', courseID);
+    if (data) {
+      const valorations: ValorationComment[] = [];
+      data.forEach(async (val) => {
+        let name = '';
+        const userDao = new UserDAO();
+        const userData = await userDao.select(val.ID_usuario);
+        if (userData) {
+          const localId = await GetID();
+          if (localId === val.ID_usuario) {
+            name = tr('Yo');
+          } else {
+            name = userData.name;
+          }
+        }
+        valorations.push(new ValorationComment(
+          name,
+          val.comentario,
+          val.calificacion,
+        ));
+      });
+      return valorations;
+    }
+    return [];
   }
 }

@@ -1,10 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
+import AppColors from '../../../util/globalColors';
 
 const styles = StyleSheet.create({
   content: {
-    backgroundColor: 'black',
+    backgroundColor: AppColors.quaternary,
     borderRadius: 90,
     height: 70,
     width: 70,

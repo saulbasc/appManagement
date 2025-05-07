@@ -21,6 +21,8 @@ const courseReducer = (state, action) => {
       return { ...state, error: action.payload };
     case 'resetCourse':
       return { ...state, course: null };
+    case 'dates':
+      return { ...state, dates: action.payload };
     default:
       return state;
   }
@@ -72,6 +74,11 @@ const deleted = (dispatch) => async (id) => {
   }
 };
 
+const getDates = (dispatch) => async () => {
+  const data = await courseDao.getCourseDates();
+  dispatch({ type: 'dates', payload: data });
+};
+
 export const { Provider, Context } = createDataContext(
   courseReducer,
   {
@@ -82,11 +89,13 @@ export const { Provider, Context } = createDataContext(
     update,
     deleted,
     resetCourse,
+    getDates,
   },
   {
     error: null,
     course: null,
     courses: [],
     selectedCourses: [],
+    dates: [],
   },
 );

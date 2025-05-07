@@ -3,14 +3,17 @@ import React from 'react';
 import { Text } from '@rneui/base';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
-import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-import { SmallSpacer } from '../util/Spacer';
+import { SmallSpacer } from '../../util/Spacer';
+import AppColors from '../../../util/globalColors';
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#db7f7f',
-    borderColor: '#6c0d0d',
-    borderWidth: 1,
+  content: {
+    flexDirection: 'row',
+  },
+  courseContent: {
+    backgroundColor: AppColors.secondary,
+    borderColor: AppColors.quaternary,
+    borderWidth: 0,
     borderRadius: 10,
     marginVertical: 10,
     padding: 15,
@@ -19,41 +22,43 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   title: {
-    fontSize: 25,
+    fontSize: 22,
     fontStyle: 'italic',
     fontWeight: 'bold',
-    borderBottomColor: 'black',
-    borderBottomWidth: 1,
-    color: 'white',
+    borderBottomColor: AppColors.quaternary,
+    borderBottomWidth: 0,
+    color: AppColors.quaternary,
   },
   category: {
     fontSize: 15,
   },
   text: {
+    fontSize: 15,
     marginLeft: 10,
-    color: 'white',
+    color: AppColors.quaternary,
+  },
+  delete: {
+    position: 'absolute',
+    right: 10,
+    top: 10,
+
   },
 });
 
-function CourseListPanel({ item, onPress }: any) {
+function AdminCourseListPanel({ item, onPress }: any) {
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={styles.container}
+      style={styles.courseContent}
     >
       <Text style={styles.title}>{item.title}</Text>
       <SmallSpacer />
       <View style={styles.rowView}>
-        <MaterialCommunityIcons name="google-classroom" size={30} color="#6c0d0d" />
-        <Text style={[styles.category, styles.text]}>{item.category}</Text>
-      </View>
-      <SmallSpacer />
-      <View style={styles.rowView}>
-        <FontAwesome5 name="chalkboard-teacher" size={24} color="#6c0d0d" />
+        <FontAwesome5 name="chalkboard-teacher" size={24} color={AppColors.quaternary} />
         <Text style={styles.text}>{item.instructor}</Text>
       </View>
     </TouchableOpacity>
   );
 }
 
-export default CourseListPanel;
+export default AdminCourseListPanel;

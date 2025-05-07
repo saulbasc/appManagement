@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
-import UserPanel from '../../components/components/UserPanel';
-import SuscribedCoursesPanel from '../../components/components/SuscribedCoursesPanel';
+import UserPanel from '../../components/components/user/UserPanel';
+import SuscribedCoursesPanel from '../../components/components/user/SuscribedCoursesPanel';
 import { MediumSpacer } from '../../components/util/Spacer';
 import { Context as UserContext } from '../../context/UserDaoContext';
 import { GetID } from '../../core/supabaseActions';

@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import supabase from '../../lib/supabase';
 import Course from '../../types/Course';
 import IDefaultDAO from './IDefaultDAO';
@@ -6,12 +7,10 @@ const tableName = 'curso';
 const idColumn = 'ID';
 
 export default class CourseDAO implements IDefaultDAO<number, Course> {
-  // eslint-disable-next-line class-methods-use-this
   async insert(object: Course): Promise<boolean> {
     const { error } = await supabase
       .from(tableName)
       .insert({
-        ID: object.id,
         titulo: object.title,
         descripcion: object.description,
         categoria: object.category,
@@ -22,7 +21,6 @@ export default class CourseDAO implements IDefaultDAO<number, Course> {
     return !error;
   }
 
-  // eslint-disable-next-line class-methods-use-this
   async selectAll(): Promise<Course[]> {
     const { data } = await supabase
       .from(tableName)
@@ -38,7 +36,6 @@ export default class CourseDAO implements IDefaultDAO<number, Course> {
     )) ?? [];
   }
 
-  // eslint-disable-next-line class-methods-use-this
   async selectAllWithID(userID : string): Promise<Course[]> {
     const courses: Course[] = [];
     const { data } = await supabase
@@ -70,7 +67,6 @@ export default class CourseDAO implements IDefaultDAO<number, Course> {
     return courses;
   }
 
-  // eslint-disable-next-line class-methods-use-this
   async select(id: number): Promise<Course | null> {
     const { data } = await supabase
       .from(tableName)
@@ -89,7 +85,6 @@ export default class CourseDAO implements IDefaultDAO<number, Course> {
     return course;
   }
 
-  // eslint-disable-next-line class-methods-use-this
   async update(object: Course): Promise<boolean> {
     const a = object;
     // eslint-disable-next-line no-console
@@ -97,12 +92,32 @@ export default class CourseDAO implements IDefaultDAO<number, Course> {
     throw new Error('Method not implemented.');
   }
 
-  // eslint-disable-next-line class-methods-use-this
   async remove(id: number): Promise<boolean> {
     const { error } = await supabase
       .from(tableName)
       .delete()
       .eq(idColumn, id);
     return !error;
+  }
+
+  async getCourseDates() {
+    const datesCount: Record<string, number> = {};
+    const { data } = await supabase
+      .from(tableName)
+      .select('fecha_creacion');
+
+    data?.forEach((row) => {
+      const date = row.fecha_creacion?.split('T')[0];
+      if (date) {
+        datesCount[date] = (datesCount[date] || 0) + 1;
+      }
+    });
+
+    const result = Object.entries(datesCount).map(([date, count]) => ({
+      date,
+      count,
+    }));
+
+    return result;
   }
 }

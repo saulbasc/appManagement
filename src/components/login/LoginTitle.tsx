@@ -1,14 +1,14 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Icon } from '@rneui/base';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { MediumSpacer, SmallSpacer } from '../util/Spacer';
 import commonStyles from '../../styles/CommonStyles';
-
-const BLUE_COLOR = '#32356b';
+import AppColors from '../../util/globalColors';
 
 const styles = StyleSheet.create({
   loginTitle: {
-    color: BLUE_COLOR,
+    color: AppColors.quaternary,
     fontSize: 40,
   },
   loginText: {
@@ -22,11 +22,7 @@ function LoginTitle({ title }: any) {
   return (
     <View style={commonStyles.centerTotal}>
       <MediumSpacer />
-      <Icon
-        name="airplay"
-        color={BLUE_COLOR}
-        size={80}
-      />
+      <Ionicons name="school" size={100} color={AppColors.quaternary} />
       <SmallSpacer />
       <Text style={styles.loginTitle}>{title}</Text>
       <MediumSpacer />

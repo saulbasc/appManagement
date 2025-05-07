@@ -3,11 +3,12 @@ import { StyleSheet, View } from 'react-native';
 import LoginTitle from './LoginTitle';
 import AuthForm from './LoginForm';
 import LoginRedirect from './LoginRedirect';
+import AppColors from '../../util/globalColors';
 
 const styles = StyleSheet.create({
   content: {
     height: '100%',
-    backgroundColor: 'white',
+    backgroundColor: AppColors.white,
   },
 });
 

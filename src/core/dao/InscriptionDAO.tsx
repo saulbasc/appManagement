@@ -68,10 +68,16 @@ export default class InscriptionDAO implements IDefaultDAO<[number, string], Ins
       .from(tableName)
       .select()
       .eq('id_curso', courseId).eq('id_usuario', userId);
-    console.log(`Data? en InscriptionDAO => ${data && data.length > 0}`);
     if (!data) {
       return false;
     }
     return data?.length > 0;
+  }
+
+  async totalInscriptions() {
+    const { count } = await supabase
+      .from(tableName)
+      .select('*', { count: 'exact', head: true });
+    return count;
   }
 }

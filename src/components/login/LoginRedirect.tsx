@@ -4,13 +4,12 @@ import { Text } from '@rneui/base';
 import { MediumSpacer } from '../util/Spacer';
 import { navigate } from '../../navigationRef';
 import commonStyles from '../../styles/CommonStyles';
-
-const LIGHT_BLUE_COLOR = '#6b73da';
+import AppColors from '../../util/globalColors';
 
 const styles = StyleSheet.create({
   text: {
     fontSize: 15,
-    color: LIGHT_BLUE_COLOR,
+    color: AppColors.quaternary,
   },
 });
 

@@ -1,13 +1,15 @@
 import React from 'react';
 import { Button } from '@rneui/base';
 import { StyleSheet } from 'react-native';
-import tr from '../../manager/TranslationManager';
+import tr from '../../../manager/TranslationManager';
+import AppColors from '../../../util/globalColors';
 
 const styles = StyleSheet.create({
   button: {
-    borderRadius: 10,
-    backgroundColor: 'black',
+    borderRadius: 5,
+    backgroundColor: AppColors.quaternary,
     padding: 10,
+    height: 50,
   },
 });
 

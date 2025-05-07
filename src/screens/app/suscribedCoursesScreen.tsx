@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { ActivityIndicator, StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import { Context as CourseContext } from '../../context/CourseDaoContext';
 import { Context as UserContext } from '../../context/UserDaoContext';
-import CourseListComponent from '../../components/components/CourseListComponent';
+import CourseListComponent from '../../components/components/courses/CourseListComponent';
 import { GetID } from '../../core/supabaseActions';
 import { navigate } from '../../navigationRef';
+import LoadingIndicator from '../../components/components/common/LoadingIndicator';
 
 const styles = StyleSheet.create({
   notFoundText: {
@@ -33,7 +34,7 @@ function SuscribedCoursesScreen() {
   }, [courseState.selectedCourses]);
 
   if (!loaded) {
-    return <ActivityIndicator size="large" color="#000" style={{ marginTop: 100 }} />;
+    return <LoadingIndicator />;
   }
 
   if (courseState.selectedCourses.length > 0) {

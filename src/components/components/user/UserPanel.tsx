@@ -6,14 +6,17 @@ import Feather from '@expo/vector-icons/Feather';
 import Fontisto from '@expo/vector-icons/Fontisto';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
-import { MediumSpacer, SmallSpacer } from '../util/Spacer';
-import tr from '../../manager/TranslationManager';
-import { Context as UserContext } from '../../context/UserDaoContext';
+import { MediumSpacer, SmallSpacer } from '../../util/Spacer';
+import tr from '../../../manager/TranslationManager';
+import { Context as UserContext } from '../../../context/UserDaoContext';
+import AppColors from '../../../util/globalColors';
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     alignItems: 'center',
+    borderColor: AppColors.quaternary,
+    backgroundColor: AppColors.secondary,
     borderWidth: 1,
     borderRadius: 10,
     paddingHorizontal: 5,
@@ -21,6 +24,8 @@ const styles = StyleSheet.create({
   },
   input: {
     borderRadius: 10,
+    backgroundColor: AppColors.white,
+    paddingLeft: 15,
   },
   button: {
     height: 50,
@@ -28,10 +33,10 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   saveButton: {
-    backgroundColor: 'gray',
+    backgroundColor: AppColors.primary,
   },
   adminButton: {
-    backgroundColor: 'black',
+    backgroundColor: AppColors.primary,
   },
 });
 
@@ -52,30 +57,36 @@ function UserPanel({ user }: any) {
       <FontAwesome5
         name="user-edit"
         size={100}
-        color="black"
+        color={AppColors.quaternary}
       />
       <MediumSpacer />
       <Input
         style={styles.input}
-        leftIcon={<Feather name="user" size={30} color="black" />}
+        leftIcon={<Feather name="user" size={30} color={AppColors.quaternary} />}
+        leftIconContainerStyle={{ marginRight: 15 }}
         value={nameInput}
         onChangeText={(value) => {
           if (value.length <= 15) {
             setNameInput(value);
           }
         }}
+        inputContainerStyle={{ borderBottomWidth: 0 }}
       />
       <Input
         style={styles.input}
-        leftIcon={<Fontisto name="email" size={30} color="black" />}
+        leftIcon={<Fontisto name="email" size={30} color={AppColors.quaternary} />}
         disabled
         value={userEmail}
+        inputContainerStyle={{ borderBottomWidth: 0 }}
+        leftIconContainerStyle={{ marginRight: 15 }}
       />
       <Input
         style={styles.input}
-        leftIcon={<MaterialIcons name="security" size={30} color="black" />}
+        leftIcon={<MaterialIcons name="security" size={30} color={AppColors.quaternary} />}
         disabled
         value={userRol}
+        inputContainerStyle={{ borderBottomWidth: 0 }}
+        leftIconContainerStyle={{ marginRight: 15 }}
       />
       <MediumSpacer />
       <Button

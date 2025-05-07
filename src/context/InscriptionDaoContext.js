@@ -19,6 +19,8 @@ const inscriptionReducer = (state, action) => {
       return { ...state, error: action.payload };
     case 'isSuscribed':
       return { ...state, suscribed: action.payload, error: null };
+    case 'totalInscriptions':
+      return { ...state, totalInscriptions: action.payload };
     default:
       return state;
   }
@@ -66,6 +68,11 @@ const isSuscribed = (dispatch) => async (courseId, userId) => {
   dispatch({ type: 'isSuscribed', payload: suscribed });
 };
 
+const totalInscriptions = (dispatch) => async () => {
+  const total = await inscriptionDao.totalInscriptions();
+  dispatch({ type: 'totalInscriptions', payload: total });
+};
+
 export const { Provider, Context } = createDataContext(
   inscriptionReducer,
   {
@@ -75,6 +82,7 @@ export const { Provider, Context } = createDataContext(
     update,
     remove,
     isSuscribed,
+    totalInscriptions,
   },
   {
     error: null,

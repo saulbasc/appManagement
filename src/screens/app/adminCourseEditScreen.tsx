@@ -1,10 +1,23 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { useEffect } from 'react';
+import { StyleSheet, View } from 'react-native';
+import CourseForm from '../../components/components/courses/CourseForm';
 
-function AdminCourseEditScreen() {
+const styles = StyleSheet.create({
+  content: {
+    marginHorizontal: 10,
+    marginVertical: 20,
+  },
+});
+
+function AdminCourseEditScreen({ course, user }: any) {
+  useEffect(() => {
+    console.log(course);
+    console.log(user);
+  });
+
   return (
-    <View>
-      <Text>Course Edit Screen</Text>
+    <View style={styles.content}>
+      <CourseForm />
     </View>
   );
 }

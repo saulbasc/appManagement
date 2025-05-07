@@ -1,13 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { ActivityIndicator, ScrollView, StyleSheet } from 'react-native';
-import CourseDetailInfo from '../../components/components/CourseDetailInfo';
-import CourseValorationPanel from '../../components/components/CourseValorationPanel';
-import { MediumSpacer, SmallSpacer } from '../../components/util/Spacer';
-import CourseSuscribePanel from '../../components/components/CourseSuscribeButton';
+import { ScrollView, StyleSheet } from 'react-native';
+import CourseDetailInfo from '../../components/components/courses/CourseDetailInfo';
+import CourseValorationPanel from '../../components/components/courses/CourseValorationPanel';
+import { MediumSpacer } from '../../components/util/Spacer';
+import CourseSuscribePanel from '../../components/components/courses/CourseSuscribeButton';
 import { Context as InscriptionContext } from '../../context/InscriptionDaoContext';
 import { Context as ValorationContext } from '../../context/ValorationDaoContext';
 import Valoration from '../../types/Valoration';
 import Inscription from '../../types/Inscription';
+import LoadingIndicator from '../../components/components/common/LoadingIndicator';
+import ValorationList from '../../components/components/valoration/ValorationList';
 
 const styles = StyleSheet.create({
   view: {
@@ -36,23 +38,28 @@ function CourseDetailScreen(props: any) {
     state: valorationState,
     insert: valorationInsert,
     select: valorationSelect,
+    valorationsOfCourse,
   } = useContext(ValorationContext);
 
   useEffect(() => {
     const Actions = async () => {
       await isSuscribed(course.id, user.id);
       await valorationSelect(user.id, course.id);
+      await valorationsOfCourse(course.id);
       setLoaded(true);
     };
     Actions();
   }, []);
 
   if (!loaded) {
-    return <ActivityIndicator size="large" color="#000" style={{ marginTop: 100 }} />;
+    return <LoadingIndicator />;
   }
 
   return (
-    <ScrollView style={styles.view}>
+    <ScrollView
+      style={styles.view}
+      showsVerticalScrollIndicator={false}
+    >
       <CourseDetailInfo
         course={course}
       />
@@ -68,7 +75,7 @@ function CourseDetailScreen(props: any) {
           await isSuscribed(course.id, user.id);
         }}
       />
-      <SmallSpacer />
+      <MediumSpacer />
       {inscriptionState.suscribed && (
         <CourseValorationPanel
           valoration={valorationState.valoration}
@@ -77,6 +84,10 @@ function CourseDetailScreen(props: any) {
           }}
         />
       )}
+      <MediumSpacer />
+      <ValorationList
+        course={course}
+      />
       <MediumSpacer />
     </ScrollView>
   );

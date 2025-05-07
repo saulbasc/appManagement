@@ -4,22 +4,22 @@ import {
   StyleSheet, Text, TouchableOpacity, View,
 } from 'react-native';
 import Feather from '@expo/vector-icons/Feather';
-import tr from '../../manager/TranslationManager';
-import { navigate } from '../../navigationRef';
+import tr from '../../../manager/TranslationManager';
+import { navigate } from '../../../navigationRef';
+import AppColors from '../../../util/globalColors';
 
 const styles = StyleSheet.create({
   content: {
     flexDirection: 'row',
-    borderWidth: 1,
     borderRadius: 10,
     padding: 10,
-    backgroundColor: 'white',
+    backgroundColor: AppColors.quaternary,
     alignItems: 'center',
     justifyContent: 'center',
   },
   text: {
-    fontSize: 23,
-    color: 'black',
+    fontSize: 20,
+    color: AppColors.white,
     marginRight: 20,
   },
 });
@@ -33,7 +33,7 @@ function SuscribedCoursesPanel() {
     >
       <View style={styles.content}>
         <Text style={styles.text}>{tr('profileListButton')}</Text>
-        <Feather name="arrow-right" size={40} color="black" />
+        <Feather name="arrow-right" size={40} color={AppColors.white} />
       </View>
     </TouchableOpacity>
   );

@@ -5,7 +5,7 @@ class Course {
 
   description: string;
 
-  category: Date;
+  category: string;
 
   duration: number;
 
@@ -17,7 +17,7 @@ class Course {
     id: number,
     title?: string,
     description?: string,
-    category?: Date,
+    category?: string,
     duration?: number,
     instructor?: string,
     startDate?: Date,
@@ -25,7 +25,7 @@ class Course {
     this.id = id;
     this.title = title ?? '';
     this.description = description ?? '';
-    this.category = category ?? new Date();
+    this.category = category ?? '';
     this.duration = duration ?? 0;
     this.instructor = instructor ?? '';
     this.startDate = startDate ? new Date(startDate) : new Date();

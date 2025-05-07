@@ -7,6 +7,7 @@ import Feather from '@expo/vector-icons/Feather';
 import CourseListScreen from '../../screens/app/courseListScreen';
 import UserProfileScreen from '../../screens/app/userProfileScreen';
 import AdminScreen from '../../screens/app/adminScreen';
+import AppColors from '../../util/globalColors';
 
 const Tab = createBottomTabNavigator();
 
@@ -28,10 +29,12 @@ function BottomTabNavigator() {
       screenOptions={{
         headerShown: false,
         tabBarLabelPosition: 'below-icon',
-        tabBarActiveTintColor: 'white',
-        tabBarInactiveTintColor: 'black',
+        tabBarActiveTintColor: AppColors.white,
+        tabBarInactiveTintColor: AppColors.quaternary,
         tabBarStyle: {
-          backgroundColor: '#c7c6c6',
+          backgroundColor: AppColors.primary,
+          borderTopWidth: 2,
+          borderColor: AppColors.quaternary,
         },
       }}
     >
