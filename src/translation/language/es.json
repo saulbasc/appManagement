@@ -23,6 +23,7 @@
     "instructor": "INSTRUCTOR",
     "createCourse": "Crear curso",
     "editCourse": "Editar course",
-    "hours": "horas"
+    "hours": "horas",
+    "me": "yo"
   }
 }

@@ -1,0 +1,57 @@
+import React from 'react';
+import { ScrollView, StyleSheet } from 'react-native';
+import { MediumSpacer } from '../../util/Spacer';
+import ValorationList from '../valoration/ValorationList';
+import CourseDetailInfo from './CourseDetailInfo';
+import CourseValorationPanel from './CourseValorationPanel';
+import CourseSuscribeButton from './CourseSuscribeButton';
+
+const styles = StyleSheet.create({
+  view: {
+    flex: 1,
+    paddingTop: 10,
+    paddingHorizontal: 10,
+    borderRadius: 10,
+    backgroundColor: '#fff',
+  },
+});
+
+function CourseDetailPanel({
+  course,
+  suscribed,
+  onSuscribe,
+  onUnsuscribe,
+  valoration,
+  onSubmitValoration,
+}: any) {
+  return (
+    <ScrollView
+      style={styles.view}
+      showsVerticalScrollIndicator={false}
+    >
+      <CourseDetailInfo
+        course={course}
+      />
+      <MediumSpacer />
+      <CourseSuscribeButton
+        suscribed={suscribed}
+        onSuscribe={onSuscribe}
+        onUnsuscribe={onUnsuscribe}
+      />
+      <MediumSpacer />
+      {suscribed && (
+        <CourseValorationPanel
+          valoration={valoration}
+          onSubmit={onSubmitValoration}
+        />
+      )}
+      <MediumSpacer />
+      <ValorationList
+        course={course}
+      />
+      <MediumSpacer />
+    </ScrollView>
+  );
+}
+
+export default CourseDetailPanel;

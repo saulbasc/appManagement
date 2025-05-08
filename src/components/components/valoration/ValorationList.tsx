@@ -3,6 +3,7 @@ import { FlatList, StyleSheet } from 'react-native';
 import { Context as ValorationContext } from '../../../context/ValorationDaoContext';
 import LoadingIndicator from '../common/LoadingIndicator';
 import ValorationPanel from './ValorationPanel';
+import { MediumSpacer } from '../../util/Spacer';
 
 const styles = StyleSheet.create({
   content: {
@@ -28,13 +29,18 @@ function ValorationList({ course }: any) {
 
   return (
     <FlatList
+      nestedScrollEnabled
+      scrollEnabled={false}
       style={styles.content}
       showsVerticalScrollIndicator={false}
       data={valorationState.valorationsOfCourse}
       renderItem={({ item }) => (
-        <ValorationPanel
-          item={item}
-        />
+        <>
+          <ValorationPanel
+            item={item}
+          />
+          <MediumSpacer />
+        </>
       )}
     />
   );

@@ -1,19 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { useContext, useEffect, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
-import AdminButtonsPanel from '../../components/components/admin/AdminButtonsPanel';
 import { Context as CourseContext } from '../../context/CourseDaoContext';
 import { Context as UserContext } from '../../context/UserDaoContext';
 import { GetID } from '../../core/supabaseActions';
 import { navigate } from '../../navigationRef';
-import AdminCourseListComponent from '../../components/components/admin/AdminCourseListComponent';
 import LoadingIndicator from '../../components/components/common/LoadingIndicator';
-
-const styles = StyleSheet.create({
-  content: {
-    flex: 1,
-  },
-});
+import AdminScreenPanel from '../../components/components/admin/AdminScreenPanel';
 
 function AdminScreen() {
   const { state: courseState, selectAll: courseSelectAll } = useContext(CourseContext);
@@ -35,29 +27,25 @@ function AdminScreen() {
       }
     };
     GetUSerID();
-  }, [courseState.courses]);
+  }, []);
 
   if (!loaded) {
     return <LoadingIndicator />;
   }
 
   return (
-    <View style={styles.content}>
-      <AdminButtonsPanel
-        onPressAdd={() => {
-          navigate('AdminCreation');
-        }}
-        onPressStats={() => {
-          navigate('AdminStats');
-        }}
-      />
-      <AdminCourseListComponent
-        courses={courseState.courses}
-        onPress={(course: any) => {
-          navigate('AdminEdit', { course, user: userState.user });
-        }}
-      />
-    </View>
+    <AdminScreenPanel
+      courses={courseState.courses}
+      onPressAdd={() => {
+        navigate('AdminCreation');
+      }}
+      onPressStats={() => {
+        navigate('AdminStats');
+      }}
+      onPressEdit={(course: any) => {
+        navigate('AdminEdit', { course, user: userState.user });
+      }}
+    />
   );
 }
 
