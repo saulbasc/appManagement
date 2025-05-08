@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Context as UserContext } from '../../context/UserDaoContext';
 import { GetID } from '../../core/supabaseActions';
-import LoadingIndicator from '../../components/components/common/LoadingIndicator';
+import LoadingIndicator from '../../components/app/common/LoadingIndicator';
 import { navigate } from '../../navigationRef';
-import UserPanelScreenComponent from '../../components/components/screen_component/UserPanelScreenComponent';
+import UserPanelScreenComponent from '../../components/app/screen_component/UserPanelScreenComponent';
 
 function UserProfileScreen() {
   const { state, select } = useContext(UserContext);

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Context as CourseContext } from '../../context/CourseDaoContext';
 import Course from '../../types/Course';
-import AdminCourseEditScreenComponent from '../../components/components/screen_component/AdminCourseEditScreenComponent';
+import AdminCourseEditScreenComponent from '../../components/app/screen_component/AdminCourseEditScreenComponent';
 
 function AdminCourseEditScreen({ route }: any) {
   const { course } = route.params;

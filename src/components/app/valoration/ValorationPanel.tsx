@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
     backgroundColor: AppColors.white,
     borderBottomWidth: 2,
     borderBottomColor: AppColors.tertiary,
-    borderRadius: 10,
   },
   user: {
     fontSize: 30,

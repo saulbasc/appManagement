@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { navigate } from '../../navigationRef';
 import { Context as CourseContext } from '../../context/CourseDaoContext';
 import { Context as UserContext } from '../../context/UserDaoContext';
-import CourseListComponent from '../../components/components/courses/CourseListComponent';
+import CourseListComponent from '../../components/app/courses/CourseListComponent';
 import { GetID } from '../../core/supabaseActions';
 
 function CourseListScreen() {

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import Course from '../../types/Course';
 import { Context as CourseContext } from '../../context/CourseDaoContext';
-import AdminCourseCreationScreenComponent from '../../components/components/screen_component/AdminCourseCreationScreenComponent';
+import AdminCourseCreationScreenComponent from '../../components/app/screen_component/AdminCourseCreationScreenComponent';
 
 function AdminCourseCreationScreen() {
   const [title, setTitle] = useState('');

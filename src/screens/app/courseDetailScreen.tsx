@@ -3,8 +3,8 @@ import { Context as InscriptionContext } from '../../context/InscriptionDaoConte
 import { Context as ValorationContext } from '../../context/ValorationDaoContext';
 import Valoration from '../../types/Valoration';
 import Inscription from '../../types/Inscription';
-import LoadingIndicator from '../../components/components/common/LoadingIndicator';
-import CourseDetailScreenComponent from '../../components/components/screen_component/CourseDetailScreenComponent';
+import LoadingIndicator from '../../components/app/common/LoadingIndicator';
+import CourseDetailScreenComponent from '../../components/app/screen_component/CourseDetailScreenComponent';
 
 function CourseDetailScreen(props: any) {
   const prop = props;

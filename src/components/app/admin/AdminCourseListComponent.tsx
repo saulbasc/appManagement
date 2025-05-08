@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
 
 function AdminCourseListComponent({ courses, onPress }: any) {
   const { selectAll } = useContext(CourseContext);
+  const [text, setText] = useState('');
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -27,16 +28,22 @@ function AdminCourseListComponent({ courses, onPress }: any) {
     GetCourses();
   }, []);
 
+  const filteredCourses = courses?.filter((course: any) => course
+    .title.toLowerCase().includes(text.toLocaleLowerCase()));
+
   if (!loaded) {
     return <LoadingIndicator />;
   }
 
   return (
     <View style={styles.view}>
-      <SearchBar />
+      <SearchBar
+        value={text}
+        onChangeText={setText}
+      />
       <FlatList
         showsVerticalScrollIndicator={false}
-        data={courses ?? []}
+        data={filteredCourses ?? []}
         renderItem={({ item }) => (
           <AdminCourseListPanel
             onPress={() => onPress(item)}

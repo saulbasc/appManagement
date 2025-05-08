@@ -26,6 +26,9 @@
     "deleteCourse": "Borrar curso",
     "hours": "horas",
     "me": "Yo",
-    "notSuscribedInCourses": "No te has suscrito a ningún curso"
+    "notSuscribedInCourses": "No te has suscrito a ningún curso",
+    "chooseIdiom": "Cambiar idioma",
+    "spanish": "Español",
+    "english": "Inglés"
   }
 }

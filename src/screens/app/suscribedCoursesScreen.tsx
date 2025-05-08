@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Context as CourseContext } from '../../context/CourseDaoContext';
 import { Context as UserContext } from '../../context/UserDaoContext';
 import { GetID } from '../../core/supabaseActions';
-import LoadingIndicator from '../../components/components/common/LoadingIndicator';
-import SuscribedCoursesScreenComponent from '../../components/components/screen_component/SuscribedCoursesScreenCOmponent';
+import LoadingIndicator from '../../components/app/common/LoadingIndicator';
+import SuscribedCoursesScreenComponent from '../../components/app/screen_component/SuscribedCoursesScreenComponent';
 import { navigate } from '../../navigationRef';
 import Course from '../../types/Course';
 

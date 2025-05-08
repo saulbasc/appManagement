@@ -4,8 +4,8 @@ import { Context as CourseContext } from '../../context/CourseDaoContext';
 import { Context as UserContext } from '../../context/UserDaoContext';
 import { GetID } from '../../core/supabaseActions';
 import { navigate } from '../../navigationRef';
-import LoadingIndicator from '../../components/components/common/LoadingIndicator';
-import AdminScreenComponent from '../../components/components/screen_component/AdminScreenComponent';
+import LoadingIndicator from '../../components/app/common/LoadingIndicator';
+import AdminScreenComponent from '../../components/app/screen_component/AdminScreenComponent';
 import Course from '../../types/Course';
 
 function AdminScreen() {

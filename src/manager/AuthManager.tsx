@@ -1,6 +1,7 @@
 import { Alert } from 'react-native';
 import { navigate } from '../navigationRef';
-import { SignInEmail, SignUpEmail, Insert } from '../core/supabaseActions';
+import { SignInEmail, SignUpEmail } from '../core/supabaseActions';
+import supabase from '../lib/supabase';
 
 const signInEmail = async ({ email, password } : any) => {
   const { error } = await SignInEmail({ email, password });
@@ -16,7 +17,7 @@ const signUpEmail = async ({ email, password }: any) => {
   if (error) {
     Alert.alert(error.message);
   } else {
-    Insert('Usuario', { ID: data.user?.id, email: data.user?.email, rol: 'User' });
+    await supabase.from('usuario').insert({ ID: data.user?.id, email: data.user?.email, rol: 'User' });
     navigate('BottomTab');
   }
 };
