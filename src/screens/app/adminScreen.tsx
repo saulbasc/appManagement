@@ -5,7 +5,8 @@ import { Context as UserContext } from '../../context/UserDaoContext';
 import { GetID } from '../../core/supabaseActions';
 import { navigate } from '../../navigationRef';
 import LoadingIndicator from '../../components/components/common/LoadingIndicator';
-import AdminScreenPanel from '../../components/components/admin/AdminScreenPanel';
+import AdminScreenComponent from '../../components/components/screen_component/AdminScreenComponent';
+import Course from '../../types/Course';
 
 function AdminScreen() {
   const { state: courseState, selectAll: courseSelectAll } = useContext(CourseContext);
@@ -34,7 +35,7 @@ function AdminScreen() {
   }
 
   return (
-    <AdminScreenPanel
+    <AdminScreenComponent
       courses={courseState.courses}
       onPressAdd={() => {
         navigate('AdminCreation');
@@ -42,7 +43,7 @@ function AdminScreen() {
       onPressStats={() => {
         navigate('AdminStats');
       }}
-      onPressEdit={(course: any) => {
+      onPressEdit={(course: Course) => {
         navigate('AdminEdit', { course, user: userState.user });
       }}
     />

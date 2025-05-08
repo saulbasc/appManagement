@@ -1,7 +1,7 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import React, { useEffect, useState } from 'react';
 import { Button } from '@rneui/base';
 import { StyleSheet, TextInput, View } from 'react-native';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { AirbnbRating } from '@rn-vui/ratings';
 import { MediumSpacer } from '../../util/Spacer';
 import AppColors from '../../../util/globalColors';

@@ -4,7 +4,7 @@ import { Context as ValorationContext } from '../../context/ValorationDaoContext
 import Valoration from '../../types/Valoration';
 import Inscription from '../../types/Inscription';
 import LoadingIndicator from '../../components/components/common/LoadingIndicator';
-import CourseDetailPanel from '../../components/components/courses/CourseDetailPanel';
+import CourseDetailScreenComponent from '../../components/components/screen_component/CourseDetailScreenComponent';
 
 function CourseDetailScreen(props: any) {
   const prop = props;
@@ -41,7 +41,7 @@ function CourseDetailScreen(props: any) {
   }
 
   return (
-    <CourseDetailPanel
+    <CourseDetailScreenComponent
       course={course}
       suscribed={inscriptionState.suscribed}
       onSuscribe={async () => {

@@ -1,24 +1,57 @@
-import React, { useEffect } from 'react';
-import { StyleSheet, View } from 'react-native';
-import CourseForm from '../../components/components/courses/CourseForm';
+import React, { useContext, useEffect, useState } from 'react';
+import { Context as CourseContext } from '../../context/CourseDaoContext';
+import Course from '../../types/Course';
+import AdminCourseEditScreenComponent from '../../components/components/screen_component/AdminCourseEditScreenComponent';
 
-const styles = StyleSheet.create({
-  content: {
-    marginHorizontal: 10,
-    marginVertical: 20,
-  },
-});
+function AdminCourseEditScreen({ route }: any) {
+  const { course } = route.params;
 
-function AdminCourseEditScreen({ course, user }: any) {
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
+  const [description, setDescription] = useState('');
+  const [duration, setDuration] = useState(0);
+  const [instructor, setInstructor] = useState('');
+
+  const { update: updateCourse, deleted: deleteCourse, selectAll } = useContext(CourseContext);
+
   useEffect(() => {
-    console.log(course);
-    console.log(user);
-  });
+    setTitle(course.title);
+    setCategory(course.category);
+    setDescription(course.description);
+    setDuration(course.duration);
+    setInstructor(course.instructor);
+  }, []);
 
   return (
-    <View style={styles.content}>
-      <CourseForm />
-    </View>
+    <AdminCourseEditScreenComponent
+      titleValue={title}
+      categoryValue={category}
+      descriptionValue={description}
+      durationValue={duration}
+      instructorValue={instructor}
+      setTitle={setTitle}
+      setCategory={setCategory}
+      setDescription={setDescription}
+      setDuration={setDuration}
+      setInstructor={setInstructor}
+      onEditPress={async () => {
+        const newCourse = new Course(
+          course.id,
+          title,
+          description,
+          category,
+          duration,
+          instructor,
+          new Date(),
+        );
+        await updateCourse(newCourse);
+        await selectAll();
+      }}
+      onDeletePress={async () => {
+        await deleteCourse(course.id);
+        await selectAll();
+      }}
+    />
   );
 }
 

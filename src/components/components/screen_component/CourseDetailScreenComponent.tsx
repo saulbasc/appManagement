@@ -2,9 +2,9 @@ import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { MediumSpacer } from '../../util/Spacer';
 import ValorationList from '../valoration/ValorationList';
-import CourseDetailInfo from './CourseDetailInfo';
-import CourseValorationPanel from './CourseValorationPanel';
-import CourseSuscribeButton from './CourseSuscribeButton';
+import CourseDetailInfo from '../courses/CourseDetailInfo';
+import CourseValorationPanel from '../courses/CourseValorationPanel';
+import CourseSuscribeButton from '../courses/CourseSuscribeButton';
 
 const styles = StyleSheet.create({
   view: {
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function CourseDetailPanel({
+function CourseDetailScreenComponent({
   course,
   suscribed,
   onSuscribe,
@@ -54,4 +54,4 @@ function CourseDetailPanel({
   );
 }
 
-export default CourseDetailPanel;
+export default CourseDetailScreenComponent;

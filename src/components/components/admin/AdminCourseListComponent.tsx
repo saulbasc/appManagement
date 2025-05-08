@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
 import SearchBar from '../../bar/SearchBar';
-import { Context as UserContext } from '../../../context/CourseDaoContext';
+import { Context as CourseContext } from '../../../context/CourseDaoContext';
 import AppColors from '../../../util/globalColors';
 import AdminCourseListPanel from './AdminCourseListPanel';
 import LoadingIndicator from '../common/LoadingIndicator';
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
 });
 
 function AdminCourseListComponent({ courses, onPress }: any) {
-  const { selectAll } = useContext(UserContext);
+  const { selectAll } = useContext(CourseContext);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {

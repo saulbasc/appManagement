@@ -66,7 +66,7 @@ const update = (dispatch) => async (course) => {
 };
 
 const deleted = (dispatch) => async (id) => {
-  const error = await courseDao.delete(id);
+  const error = await courseDao.remove(id);
   if (error) {
     dispatch({ type: 'error', payload: error });
   } else {

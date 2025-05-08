@@ -22,8 +22,10 @@
     "duration": "DURACIÓN",
     "instructor": "INSTRUCTOR",
     "createCourse": "Crear curso",
-    "editCourse": "Editar course",
+    "editCourse": "Editar curso",
+    "deleteCourse": "Borrar curso",
     "hours": "horas",
-    "me": "yo"
+    "me": "Yo",
+    "notSuscribedInCourses": "No te has suscrito a ningún curso"
   }
 }

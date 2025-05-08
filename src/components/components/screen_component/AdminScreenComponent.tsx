@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import AdminButtonsPanel from './AdminButtonsPanel';
-import AdminCourseListComponent from './AdminCourseListComponent';
+import AdminButtonsPanel from '../admin/AdminButtonsPanel';
+import AdminCourseListComponent from '../admin/AdminCourseListComponent';
+import Course from '../../../types/Course';
 
 const styles = StyleSheet.create({
   content: {
@@ -9,12 +11,19 @@ const styles = StyleSheet.create({
   },
 });
 
-function AdminScreenPanel({
+type AdminScreenProps = {
+  onPressAdd: () => void;
+  onPressStats: () => void;
+  onPressEdit: (course: Course) => void;
+  courses: Course[];
+};
+
+function AdminScreenComponent({
   onPressAdd,
   onPressStats,
   courses,
   onPressEdit,
-}: any) {
+}: Readonly<AdminScreenProps>) {
   return (
     <View style={styles.content}>
       <AdminButtonsPanel
@@ -29,4 +38,4 @@ function AdminScreenPanel({
   );
 }
 
-export default AdminScreenPanel;
+export default AdminScreenComponent;

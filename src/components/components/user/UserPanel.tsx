@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { Button, Input } from '@rneui/base';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Feather from '@expo/vector-icons/Feather';
 import Fontisto from '@expo/vector-icons/Fontisto';
@@ -8,7 +8,6 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { MediumSpacer, SmallSpacer } from '../../util/Spacer';
 import tr from '../../../manager/TranslationManager';
-import { Context as UserContext } from '../../../context/UserDaoContext';
 import AppColors from '../../../util/globalColors';
 
 const styles = StyleSheet.create({
@@ -40,12 +39,11 @@ const styles = StyleSheet.create({
   },
 });
 
-function UserPanel({ user }: any) {
+function UserPanel({ user, onPressAdminButton, onPressSaveButton }: any) {
   const userName = user.name;
   const userEmail = user.email;
   const userRol = user.rol;
 
-  const { update } = useContext(UserContext);
   const [nameInput, setNameInput] = useState('');
 
   useEffect(() => {
@@ -92,25 +90,13 @@ function UserPanel({ user }: any) {
       <Button
         title={tr('profileSaveButton')}
         buttonStyle={[styles.button, styles.saveButton]}
-        onPress={async () => {
-          const newUser = user;
-          newUser.name = nameInput;
-          await update(newUser);
-        }}
+        onPress={() => onPressSaveButton(nameInput)}
       />
       <SmallSpacer />
       <Button
         title={userRol === 'User' ? tr('profileUpgradeButton') : tr('profileDowngradeButton')}
         buttonStyle={[styles.button, styles.adminButton]}
-        onPress={async () => {
-          const newUser = user;
-          if (newUser.rol === 'User') {
-            newUser.rol = 'Admin';
-          } else {
-            newUser.rol = 'User';
-          }
-          await update(newUser);
-        }}
+        onPress={onPressAdminButton}
       />
     </View>
   );

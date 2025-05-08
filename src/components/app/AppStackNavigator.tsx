@@ -10,7 +10,7 @@ import AdminScreen from '../../screens/app/adminScreen';
 import SuscribedCoursesScreen from '../../screens/app/suscribedCoursesScreen';
 import AdminStatsScreen from '../../screens/app/adminStatsScreen';
 import AdminCourseEditScreen from '../../screens/app/adminCourseEditScreen';
-import AdminCourseCreationScreen from '../../screens/app/adminCourseCreationScene';
+import AdminCourseCreationScreen from '../../screens/app/adminCourseCreationScreen';
 
 const Stack = createNativeStackNavigator();
 

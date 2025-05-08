@@ -86,9 +86,17 @@ export default class CourseDAO implements IDefaultDAO<number, Course> {
   }
 
   async update(object: Course): Promise<boolean> {
-    const a = object;
-    // eslint-disable-next-line no-console
-    console.log(a);
+    await supabase
+      .from(tableName)
+      .update({
+        titulo: object.title,
+        descripcion: object.description,
+        categoria: object.category,
+        duracion: object.duration,
+        instructor: object.instructor,
+        fecha_creacion: object.startDate,
+      })
+      .eq('ID', object.id);
     throw new Error('Method not implemented.');
   }
 
@@ -98,6 +106,20 @@ export default class CourseDAO implements IDefaultDAO<number, Course> {
       .delete()
       .eq(idColumn, id);
     return !error;
+  }
+
+  async upsert(course: Course) {
+    await supabase
+      .from(tableName)
+      .upsert({
+        ID: course.id,
+        titulo: course.title,
+        descripcion: course.description,
+        categoria: course.category,
+        duracion: course.duration,
+        instructor: course.instructor,
+        fecha_creacion: course.startDate,
+      });
   }
 
   async getCourseDates() {

@@ -5,7 +5,6 @@ import {
 } from 'react-native';
 import Feather from '@expo/vector-icons/Feather';
 import tr from '../../../manager/TranslationManager';
-import { navigate } from '../../../navigationRef';
 import AppColors from '../../../util/globalColors';
 
 const styles = StyleSheet.create({
@@ -24,12 +23,10 @@ const styles = StyleSheet.create({
   },
 });
 
-function SuscribedCoursesPanel() {
+function SuscribedCoursesPanel({ onPress }: any) {
   return (
     <TouchableOpacity
-      onPress={async () => {
-        navigate('SuscribedCourses');
-      }}
+      onPress={onPress}
     >
       <View style={styles.content}>
         <Text style={styles.text}>{tr('profileListButton')}</Text>
