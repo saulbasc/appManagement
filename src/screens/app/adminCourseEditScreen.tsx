@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Context as CourseContext } from '../../context/CourseDaoContext';
 import Course from '../../types/Course';
 import AdminCourseEditScreenComponent from '../../components/app/screen_component/AdminCourseEditScreenComponent';
+import { goBack } from '../../navigationRef';
 
 function AdminCourseEditScreen({ route }: any) {
   const { course } = route.params;
@@ -44,10 +45,12 @@ function AdminCourseEditScreen({ route }: any) {
           instructor,
           new Date(),
         );
+        goBack();
         await updateCourse(newCourse);
         await selectAll();
       }}
       onDeletePress={async () => {
+        goBack();
         await deleteCourse(course.id);
         await selectAll();
       }}
