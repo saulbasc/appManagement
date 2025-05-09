@@ -102,19 +102,23 @@ export default class ValorationDAO implements IDefaultDAO<[number, string], Valo
     if (data) {
       let valorations: ValorationComment[] = [];
       const userDao = new UserDAO();
-      valorations = await Promise.all(data.map(async (val) => {
-        let name = '';
-        const userData = await userDao.select(val.ID_usuario);
-        if (userData) {
-          const localId = await GetID();
-          name = localId === val.ID_usuario ? tr('me') : userData.name;
-        }
-        return new ValorationComment(
-          name,
-          val.comentario,
-          val.calificacion,
-        );
-      }));
+      try {
+        valorations = await Promise.all(data.map(async (val) => {
+          let name = '';
+          const userData = await userDao.select(val.ID_usuario);
+          if (userData) {
+            const localId = await GetID();
+            name = localId === val.ID_usuario ? '(Yo)' : userData.name;
+          }
+          return new ValorationComment(
+            name,
+            val.comentario,
+            val.calificacion,
+          );
+        }));
+      } catch (error) {
+        console.log(`Error valorations => ${error}`);
+      }
       return valorations;
     }
     return [];

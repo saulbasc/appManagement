@@ -29,6 +29,9 @@
     "notSuscribedInCourses": "No te has suscrito a ningún curso",
     "chooseIdiom": "Cambiar idioma",
     "spanish": "Español",
-    "english": "Inglés"
+    "english": "Inglés",
+    "tabCoursesSection": "Cursos",
+    "tabUserSection": "Usuario",
+    "tabAdminSection": "Administrador"
   }
 }

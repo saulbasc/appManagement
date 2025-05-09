@@ -1,30 +1,32 @@
 import translation from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import en from './language/en.json';
 import es from './language/es.json';
 
-let idiomSelected = 'es';
-
-function idiom() {
-  return idiomSelected;
+async function GetLang() {
+  const lang = await AsyncStorage.getItem('lang');
+  console.log(`Recoged Async => ${lang}`);
+  return lang != null ? lang : 'en';
 }
 
-translation.use(initReactI18next).init({
-  lng: idiom(),
-  fallbacking: idiom(),
-  compatibilityJSON: 'v3',
-  resources: {
-    en,
-    es,
-  },
-  interpolation: {
-    escapeValue: false,
-  },
-});
-
-export function ChangeIdiom(newIdiom) {
-  idiomSelected = newIdiom;
+export async function initI18() {
+  const lang = await GetLang();
+  translation.use(initReactI18next).init({
+    lng: lang,
+    fallbacking: lang,
+    compatibilityJSON: 'v3',
+    resources: {
+      en,
+      es,
+    },
+    interpolation: {
+      escapeValue: false,
+    },
+  });
 }
+
+initI18();
 
 export default translation;

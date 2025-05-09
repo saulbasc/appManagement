@@ -1,7 +1,37 @@
 {
-  "translation":{
-    "loginTitle":"HALLO",
-    "loginUser":"USER",
-    "loginPass":"PASSWORD"
+  "translation": {
+    "loginUser": "User",
+    "loginPass": "Password",
+    "loginButton": "Confirm",
+    "signinTitle": "Sign In",
+    "signinRedirect": "Don't have an account yet? Sign up now",
+    "signupTitle": "Sign Up",
+    "signupRedirect": "Already have an account? Log in now",
+    "suscribeCourseButton": "Subscribe to the course",
+    "unsuscribeCourseButton": "Unsubscribe",
+    "profileSaveButton": "Save",
+    "profileUpgradeButton": "Become an administrator",
+    "profileDowngradeButton": "Unsubscribe from administrator",
+    "profileListButton": "View subscribed courses",
+    "totalInscriptionsText": "Total subscriptions: ",
+    "courseCreationDates": "Course creation",
+    "usersForRating": "Users for rating",
+    "title": "TITLE",
+    "category": "CATEGORY",
+    "description": "DESCRIPTION",
+    "duration": "DURATION",
+    "instructor": "INSTRUCTOR",
+    "createCourse": "Create course",
+    "editCourse": "Edit course",
+    "deleteCourse": "Delete course",
+    "hours": "hours",
+    "me": "(Me)",
+    "notSuscribedInCourses": "You have not subscribed to any course",
+    "chooseIdiom": "Change language",
+    "spanish": "Spanish",
+    "english": "English",
+    "tabCoursesSection": "Courses",
+    "tabUserSection": "User",
+    "tabAdminSection": "Admin"
   }
 }

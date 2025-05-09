@@ -8,6 +8,7 @@ import CourseListScreen from '../../screens/app/courseListScreen';
 import UserProfileScreen from '../../screens/app/userProfileScreen';
 import AdminScreen from '../../screens/app/adminScreen';
 import AppColors from '../../util/globalColors';
+import tr from '../../manager/TranslationManager';
 
 const Tab = createBottomTabNavigator();
 
@@ -43,7 +44,7 @@ function BottomTabNavigator() {
         component={CourseListScreen}
         options={{
           tabBarIcon: renderHomeIcon,
-          tabBarLabel: 'Cursos',
+          tabBarLabel: tr('tabCoursesSection'),
         }}
       />
       <Tab.Screen
@@ -51,7 +52,7 @@ function BottomTabNavigator() {
         component={UserProfileScreen}
         options={{
           tabBarIcon: renderUserIcon,
-          tabBarLabel: 'Usuario',
+          tabBarLabel: tr('tabUserSection'),
         }}
       />
       <Tab.Screen
@@ -59,7 +60,7 @@ function BottomTabNavigator() {
         component={AdminScreen}
         options={{
           tabBarIcon: renderAdminIcon,
-          tabBarLabel: 'Administrar',
+          tabBarLabel: tr('tabAdminSection'),
         }}
       />
     </Tab.Navigator>

@@ -1,10 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import SelectDropdown from 'react-native-select-dropdown';
 import { StyleSheet, Text, View } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import tr from '../../manager/TranslationManager';
 import AppColors from '../../util/globalColors';
+import translation from '../../translation/translation';
 
 const styles = StyleSheet.create({
   dropdownButtonStyle: {
@@ -71,25 +73,44 @@ const styles = StyleSheet.create({
 });
 
 function BarDropDown() {
+  const spanish = tr('spanish');
+  const english = tr('english');
+
+  const [defaultLang, setDefaultLang] = useState('');
+
   const idioms = [
     { title: tr('spanish') },
     { title: tr('english') },
   ];
 
+  useEffect(() => {
+    const GetLang = async () => {
+      const receiveLang = await AsyncStorage.getItem('lang');
+      if (receiveLang === 'es') {
+        setDefaultLang(spanish);
+      } else if (receiveLang === 'en') {
+        setDefaultLang(english);
+      }
+    };
+    GetLang();
+  });
+
   return (
     <SelectDropdown
       data={idioms}
-      onSelect={(selectedItem) => {
-        if (selectedItem.title === tr('spanish')) {
-          console.log('España');
-        } else if (selectedItem.title === tr('english')) {
-          console.log('Ingland');
+      onSelect={async (selectedItem) => {
+        if (selectedItem.title === spanish) {
+          await AsyncStorage.setItem('lang', 'es');
+          translation.changeLanguage('es');
+        } else if (selectedItem.title === english) {
+          await AsyncStorage.setItem('lang', 'en');
+          translation.changeLanguage('en');
         }
       }}
       renderButton={(selectedItem) => (
         <View style={styles.dropdownButtonStyle}>
           <Text style={styles.dropdownButtonTxtStyle}>
-            {selectedItem?.title ?? tr('chooseIdiom')}
+            {selectedItem?.title ?? defaultLang}
           </Text>
           <AntDesign name="caretdown" size={24} color={AppColors.tertiary} />
         </View>

@@ -1,7 +1,7 @@
-import useTranslation from '../translation/translation';
+import { useTranslation } from 'react-i18next';
 
 const useStartTranslation = () => {
-  const { t } = useTranslation;
+  const { t } = useTranslation();
   return t;
 };
 
