@@ -86,7 +86,7 @@ export default class CourseDAO implements IDefaultDAO<number, Course> {
   }
 
   async update(object: Course): Promise<boolean> {
-    await supabase
+    const { error } = await supabase
       .from(tableName)
       .update({
         titulo: object.title,
@@ -97,7 +97,8 @@ export default class CourseDAO implements IDefaultDAO<number, Course> {
         fecha_creacion: object.startDate,
       })
       .eq('ID', object.id);
-    throw new Error('Method not implemented.');
+    if (error) return true;
+    return false;
   }
 
   async remove(id: number): Promise<boolean> {

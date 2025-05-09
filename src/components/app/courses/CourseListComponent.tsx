@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
 import SearchBar from '../../bar/SearchBar';
 import CourseListPanel from './CourseListPanel';
-import { Context as UserContext } from '../../../context/CourseDaoContext';
+import { Context as CourseContext } from '../../../context/CourseDaoContext';
 import AppColors from '../../../util/globalColors';
 
 const styles = StyleSheet.create({
@@ -15,12 +15,12 @@ const styles = StyleSheet.create({
 });
 
 function CourseListComponent({ courses, onPressCourse }: any) {
-  const { state, resetCourse } = useContext(UserContext);
+  const { resetCourse } = useContext(CourseContext);
   const [text, setText] = useState('');
 
   useEffect(() => {
     resetCourse();
-  }, [state.courses]);
+  }, []);
 
   const filteredCourses = courses?.filter((course: any) => course
     .title.toLowerCase().includes(text.toLocaleLowerCase()));

@@ -23,7 +23,7 @@ function SuscribedCoursesScreen() {
       }
     };
     GetUserID();
-  }, [courseState.selectedCourses]);
+  }, []);
 
   if (!loaded) {
     return <LoadingIndicator />;
