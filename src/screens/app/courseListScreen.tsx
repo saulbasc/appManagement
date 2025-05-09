@@ -27,7 +27,7 @@ function CourseListScreen() {
   return (
     <CourseListComponent
       courses={courseState.courses}
-      onPress={async (course: any) => {
+      onPressCourse={async (course: any) => {
         navigate('CourseDetail', { course, user: userState.user });
       }}
     />
