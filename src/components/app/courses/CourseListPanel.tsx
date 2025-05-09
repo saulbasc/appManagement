@@ -37,10 +37,10 @@ const styles = StyleSheet.create({
   },
 });
 
-function CourseListPanel({ item, onPress }: any) {
+function CourseListPanel({ item, onPressCourse }: any) {
   return (
     <TouchableOpacity
-      onPress={onPress}
+      onPress={onPressCourse}
       style={styles.container}
     >
       <Text style={styles.title}>{item.title}</Text>

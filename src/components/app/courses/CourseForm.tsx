@@ -39,38 +39,36 @@ function CourseForm({
   setInstructor,
 }: any) {
   return (
-    <View>
-      <View style={styles.inputsContent}>
-        <DefaultTextInput
-          value={titleValue}
-          onChangeText={setTitle}
-          multiline={false}
-          label={tr('title')}
-        />
-        <DefaultTextInput
-          value={categoryValue}
-          onChangeText={setCategory}
-          multiline={false}
-          label={tr('category')}
-        />
-        <DefaultTextInput
-          value={descriptionValue}
-          onChangeText={setDescription}
-          multiline
-          label={tr('description')}
-        />
-        <DefaultNumberInput
-          value={durationValue.toString()}
-          onChangeText={setDuration}
-          label={tr('duration')}
-        />
-        <DefaultTextInput
-          value={instructorValue}
-          onChangeText={setInstructor}
-          multiline={false}
-          label={tr('instructor')}
-        />
-      </View>
+    <View style={styles.inputsContent}>
+      <DefaultTextInput
+        value={titleValue}
+        onChangeText={setTitle}
+        multiline={false}
+        label={tr('title')}
+      />
+      <DefaultTextInput
+        value={categoryValue}
+        onChangeText={setCategory}
+        multiline={false}
+        label={tr('category')}
+      />
+      <DefaultTextInput
+        value={descriptionValue}
+        onChangeText={setDescription}
+        multiline
+        label={tr('description')}
+      />
+      <DefaultNumberInput
+        value={durationValue.toString()}
+        onChangeText={setDuration}
+        label={tr('duration')}
+      />
+      <DefaultTextInput
+        value={instructorValue}
+        onChangeText={setInstructor}
+        multiline={false}
+        label={tr('instructor')}
+      />
       <MediumSpacer />
     </View>
   );

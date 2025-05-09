@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function CourseListComponent({ courses, onPress }: any) {
+function CourseListComponent({ courses, onPressCourse }: any) {
   const { state, resetCourse } = useContext(UserContext);
   const [text, setText] = useState('');
 
@@ -33,7 +33,7 @@ function CourseListComponent({ courses, onPress }: any) {
         data={filteredCourses ?? []}
         renderItem={({ item }) => (
           <CourseListPanel
-            onPress={() => onPress(item)}
+            onPressCourse={() => onPressCourse(item)}
             item={item}
           />
         )}
