@@ -1,9 +1,10 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 import { Button } from '@rneui/base';
 import CourseForm from '../courses/CourseForm';
-import tr from '../../../manager/TranslationManager';
 import AppColors from '../../../util/globalColors';
+import useTr from '../../../manager/TranslationManager';
+import { MediumSpacer } from '../../util/Spacer';
 
 const styles = StyleSheet.create({
   content: {
@@ -30,8 +31,9 @@ function AdminCourseCreationScreenComponent({
   setInstructor,
   onPress,
 }: any) {
+  const tr = useTr();
   return (
-    <View style={styles.content}>
+    <ScrollView style={styles.content}>
       <CourseForm
         titleValue={titleValue}
         categoryValue={categoryValue}
@@ -44,12 +46,14 @@ function AdminCourseCreationScreenComponent({
         setDuration={setDuration}
         setInstructor={setInstructor}
       />
+      <MediumSpacer />
       <Button
         buttonStyle={styles.button}
         title={tr('createCourse')}
         onPress={onPress}
       />
-    </View>
+      <MediumSpacer />
+    </ScrollView>
   );
 }
 

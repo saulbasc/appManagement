@@ -1,9 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import {
+  View, Text, StyleSheet, ScrollView,
+} from 'react-native';
 import { MediumSpacer, SmallSpacer } from '../../util/Spacer';
-import tr from '../../../manager/TranslationManager';
 import ContributionGraphComponent from '../common/ContributionGraphComponent';
 import LinearGraph from '../common/LinearGraph';
+import useTr from '../../../manager/TranslationManager';
 
 const styles = StyleSheet.create({
   content: {
@@ -42,8 +44,9 @@ function AdminStatsScreenComponent({
   valorationsForUsers,
   dates,
 }: Readonly<AdminStatsProps>) {
+  const tr = useTr();
   return (
-    <View style={styles.content}>
+    <ScrollView contentContainerStyle={styles.content}>
       <SmallSpacer />
       <View style={styles.totalView}>
         <Text style={styles.totalText}>{tr('totalInscriptionsText')}</Text>
@@ -62,7 +65,7 @@ function AdminStatsScreenComponent({
       <ContributionGraphComponent
         data={dates}
       />
-    </View>
+    </ScrollView>
   );
 }
 

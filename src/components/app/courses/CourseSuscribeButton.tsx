@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@rneui/base';
 import { StyleSheet } from 'react-native';
-import tr from '../../../manager/TranslationManager';
+import useTr from '../../../manager/TranslationManager';
 import AppColors from '../../../util/globalColors';
 
 const styles = StyleSheet.create({
@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
 function CourseSuscribeButton({
   suscribed, onSuscribe, onUnsuscribe,
 }: any) {
+  const tr = useTr();
   return (
     <Button
       title={suscribed ? tr('unsuscribeCourseButton') : tr('suscribeCourseButton')}

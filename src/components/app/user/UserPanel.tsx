@@ -7,7 +7,7 @@ import Fontisto from '@expo/vector-icons/Fontisto';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { MediumSpacer, SmallSpacer } from '../../util/Spacer';
-import tr from '../../../manager/TranslationManager';
+import useTr from '../../../manager/TranslationManager';
 import AppColors from '../../../util/globalColors';
 
 const styles = StyleSheet.create({
@@ -40,6 +40,8 @@ const styles = StyleSheet.create({
 });
 
 function UserPanel({ user, onPressAdminButton, onPressSaveButton }: any) {
+  const tr = useTr();
+
   const userName = user.name;
   const userEmail = user.email;
   const userRol = user.rol;

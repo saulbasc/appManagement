@@ -7,7 +7,7 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { SmallSpacer, MediumSpacer } from '../../util/Spacer';
 import AppColors from '../../../util/globalColors';
 import IconAndText from '../common/IconAndText';
-import tr from '../../../manager/TranslationManager';
+import useTr from '../../../manager/TranslationManager';
 
 const styles = StyleSheet.create({
   view: {
@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
 });
 
 function CourseDetailInfo({ course }: any) {
+  const tr = useTr();
   return (
     <View style={styles.view}>
       <Text style={styles.title}>{course?.title}</Text>

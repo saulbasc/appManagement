@@ -1,9 +1,10 @@
 import React from 'react';
-import tr from '../../manager/TranslationManager';
+import useTr from '../../manager/TranslationManager';
 import { signUpEmail } from '../../manager/AuthManager';
 import LoginView from '../../components/login/LoginView';
 
 function SignupScreen() {
+  const tr = useTr();
   return (
     <LoginView
       route="Signin"

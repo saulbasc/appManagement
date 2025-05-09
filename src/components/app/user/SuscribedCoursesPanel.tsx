@@ -4,7 +4,7 @@ import {
   StyleSheet, Text, TouchableOpacity, View,
 } from 'react-native';
 import Feather from '@expo/vector-icons/Feather';
-import tr from '../../../manager/TranslationManager';
+import useTr from '../../../manager/TranslationManager';
 import AppColors from '../../../util/globalColors';
 
 const styles = StyleSheet.create({
@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
 });
 
 function SuscribedCoursesPanel({ onPress }: any) {
+  const tr = useTr();
   return (
     <TouchableOpacity
       onPress={onPress}

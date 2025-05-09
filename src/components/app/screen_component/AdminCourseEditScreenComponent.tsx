@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 import { Button } from '@rneui/base';
 import CourseForm from '../courses/CourseForm';
-import tr from '../../../manager/TranslationManager';
-import { SmallSpacer } from '../../util/Spacer';
+import { MediumSpacer, SmallSpacer } from '../../util/Spacer';
 import AppColors from '../../../util/globalColors';
+import useTr from '../../../manager/TranslationManager';
 
 const styles = StyleSheet.create({
   content: {
@@ -32,8 +32,9 @@ function AdminCourseEditScreenComponent({
   onEditPress,
   onDeletePress,
 }: any) {
+  const tr = useTr();
   return (
-    <View style={styles.content}>
+    <ScrollView contentContainerStyle={styles.content}>
       <CourseForm
         titleValue={titleValue}
         categoryValue={categoryValue}
@@ -46,6 +47,7 @@ function AdminCourseEditScreenComponent({
         setDuration={setDuration}
         setInstructor={setInstructor}
       />
+      <MediumSpacer />
       <Button
         buttonStyle={styles.button}
         title={tr('editCourse')}
@@ -57,7 +59,8 @@ function AdminCourseEditScreenComponent({
         title={tr('deleteCourse')}
         onPress={onDeletePress}
       />
-    </View>
+      <MediumSpacer />
+    </ScrollView>
   );
 }
 

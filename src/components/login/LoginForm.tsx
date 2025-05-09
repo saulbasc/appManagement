@@ -4,7 +4,7 @@ import { View, StyleSheet } from 'react-native';
 import { Input, Button } from '@rneui/base';
 import Feather from '@expo/vector-icons/Feather';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import tr from '../../manager/TranslationManager';
+import useTr from '../../manager/TranslationManager';
 import AppColors from '../../util/globalColors';
 import { MediumSpacer } from '../util/Spacer';
 
@@ -38,6 +38,8 @@ const styles = StyleSheet.create({
 });
 
 function AuthForm({ onSubmit } : any) {
+  const tr = useTr();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 

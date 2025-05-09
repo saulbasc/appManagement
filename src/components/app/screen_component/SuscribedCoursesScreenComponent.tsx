@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 import CourseListComponent from '../courses/CourseListComponent';
 import Course from '../../../types/Course';
-import tr from '../../../manager/TranslationManager';
+import useTr from '../../../manager/TranslationManager';
 
 const styles = StyleSheet.create({
   notFoundText: {
@@ -24,6 +24,7 @@ function SuscribedCoursesScreenComponent({
   selectedCourses,
   onPressCourse,
 }: Readonly<SuscribedCoursesProps>) {
+  const tr = useTr();
   if (areCourses) {
     return (
       <CourseListComponent

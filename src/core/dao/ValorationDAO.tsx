@@ -1,6 +1,5 @@
 /* eslint-disable class-methods-use-this */
 import supabase from '../../lib/supabase';
-import tr from '../../manager/TranslationManager';
 import Valoration from '../../types/Valoration';
 import ValorationComment from '../../types/ValorationComment';
 import { GetID } from '../supabaseActions';

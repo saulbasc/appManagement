@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { Input } from '@rneui/base';
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import AppColors from '../../../util/globalColors';
 
@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
     borderColor: AppColors.quaternary,
   },
   input: {
-    height: 50,
     backgroundColor: AppColors.white,
     borderRadius: 7,
   },
@@ -32,16 +31,22 @@ function DefaultTextInput({
   multiline,
   label,
 }: Readonly<DefaultInputProps>) {
+  const [inputHeight, setInputHeight] = useState(0);
+
   return (
     <Input
       inputContainerStyle={{ borderBottomWidth: 0 }}
       leftIconContainerStyle={{ marginRight: 15 }}
-      style={styles.input}
+      style={[styles.input, { height: inputHeight }]}
       label={label}
       labelStyle={{ marginBottom: 10 }}
       onChangeText={(text: string) => onChangeText(text)}
       value={value}
       multiline={multiline}
+      onContentSizeChange={(e) => {
+        const inputH = Math.max(e.nativeEvent.contentSize.height, 35);
+        setInputHeight(inputH);
+      }}
     />
   );
 }

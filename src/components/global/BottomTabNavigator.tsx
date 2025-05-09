@@ -8,7 +8,7 @@ import CourseListScreen from '../../screens/app/courseListScreen';
 import UserProfileScreen from '../../screens/app/userProfileScreen';
 import AdminScreen from '../../screens/app/adminScreen';
 import AppColors from '../../util/globalColors';
-import tr from '../../manager/TranslationManager';
+import useTr from '../../manager/TranslationManager';
 
 const Tab = createBottomTabNavigator();
 
@@ -25,6 +25,7 @@ function renderUserIcon({ color, size }: {color:string, size:number}) {
 }
 
 function BottomTabNavigator() {
+  const tr = useTr();
   return (
     <Tab.Navigator
       screenOptions={{

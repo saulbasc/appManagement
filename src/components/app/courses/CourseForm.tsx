@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import AppColors from '../../../util/globalColors';
-import tr from '../../../manager/TranslationManager';
+import useTr from '../../../manager/TranslationManager';
 import { MediumSpacer } from '../../util/Spacer';
 import DefaultTextInput from '../common/DefaultTextInput';
 import DefaultNumberInput from '../common/DefaultNumberInput';
@@ -38,6 +38,7 @@ function CourseForm({
   setDuration,
   setInstructor,
 }: any) {
+  const tr = useTr();
   return (
     <View style={styles.inputsContent}>
       <DefaultTextInput
