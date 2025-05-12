@@ -12,9 +12,10 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     backgroundColor: AppColors.secondary,
     borderWidth: 1,
-    borderRadius: 10,
+    borderRadius: 20,
     borderColor: AppColors.quaternary,
     padding: 15,
+    elevation: 8
   },
   title: {
     fontSize: 40,

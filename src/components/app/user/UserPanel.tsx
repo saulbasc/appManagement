@@ -1,11 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { Button, Input } from "@rneui/base";
 import React, { useEffect, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet } from "react-native";
 import Feather from "@expo/vector-icons/Feather";
 import Fontisto from "@expo/vector-icons/Fontisto";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import { LinearGradient } from 'expo-linear-gradient';
 import { MediumSpacer, SmallSpacer } from "../../util/Spacer";
 import useTr from "../../../manager/TranslationManager";
 import AppColors from "../../../util/globalColors";
@@ -16,28 +17,26 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderColor: AppColors.quaternary,
     backgroundColor: AppColors.secondary,
-    borderWidth: 1,
-    borderRadius: 10,
+    borderRadius: 20,
     paddingHorizontal: 5,
     paddingVertical: 20,
+    elevation: 8
   },
   input: {
-    borderRadius: 10,
+    borderRadius: 20,
     backgroundColor: AppColors.white,
     paddingLeft: 15,
   },
   enabledInput: {
-    borderRadius: 10,
+    borderRadius: 20,
     backgroundColor: AppColors.white,
     borderWidth: 1,
     paddingLeft: 15,
   },
   button: {
     height: 50,
-    width: 300,
-    borderRadius: 5,
-    borderWidth: 1,
-    borderColor: AppColors.quaternary,
+    width: 340,
+    borderRadius: 20,
     backgroundColor: AppColors.primary,
   },
 });
@@ -56,7 +55,10 @@ function UserPanel({ user, onPressAdminButton, onPressSaveButton }: any) {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <LinearGradient 
+      colors={[AppColors.light, AppColors.secondary]}
+      style={styles.container}
+    >
       <FontAwesome5 name="user-edit" size={100} color={AppColors.quaternary} />
       <MediumSpacer />
       <Input
@@ -117,7 +119,7 @@ function UserPanel({ user, onPressAdminButton, onPressSaveButton }: any) {
         buttonStyle={styles.button}
         onPress={onPressAdminButton}
       />
-    </View>
+    </LinearGradient>
   );
 }
 

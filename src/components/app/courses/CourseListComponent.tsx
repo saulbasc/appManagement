@@ -13,6 +13,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5,
     backgroundColor: AppColors.white,
   },
+    contentContainer: {
+    paddingBottom: 100,
+    paddingTop: 30
+  }
 });
 
 function CourseListComponent({ courses, onPressCourse }: any) {
@@ -42,6 +46,7 @@ function CourseListComponent({ courses, onPressCourse }: any) {
             item={item}
           />
         )}
+        contentContainerStyle={styles.contentContainer}
       />
     </View>
   );

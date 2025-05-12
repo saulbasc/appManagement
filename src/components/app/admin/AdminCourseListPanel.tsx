@@ -3,6 +3,7 @@ import React from "react";
 import { Text } from "@rneui/base";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import { LinearGradient } from "expo-linear-gradient";
 import { SmallSpacer } from "../../util/Spacer";
 import AppColors from "../../../util/globalColors";
 
@@ -12,11 +13,10 @@ const styles = StyleSheet.create({
   },
   courseContent: {
     backgroundColor: AppColors.secondary,
-    borderColor: AppColors.primary,
-    borderWidth: 1,
-    borderRadius: 10,
-    marginVertical: 10,
+    borderRadius: 20,
+    marginVertical: 15,
     padding: 15,
+    elevation: 8
   },
   rowView: {
     flexDirection: "row",
@@ -47,9 +47,9 @@ const styles = StyleSheet.create({
     right: 0,
     top: -1,
     bottom: -1,
-    width: 10,
-    borderTopRightRadius: 5,
-    borderBottomRightRadius: 5,
+    width: 15,
+    borderTopRightRadius: 20,
+    borderBottomRightRadius: 20,
     backgroundColor: AppColors.tertiary,
   }
 });
@@ -58,20 +58,25 @@ function AdminCourseListPanel({ item, onPress }: any) {
   return (
     <TouchableOpacity 
       onPress={onPress} 
-      style={styles.courseContent}
       activeOpacity={0.8}
     >
-      <Text style={styles.title}>{item.title}</Text>
-      <SmallSpacer />
-      <View style={styles.rowView}>
-        <FontAwesome5
-          name="chalkboard-teacher"
-          size={24}
-          color={AppColors.quaternary}
-        />
-        <Text style={styles.text}>{item.instructor}</Text>
-      </View>
-      <View style={styles.right} />
+      <LinearGradient
+       colors={[AppColors.secondary, AppColors.white]}
+       style={styles.courseContent}
+       end={{ x: 1, y:0}}
+      >
+        <Text style={styles.title}>{item.title}</Text>
+        <SmallSpacer />
+        <View style={styles.rowView}>
+          <FontAwesome5
+            name="chalkboard-teacher"
+            size={24}
+            color={AppColors.quaternary}
+          />
+          <Text style={styles.text}>{item.instructor}</Text>
+        </View>
+        <View style={styles.right} />
+      </LinearGradient>
     </TouchableOpacity>
   );
 }

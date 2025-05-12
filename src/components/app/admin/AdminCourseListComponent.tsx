@@ -14,6 +14,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5,
     backgroundColor: AppColors.white,
   },
+  contentContainer: {
+    paddingBottom: 100,
+    paddingTop: 30
+  }
 });
 
 function AdminCourseListComponent({ courses, onPress }: any) {
@@ -49,6 +53,7 @@ function AdminCourseListComponent({ courses, onPress }: any) {
         renderItem={({ item }) => (
           <AdminCourseListPanel onPress={() => onPress(item)} item={item} />
         )}
+        contentContainerStyle={styles.contentContainer}
       />
     </View>
   );

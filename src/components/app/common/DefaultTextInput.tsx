@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: AppColors.white,
-    borderRadius: 7,
+    borderRadius: 20,
   },
 });
 

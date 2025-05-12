@@ -1,6 +1,6 @@
 import React from "react";
 import { ScrollView, StyleSheet } from "react-native";
-import { MediumSpacer } from "../../util/Spacer";
+import { BigSpacer, MediumSpacer } from "../../util/Spacer";
 import ValorationList from "../valoration/ValorationList";
 import CourseDetailInfo from "../courses/CourseDetailInfo";
 import CourseValorationPanel from "../courses/CourseValorationPanel";
@@ -9,7 +9,7 @@ import CourseSuscribeButton from "../courses/CourseSuscribeButton";
 const styles = StyleSheet.create({
   view: {
     flex: 1,
-    paddingTop: 10,
+    paddingTop: 20,
     paddingHorizontal: 10,
     borderRadius: 10,
     backgroundColor: "#fff",
@@ -40,7 +40,7 @@ function CourseDetailScreenComponent({
           onSubmit={onSubmitValoration}
         />
       )}
-      <MediumSpacer />
+      <BigSpacer />
       <ValorationList course={course} />
       <MediumSpacer />
     </ScrollView>

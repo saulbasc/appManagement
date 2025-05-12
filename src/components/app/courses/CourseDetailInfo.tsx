@@ -12,10 +12,11 @@ import useTr from "../../../manager/TranslationManager";
 const styles = StyleSheet.create({
   view: {
     paddingTop: 10,
-    borderRadius: 10,
+    borderRadius: 20,
     borderWidth: 1,
     backgroundColor: AppColors.secondary,
     padding: 20,
+    elevation: 10
   },
   title: {
     fontSize: 45,

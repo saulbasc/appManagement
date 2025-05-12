@@ -6,7 +6,7 @@ import AppColors from "../../../util/globalColors";
 
 const styles = StyleSheet.create({
   button: {
-    borderRadius: 5,
+    borderRadius: 20,
     backgroundColor: AppColors.quaternary,
     padding: 10,
     height: 50,

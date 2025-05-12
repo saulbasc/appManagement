@@ -5,18 +5,15 @@ import { StyleSheet } from "react-native";
 import AppColors from "../../../util/globalColors";
 
 const styles = StyleSheet.create({
-  inputsContent: {
-    backgroundColor: AppColors.secondary,
-    borderRadius: 15,
-    paddingVertical: 20,
-    borderWidth: 1,
-    borderColor: AppColors.quaternary,
-  },
   input: {
     height: 50,
     backgroundColor: AppColors.white,
-    borderRadius: 7,
+    borderRadius: 20,
   },
+  inputContainer: {
+    borderBottomWidth: 0,
+    width: 80,
+  }
 });
 
 type DefaultInputProps = {
@@ -32,7 +29,7 @@ function DefaultNumberInput({
 }: Readonly<DefaultInputProps>) {
   return (
     <Input
-      inputContainerStyle={{ borderBottomWidth: 0 }}
+      inputContainerStyle={styles.inputContainer}
       leftIconContainerStyle={{ marginRight: 15 }}
       style={styles.input}
       label={label}

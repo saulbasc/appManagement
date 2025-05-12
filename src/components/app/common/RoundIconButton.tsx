@@ -7,13 +7,13 @@ const styles = StyleSheet.create({
   content: {
     backgroundColor: AppColors.white,
     borderColor: AppColors.black,
-    borderWidth: 2,
     borderRadius: 90,
     height: 70,
     width: 70,
     justifyContent: "center",
     alignItems: "center",
     opacity: 1,
+    elevation: 10
   },
 });
 

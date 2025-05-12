@@ -12,9 +12,9 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   button: {
-    backgroundColor: AppColors.quaternary,
+    backgroundColor: AppColors.primary,
     height: 50,
-    borderRadius: 7,
+    borderRadius: 20,
   },
 });
 

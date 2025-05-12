@@ -4,6 +4,7 @@ import { StyleSheet, View } from "react-native";
 import AdminButtonsPanel from "../admin/AdminButtonsPanel";
 import AdminCourseListComponent from "../admin/AdminCourseListComponent";
 import Course from "../../../types/Course";
+import { BigSpacer } from "../../util/Spacer";
 
 const styles = StyleSheet.create({
   content: {

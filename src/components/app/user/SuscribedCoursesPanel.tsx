@@ -8,7 +8,7 @@ import AppColors from "../../../util/globalColors";
 const styles = StyleSheet.create({
   content: {
     flexDirection: "row",
-    borderRadius: 10,
+    borderRadius: 20,
     padding: 10,
     backgroundColor: AppColors.quaternary,
     alignItems: "center",
