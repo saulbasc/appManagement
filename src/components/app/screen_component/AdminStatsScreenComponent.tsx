@@ -17,8 +17,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     flexDirection: "row",
     borderColor: "#a84444",
-    borderWidth: 2,
-    borderRadius: 20,
+    borderBottomWidth: 2,
   },
   totalText: {
     fontSize: 25,

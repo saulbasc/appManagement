@@ -5,7 +5,9 @@ import AppColors from "../../../util/globalColors";
 
 const styles = StyleSheet.create({
   content: {
-    backgroundColor: AppColors.quaternary,
+    backgroundColor: AppColors.white,
+    borderColor: AppColors.black,
+    borderWidth: 2,
     borderRadius: 90,
     height: 70,
     width: 70,
@@ -17,7 +19,11 @@ const styles = StyleSheet.create({
 
 function RoundIconButton({ children, onPress }: any) {
   return (
-    <TouchableOpacity style={styles.content} onPress={onPress}>
+    <TouchableOpacity 
+      style={styles.content} 
+      onPress={onPress}
+      activeOpacity={0.8}
+    >
       {children}
     </TouchableOpacity>
   );

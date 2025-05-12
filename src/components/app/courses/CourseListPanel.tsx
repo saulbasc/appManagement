@@ -10,8 +10,9 @@ import AppColors from "../../../util/globalColors";
 const styles = StyleSheet.create({
   container: {
     backgroundColor: AppColors.secondary,
-    borderColor: AppColors.quaternary,
-    borderWidth: 0,
+    borderColor: AppColors.primary,
+    borderWidth: 1,
+    borderRightWidth: 0,
     borderRadius: 10,
     marginVertical: 10,
     padding: 15,
@@ -35,11 +36,25 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     color: AppColors.quaternary,
   },
+  right: {
+    position: "absolute",
+    right: 0,
+    top: -1,
+    bottom: -1,
+    width: 10,
+    borderTopRightRadius: 5,
+    borderBottomRightRadius: 5,
+    backgroundColor: AppColors.tertiary,
+  }
 });
 
 function CourseListPanel({ item, onPressCourse }: any) {
   return (
-    <TouchableOpacity onPress={onPressCourse} style={styles.container}>
+    <TouchableOpacity 
+      onPress={onPressCourse} 
+      style={styles.container}
+      activeOpacity={0.8}
+    >
       <Text style={styles.title}>{item.title}</Text>
       <MediumSpacer />
       <View style={styles.rowView}>
@@ -59,6 +74,7 @@ function CourseListPanel({ item, onPressCourse }: any) {
         />
         <Text style={styles.text}>{item.instructor}</Text>
       </View>
+      <View style={styles.right} />
     </TouchableOpacity>
   );
 }

@@ -33,9 +33,9 @@ function AdminCourseCreationScreen() {
           category,
           duration,
           instructor,
-          new Date(),
+          new Date(), 
         );
-        goBack();
+        goBack(); 
         await insertCourse(newCourse);
         await selectAll();
       }}

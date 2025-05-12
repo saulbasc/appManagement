@@ -26,15 +26,18 @@ const styles = StyleSheet.create({
     backgroundColor: AppColors.white,
     paddingLeft: 15,
   },
+  enabledInput: {
+    borderRadius: 10,
+    backgroundColor: AppColors.white,
+    borderWidth: 1,
+    paddingLeft: 15,
+  },
   button: {
     height: 50,
     width: 300,
     borderRadius: 5,
-  },
-  saveButton: {
-    backgroundColor: AppColors.primary,
-  },
-  adminButton: {
+    borderWidth: 1,
+    borderColor: AppColors.quaternary,
     backgroundColor: AppColors.primary,
   },
 });
@@ -57,7 +60,7 @@ function UserPanel({ user, onPressAdminButton, onPressSaveButton }: any) {
       <FontAwesome5 name="user-edit" size={100} color={AppColors.quaternary} />
       <MediumSpacer />
       <Input
-        style={styles.input}
+        style={styles.enabledInput}
         leftIcon={
           <Feather name="user" size={30} color={AppColors.quaternary} />
         }
@@ -75,9 +78,12 @@ function UserPanel({ user, onPressAdminButton, onPressSaveButton }: any) {
         leftIcon={
           <Fontisto name="email" size={30} color={AppColors.quaternary} />
         }
-        disabled
+        inputStyle={{ color: AppColors.darkGray }}
+        editable={false}
         value={userEmail}
-        inputContainerStyle={{ borderBottomWidth: 0 }}
+        inputContainerStyle={{ 
+          borderBottomWidth: 0
+        }}
         leftIconContainerStyle={{ marginRight: 15 }}
       />
       <Input
@@ -89,7 +95,8 @@ function UserPanel({ user, onPressAdminButton, onPressSaveButton }: any) {
             color={AppColors.quaternary}
           />
         }
-        disabled
+        inputStyle={{ color: AppColors.darkGray }}
+        editable={false}
         value={userRol}
         inputContainerStyle={{ borderBottomWidth: 0 }}
         leftIconContainerStyle={{ marginRight: 15 }}
@@ -97,7 +104,7 @@ function UserPanel({ user, onPressAdminButton, onPressSaveButton }: any) {
       <MediumSpacer />
       <Button
         title={tr("profileSaveButton")}
-        buttonStyle={[styles.button, styles.saveButton]}
+        buttonStyle={styles.button}
         onPress={() => onPressSaveButton(nameInput)}
       />
       <SmallSpacer />
@@ -107,7 +114,7 @@ function UserPanel({ user, onPressAdminButton, onPressSaveButton }: any) {
             ? tr("profileUpgradeButton")
             : tr("profileDowngradeButton")
         }
-        buttonStyle={[styles.button, styles.adminButton]}
+        buttonStyle={styles.button}
         onPress={onPressAdminButton}
       />
     </View>

@@ -10,29 +10,21 @@ import translation from "../../translation/translation";
 
 const styles = StyleSheet.create({
   dropdownButtonStyle: {
-    width: 200,
+    width: 150,
     height: 50,
     backgroundColor: AppColors.white,
-    borderRadius: 10,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     paddingLeft: 20,
     paddingRight: 10,
-    borderWidth: 2,
+    borderBottomWidth: 2,
     borderColor: AppColors.tertiary,
   },
   dropdownButtonTxtStyle: {
     flex: 1,
     fontSize: 18,
     fontWeight: "500",
-  },
-  dropdownButtonArrowStyle: {
-    fontSize: 28,
-  },
-  dropdownButtonIconStyle: {
-    fontSize: 28,
-    marginRight: 8,
   },
   dropdownMenuStyle: {
     backgroundColor: AppColors.white,
@@ -115,7 +107,7 @@ function BarDropDown() {
       renderButton={() => (
         <View style={styles.dropdownButtonStyle}>
           <Text style={styles.dropdownButtonTxtStyle}>{defaultLang}</Text>
-          <AntDesign name="caretdown" size={24} color={AppColors.tertiary} />
+          <AntDesign name="caretdown" size={20} color={AppColors.tertiary} />
         </View>
       )}
       renderItem={(item, index, isSelected) => (

@@ -28,11 +28,11 @@ function AdminButtonsPanel({ onPressAdd, onPressStats }: any) {
   return (
     <View style={styles.content}>
       <RoundIconButton onPress={onPressStats}>
-        {statsIcon({ color: AppColors.white, size: 45 })}
+        {statsIcon({ color: AppColors.black, size: 45 })}
       </RoundIconButton>
       <SmallSpacer />
       <RoundIconButton onPress={onPressAdd}>
-        {addIcon({ color: AppColors.white, size: 45 })}
+        {addIcon({ color: AppColors.black, size: 45 })}
       </RoundIconButton>
     </View>
   );

@@ -12,8 +12,8 @@ const styles = StyleSheet.create({
   },
   courseContent: {
     backgroundColor: AppColors.secondary,
-    borderColor: AppColors.quaternary,
-    borderWidth: 0,
+    borderColor: AppColors.primary,
+    borderWidth: 1,
     borderRadius: 10,
     marginVertical: 10,
     padding: 15,
@@ -42,11 +42,25 @@ const styles = StyleSheet.create({
     right: 10,
     top: 10,
   },
+  right: {
+    position: "absolute",
+    right: 0,
+    top: -1,
+    bottom: -1,
+    width: 10,
+    borderTopRightRadius: 5,
+    borderBottomRightRadius: 5,
+    backgroundColor: AppColors.tertiary,
+  }
 });
 
 function AdminCourseListPanel({ item, onPress }: any) {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.courseContent}>
+    <TouchableOpacity 
+      onPress={onPress} 
+      style={styles.courseContent}
+      activeOpacity={0.8}
+    >
       <Text style={styles.title}>{item.title}</Text>
       <SmallSpacer />
       <View style={styles.rowView}>
@@ -57,6 +71,7 @@ function AdminCourseListPanel({ item, onPress }: any) {
         />
         <Text style={styles.text}>{item.instructor}</Text>
       </View>
+      <View style={styles.right} />
     </TouchableOpacity>
   );
 }

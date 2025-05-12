@@ -24,10 +24,13 @@ const styles = StyleSheet.create({
 function SuscribedCoursesPanel({ onPress }: any) {
   const tr = useTr();
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity 
+      onPress={onPress}
+      activeOpacity={0.9}
+    >
       <View style={styles.content}>
         <Text style={styles.text}>{tr("profileListButton")}</Text>
-        <Feather name="arrow-right" size={40} color={AppColors.white} />
+        <Feather name="arrow-right" size={35} color={AppColors.white} />
       </View>
     </TouchableOpacity>
   );
