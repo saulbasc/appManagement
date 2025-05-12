@@ -1,10 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React from 'react';
-import { Dimensions, StyleSheet, View } from 'react-native';
-import { LineChart } from 'react-native-chart-kit';
-import AppColors from '../../../util/globalColors';
+import React from "react";
+import { Dimensions, StyleSheet, View } from "react-native";
+import { LineChart } from "react-native-chart-kit";
+import AppColors from "../../../util/globalColors";
 
-const screenWidth = Dimensions.get('window').width - 20;
+const screenWidth = Dimensions.get("window").width - 20;
 
 const styles = StyleSheet.create({
   view: {
@@ -17,7 +17,7 @@ function LinearGraph({ graphDataX, graphDataY }: any) {
     backgroundGradientFrom: AppColors.primary,
     backgroundGradientTo: AppColors.primary,
     color: () => AppColors.primary,
-    labelColor: () => 'white',
+    labelColor: () => "white",
     strokeWidth: 2,
     barPercentage: 0.5,
     useShadowColorFromDataset: true,
@@ -28,11 +28,11 @@ function LinearGraph({ graphDataX, graphDataY }: any) {
     datasets: [
       {
         data: graphDataY,
-        color: () => 'white',
+        color: () => "white",
         strokeWidth: 2,
       },
     ],
-    legend: ['Valoraciones'],
+    legend: ["Valoraciones"],
   };
 
   return (

@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { FlatList, StyleSheet } from 'react-native';
-import { Context as ValorationContext } from '../../../context/ValorationDaoContext';
-import LoadingIndicator from '../common/LoadingIndicator';
-import ValorationPanel from './ValorationPanel';
-import { MediumSpacer } from '../../util/Spacer';
+import React, { useContext, useEffect, useState } from "react";
+import { FlatList, StyleSheet } from "react-native";
+import { Context as ValorationContext } from "../../../context/ValorationDaoContext";
+import LoadingIndicator from "../common/LoadingIndicator";
+import ValorationPanel from "./ValorationPanel";
+import { MediumSpacer } from "../../util/Spacer";
 
 const styles = StyleSheet.create({
   content: {
@@ -12,7 +12,8 @@ const styles = StyleSheet.create({
 });
 
 function ValorationList({ course }: any) {
-  const { state: valorationState, valorationsOfCourse } = useContext(ValorationContext);
+  const { state: valorationState, valorationsOfCourse } =
+    useContext(ValorationContext);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -36,9 +37,7 @@ function ValorationList({ course }: any) {
       data={valorationState.valorationsOfCourse}
       renderItem={({ item }) => (
         <>
-          <ValorationPanel
-            item={item}
-          />
+          <ValorationPanel item={item} />
           <MediumSpacer />
         </>
       )}

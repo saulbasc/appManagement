@@ -1,7 +1,7 @@
-import React from 'react';
-import { StyleSheet } from 'react-native';
-import { Icon, Input } from '@rneui/base';
-import AppColors from '../../util/globalColors';
+import React from "react";
+import { StyleSheet } from "react-native";
+import { Icon, Input } from "@rneui/base";
+import AppColors from "../../util/globalColors";
 
 const styles = StyleSheet.create({
   searchBar: {
@@ -10,8 +10,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: AppColors.quaternary,
     backgroundColor: AppColors.white,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 

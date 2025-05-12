@@ -1,19 +1,19 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { Button, Input } from '@rneui/base';
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
-import Feather from '@expo/vector-icons/Feather';
-import Fontisto from '@expo/vector-icons/Fontisto';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
-import { MediumSpacer, SmallSpacer } from '../../util/Spacer';
-import useTr from '../../../manager/TranslationManager';
-import AppColors from '../../../util/globalColors';
+import { Button, Input } from "@rneui/base";
+import React, { useEffect, useState } from "react";
+import { StyleSheet, View } from "react-native";
+import Feather from "@expo/vector-icons/Feather";
+import Fontisto from "@expo/vector-icons/Fontisto";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import { MediumSpacer, SmallSpacer } from "../../util/Spacer";
+import useTr from "../../../manager/TranslationManager";
+import AppColors from "../../../util/globalColors";
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'column',
-    alignItems: 'center',
+    flexDirection: "column",
+    alignItems: "center",
     borderColor: AppColors.quaternary,
     backgroundColor: AppColors.secondary,
     borderWidth: 1,
@@ -46,7 +46,7 @@ function UserPanel({ user, onPressAdminButton, onPressSaveButton }: any) {
   const userEmail = user.email;
   const userRol = user.rol;
 
-  const [nameInput, setNameInput] = useState('');
+  const [nameInput, setNameInput] = useState("");
 
   useEffect(() => {
     setNameInput(userName);
@@ -54,15 +54,13 @@ function UserPanel({ user, onPressAdminButton, onPressSaveButton }: any) {
 
   return (
     <View style={styles.container}>
-      <FontAwesome5
-        name="user-edit"
-        size={100}
-        color={AppColors.quaternary}
-      />
+      <FontAwesome5 name="user-edit" size={100} color={AppColors.quaternary} />
       <MediumSpacer />
       <Input
         style={styles.input}
-        leftIcon={<Feather name="user" size={30} color={AppColors.quaternary} />}
+        leftIcon={
+          <Feather name="user" size={30} color={AppColors.quaternary} />
+        }
         leftIconContainerStyle={{ marginRight: 15 }}
         value={nameInput}
         onChangeText={(value) => {
@@ -74,7 +72,9 @@ function UserPanel({ user, onPressAdminButton, onPressSaveButton }: any) {
       />
       <Input
         style={styles.input}
-        leftIcon={<Fontisto name="email" size={30} color={AppColors.quaternary} />}
+        leftIcon={
+          <Fontisto name="email" size={30} color={AppColors.quaternary} />
+        }
         disabled
         value={userEmail}
         inputContainerStyle={{ borderBottomWidth: 0 }}
@@ -82,7 +82,13 @@ function UserPanel({ user, onPressAdminButton, onPressSaveButton }: any) {
       />
       <Input
         style={styles.input}
-        leftIcon={<MaterialIcons name="security" size={30} color={AppColors.quaternary} />}
+        leftIcon={
+          <MaterialIcons
+            name="security"
+            size={30}
+            color={AppColors.quaternary}
+          />
+        }
         disabled
         value={userRol}
         inputContainerStyle={{ borderBottomWidth: 0 }}
@@ -90,13 +96,17 @@ function UserPanel({ user, onPressAdminButton, onPressSaveButton }: any) {
       />
       <MediumSpacer />
       <Button
-        title={tr('profileSaveButton')}
+        title={tr("profileSaveButton")}
         buttonStyle={[styles.button, styles.saveButton]}
         onPress={() => onPressSaveButton(nameInput)}
       />
       <SmallSpacer />
       <Button
-        title={userRol === 'User' ? tr('profileUpgradeButton') : tr('profileDowngradeButton')}
+        title={
+          userRol === "User"
+            ? tr("profileUpgradeButton")
+            : tr("profileDowngradeButton")
+        }
         buttonStyle={[styles.button, styles.adminButton]}
         onPress={onPressAdminButton}
       />

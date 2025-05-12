@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Context as UserContext } from '../../context/UserDaoContext';
-import { GetID } from '../../core/supabaseActions';
-import LoadingIndicator from '../../components/app/common/LoadingIndicator';
-import { navigate } from '../../navigationRef';
-import UserPanelScreenComponent from '../../components/app/screen_component/UserPanelScreenComponent';
+import React, { useContext, useEffect, useState } from "react";
+import { Context as UserContext } from "../../context/UserDaoContext";
+import { GetID } from "../../core/supabaseActions";
+import LoadingIndicator from "../../components/app/common/LoadingIndicator";
+import { navigate } from "../../navigationRef";
+import UserPanelScreenComponent from "../../components/app/screen_component/UserPanelScreenComponent";
 
 function UserProfileScreen() {
   const { state, select } = useContext(UserContext);
@@ -27,10 +27,10 @@ function UserProfileScreen() {
     <UserPanelScreenComponent
       user={state.user}
       onPressAdminButton={async () => {
-        if (state.user.rol === 'User') {
-          state.user.rol = 'Admin';
+        if (state.user.rol === "User") {
+          state.user.rol = "Admin";
         } else {
-          state.user.rol = 'User';
+          state.user.rol = "User";
         }
         await update(state.user);
       }}
@@ -41,7 +41,7 @@ function UserProfileScreen() {
         await select(state.user.id);
       }}
       onPressSuscribedCourses={async () => {
-        navigate('SuscribedCourses');
+        navigate("SuscribedCourses");
       }}
     />
   );

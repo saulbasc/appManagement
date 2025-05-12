@@ -1,0 +1,76 @@
+"filename", "language", "TypeScript JSX", "TypeScript", "JavaScript", "JSON", "comment", "blank", "total"
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\admin\AdminButtonsPanel.tsx", "TypeScript JSX", 35, 0, 0, 0, 1, 6, 42
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\admin\AdminCourseListComponent.tsx", "TypeScript JSX", 50, 0, 0, 0, 0, 8, 58
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\admin\AdminCourseListPanel.tsx", "TypeScript JSX", 60, 0, 0, 0, 1, 4, 65
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\common\ContributionGraphComponent.tsx", "TypeScript JSX", 28, 0, 0, 0, 1, 4, 33
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\common\DefaultNumberInput.tsx", "TypeScript JSX", 42, 0, 0, 0, 1, 5, 48
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\common\DefaultTextInput.tsx", "TypeScript JSX", 48, 0, 0, 0, 1, 6, 55
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\common\IconAndText.tsx", "TypeScript JSX", 17, 0, 0, 0, 0, 4, 21
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\common\LinearGraph.tsx", "TypeScript JSX", 44, 0, 0, 0, 1, 7, 52
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\common\LoadingIndicator.tsx", "TypeScript JSX", 13, 0, 0, 0, 0, 3, 16
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\common\RoundIconButton.tsx", "TypeScript JSX", 22, 0, 0, 0, 1, 4, 27
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\courses\CourseDetailInfo.tsx", "TypeScript JSX", 72, 0, 0, 0, 1, 4, 77
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\courses\CourseForm.tsx", "TypeScript JSX", 75, 0, 0, 0, 0, 4, 79
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\courses\CourseListComponent.tsx", "TypeScript JSX", 44, 0, 0, 0, 0, 7, 51
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\courses\CourseListPanel.tsx", "TypeScript JSX", 62, 0, 0, 0, 1, 4, 67
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\courses\CourseSuscribeButton.tsx", "TypeScript JSX", 32, 0, 0, 0, 0, 4, 36
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\courses\CourseValorationPanel.tsx", "TypeScript JSX", 70, 0, 0, 0, 1, 6, 77
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\screen_component\AdminCourseCreationScreenComponent.tsx", "TypeScript JSX", 57, 0, 0, 0, 0, 4, 61
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\screen_component\AdminCourseEditScreenComponent.tsx", "TypeScript JSX", 64, 0, 0, 0, 0, 4, 68
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\screen_component\AdminScreenComponent.tsx", "TypeScript JSX", 30, 0, 0, 0, 1, 5, 36
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\screen_component\AdminStatsScreenComponent.tsx", "TypeScript JSX", 64, 0, 0, 0, 0, 5, 69
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\screen_component\CourseDetailScreenComponent.tsx", "TypeScript JSX", 47, 0, 0, 0, 0, 4, 51
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\screen_component\SuscribedCoursesScreenComponent.tsx", "TypeScript JSX", 34, 0, 0, 0, 1, 5, 40
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\screen_component\UserPanelScreenComponent.tsx", "TypeScript JSX", 30, 0, 0, 0, 0, 4, 34
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\user\SuscribedCoursesPanel.tsx", "TypeScript JSX", 32, 0, 0, 0, 1, 4, 37
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\user\UserPanel.tsx", "TypeScript JSX", 109, 0, 0, 0, 1, 8, 118
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\valoration\ValorationList.tsx", "TypeScript JSX", 42, 0, 0, 0, 0, 7, 49
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\valoration\ValorationPanel.tsx", "TypeScript JSX", 45, 0, 0, 0, 0, 4, 49
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\bar\BarDropDown.tsx", "TypeScript JSX", 134, 0, 0, 0, 1, 10, 145
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\bar\BarView.tsx", "TypeScript JSX", 34, 0, 0, 0, 1, 4, 39
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\bar\SearchBar.tsx", "TypeScript JSX", 27, 0, 0, 0, 0, 4, 31
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\global\AppStackNavigator.tsx", "TypeScript JSX", 76, 0, 0, 0, 0, 4, 80
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\global\BottomTabNavigator.tsx", "TypeScript JSX", 66, 0, 0, 0, 1, 7, 74
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\login\LoginForm.tsx", "TypeScript JSX", 81, 0, 0, 0, 1, 6, 88
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\login\LoginRedirect.tsx", "TypeScript JSX", 28, 0, 0, 0, 0, 4, 32
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\login\LoginTitle.tsx", "TypeScript JSX", 29, 0, 0, 0, 1, 4, 34
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\login\LoginView.tsx", "TypeScript JSX", 22, 0, 0, 0, 0, 4, 26
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\util\Spacer.tsx", "TypeScript JSX", 15, 0, 0, 0, 0, 6, 21
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\context\CourseDaoContext.js", "JavaScript", 0, 0, 90, 0, 0, 12, 102
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\context\InscriptionDaoContext.js", "JavaScript", 0, 0, 83, 0, 0, 11, 94
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\context\TranslationContext.js", "JavaScript", 0, 0, 0, 0, 0, 1, 1
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\context\UserDaoContext.js", "JavaScript", 0, 0, 68, 0, 0, 9, 77
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\context\ValorationDaoContext.js", "JavaScript", 0, 0, 90, 0, 0, 12, 102
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\context\createDataContext.js", "JavaScript", 0, 0, 21, 0, 2, 6, 29
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\core\dao\CourseDAO.tsx", "TypeScript JSX", 126, 0, 0, 0, 1, 14, 141
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\core\dao\IDefaultDAO.tsx", "TypeScript JSX", 8, 0, 0, 0, 1, 2, 11
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\core\dao\InscriptionDAO.tsx", "TypeScript JSX", 67, 0, 0, 0, 2, 10, 79
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\core\dao\UserDAO.tsx", "TypeScript JSX", 46, 0, 0, 0, 1, 7, 54
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\core\dao\ValorationDAO.tsx", "TypeScript JSX", 127, 0, 0, 0, 2, 10, 139
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\core\initManager.tsx", "TypeScript JSX", 35, 0, 0, 0, 0, 6, 41
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\core\supabaseActions.tsx", "TypeScript JSX", 31, 0, 0, 0, 0, 7, 38
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\lib\supabase.ts", "TypeScript", 0, 23, 0, 0, 0, 5, 28
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\manager\AuthManager.tsx", "TypeScript JSX", 24, 0, 0, 0, 0, 4, 28
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\manager\TranslationManager.tsx", "TypeScript JSX", 6, 0, 0, 0, 0, 3, 9
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\navigationRef.tsx", "TypeScript JSX", 12, 0, 0, 0, 0, 4, 16
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\screens\app\adminCourseCreationScreen.tsx", "TypeScript JSX", 42, 0, 0, 0, 0, 5, 47
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\screens\app\adminCourseEditScreen.tsx", "TypeScript JSX", 59, 0, 0, 0, 0, 7, 66
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\screens\app\adminScreen.tsx", "TypeScript JSX", 43, 0, 0, 0, 1, 8, 52
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\screens\app\adminStatsScreen.tsx", "TypeScript JSX", 34, 0, 0, 0, 1, 6, 41
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\screens\app\courseDetailScreen.tsx", "TypeScript JSX", 63, 0, 0, 0, 0, 10, 73
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\screens\app\courseListScreen.tsx", "TypeScript JSX", 30, 0, 0, 0, 0, 6, 36
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\screens\app\suscribedCoursesScreen.tsx", "TypeScript JSX", 38, 0, 0, 0, 0, 7, 45
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\screens\app\userProfileScreen.tsx", "TypeScript JSX", 45, 0, 0, 0, 0, 6, 51
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\screens\login\signinScreen.tsx", "TypeScript JSX", 16, 0, 0, 0, 0, 3, 19
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\screens\login\signupScreen.tsx", "TypeScript JSX", 16, 0, 0, 0, 0, 3, 19
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\styles\CommonStyles.tsx", "TypeScript JSX", 8, 0, 0, 0, 0, 3, 11
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\translation\language\en.json", "JSON", 0, 0, 0, 37, 0, 1, 38
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\translation\language\es.json", "JSON", 0, 0, 0, 37, 0, 1, 38
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\translation\translation.js", "JavaScript", 0, 0, 26, 0, 0, 6, 32
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\types\Course.tsx", "TypeScript JSX", 27, 0, 0, 0, 0, 9, 36
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\types\Inscription.tsx", "TypeScript JSX", 9, 0, 0, 0, 0, 4, 13
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\types\User.tsx", "TypeScript JSX", 13, 0, 0, 0, 0, 6, 19
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\types\Valoration.tsx", "TypeScript JSX", 18, 0, 0, 0, 0, 6, 24
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\types\ValorationComment.tsx", "TypeScript JSX", 11, 0, 0, 0, 0, 5, 16
+"c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\util\globalColors.tsx", "TypeScript JSX", 10, 0, 0, 0, 0, 2, 12
+"Total", "-", 2744, 23, 378, 74, 30, 414, 3663

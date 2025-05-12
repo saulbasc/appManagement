@@ -1,4 +1,4 @@
-import supabase from '../lib/supabase';
+import supabase from "../lib/supabase";
 
 async function SignInEmail({ email, password }: any) {
   const { data, error } = await supabase.auth.signInWithPassword({
@@ -34,10 +34,4 @@ async function GetID() {
   return id;
 }
 
-export {
-  SignInEmail,
-  SignUpEmail,
-  LogOut,
-  SearchByText,
-  GetID,
-};
+export { SignInEmail, SignUpEmail, LogOut, SearchByText, GetID };

@@ -1,0 +1,129 @@
+Date : 2025-05-12 10:38:46
+Directory : c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src
+Total : 74 files,  3219 codes, 30 comments, 414 blanks, all 3663 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| TypeScript JSX |         64 |      2,744 |         28 |        350 |      3,122 |
+| JavaScript     |          7 |        378 |          2 |         57 |        437 |
+| JSON           |          2 |         74 |          0 |          2 |         76 |
+| TypeScript     |          1 |         23 |          0 |          5 |         28 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                                       | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                          |         74 |      3,219 |         30 |        414 |      3,663 |
+| . (Files)                                                                                                                                  |          1 |         12 |          0 |          4 |         16 |
+| components                                                                                                                                 |         37 |      1,780 |         19 |        187 |      1,986 |
+| components\app                                                                                                                             |         27 |      1,268 |         14 |        134 |      1,416 |
+| components\app\admin                                                                                                                       |          3 |        145 |          2 |         18 |        165 |
+| components\app\common                                                                                                                      |          7 |        214 |          5 |         33 |        252 |
+| components\app\courses                                                                                                                     |          6 |        355 |          3 |         29 |        387 |
+| components\app\screen_component                                                                                                            |          7 |        326 |          2 |         31 |        359 |
+| components\app\user                                                                                                                        |          2 |        141 |          2 |         12 |        155 |
+| components\app\valoration                                                                                                                  |          2 |         87 |          0 |         11 |         98 |
+| components\bar                                                                                                                             |          3 |        195 |          2 |         18 |        215 |
+| components\global                                                                                                                          |          2 |        142 |          1 |         11 |        154 |
+| components\login                                                                                                                           |          4 |        160 |          2 |         18 |        180 |
+| components\util                                                                                                                            |          1 |         15 |          0 |          6 |         21 |
+| context                                                                                                                                    |          6 |        352 |          2 |         51 |        405 |
+| core                                                                                                                                       |          7 |        440 |          7 |         56 |        503 |
+| core (Files)                                                                                                                               |          2 |         66 |          0 |         13 |         79 |
+| core\dao                                                                                                                                   |          5 |        374 |          7 |         43 |        424 |
+| lib                                                                                                                                        |          1 |         23 |          0 |          5 |         28 |
+| manager                                                                                                                                    |          2 |         30 |          0 |          7 |         37 |
+| screens                                                                                                                                    |         10 |        386 |          2 |         61 |        449 |
+| screens\app                                                                                                                                |          8 |        354 |          2 |         55 |        411 |
+| screens\login                                                                                                                              |          2 |         32 |          0 |          6 |         38 |
+| styles                                                                                                                                     |          1 |          8 |          0 |          3 |         11 |
+| translation                                                                                                                                |          3 |        100 |          0 |          8 |        108 |
+| translation (Files)                                                                                                                        |          1 |         26 |          0 |          6 |         32 |
+| translation\language                                                                                                                       |          2 |         74 |          0 |          2 |         76 |
+| types                                                                                                                                      |          5 |         78 |          0 |         30 |        108 |
+| util                                                                                                                                       |          1 |         10 |          0 |          2 |         12 |
++--------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                                                                   | language       | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\admin\AdminButtonsPanel.tsx                             | TypeScript JSX |         35 |          1 |          6 |         42 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\admin\AdminCourseListComponent.tsx                      | TypeScript JSX |         50 |          0 |          8 |         58 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\admin\AdminCourseListPanel.tsx                          | TypeScript JSX |         60 |          1 |          4 |         65 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\common\ContributionGraphComponent.tsx                   | TypeScript JSX |         28 |          1 |          4 |         33 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\common\DefaultNumberInput.tsx                           | TypeScript JSX |         42 |          1 |          5 |         48 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\common\DefaultTextInput.tsx                             | TypeScript JSX |         48 |          1 |          6 |         55 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\common\IconAndText.tsx                                  | TypeScript JSX |         17 |          0 |          4 |         21 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\common\LinearGraph.tsx                                  | TypeScript JSX |         44 |          1 |          7 |         52 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\common\LoadingIndicator.tsx                             | TypeScript JSX |         13 |          0 |          3 |         16 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\common\RoundIconButton.tsx                              | TypeScript JSX |         22 |          1 |          4 |         27 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\courses\CourseDetailInfo.tsx                            | TypeScript JSX |         72 |          1 |          4 |         77 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\courses\CourseForm.tsx                                  | TypeScript JSX |         75 |          0 |          4 |         79 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\courses\CourseListComponent.tsx                         | TypeScript JSX |         44 |          0 |          7 |         51 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\courses\CourseListPanel.tsx                             | TypeScript JSX |         62 |          1 |          4 |         67 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\courses\CourseSuscribeButton.tsx                        | TypeScript JSX |         32 |          0 |          4 |         36 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\courses\CourseValorationPanel.tsx                       | TypeScript JSX |         70 |          1 |          6 |         77 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\screen_component\AdminCourseCreationScreenComponent.tsx | TypeScript JSX |         57 |          0 |          4 |         61 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\screen_component\AdminCourseEditScreenComponent.tsx     | TypeScript JSX |         64 |          0 |          4 |         68 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\screen_component\AdminScreenComponent.tsx               | TypeScript JSX |         30 |          1 |          5 |         36 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\screen_component\AdminStatsScreenComponent.tsx          | TypeScript JSX |         64 |          0 |          5 |         69 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\screen_component\CourseDetailScreenComponent.tsx        | TypeScript JSX |         47 |          0 |          4 |         51 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\screen_component\SuscribedCoursesScreenComponent.tsx    | TypeScript JSX |         34 |          1 |          5 |         40 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\screen_component\UserPanelScreenComponent.tsx           | TypeScript JSX |         30 |          0 |          4 |         34 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\user\SuscribedCoursesPanel.tsx                          | TypeScript JSX |         32 |          1 |          4 |         37 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\user\UserPanel.tsx                                      | TypeScript JSX |        109 |          1 |          8 |        118 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\valoration\ValorationList.tsx                           | TypeScript JSX |         42 |          0 |          7 |         49 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\app\valoration\ValorationPanel.tsx                          | TypeScript JSX |         45 |          0 |          4 |         49 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\bar\BarDropDown.tsx                                         | TypeScript JSX |        134 |          1 |         10 |        145 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\bar\BarView.tsx                                             | TypeScript JSX |         34 |          1 |          4 |         39 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\bar\SearchBar.tsx                                           | TypeScript JSX |         27 |          0 |          4 |         31 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\global\AppStackNavigator.tsx                                | TypeScript JSX |         76 |          0 |          4 |         80 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\global\BottomTabNavigator.tsx                               | TypeScript JSX |         66 |          1 |          7 |         74 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\login\LoginForm.tsx                                         | TypeScript JSX |         81 |          1 |          6 |         88 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\login\LoginRedirect.tsx                                     | TypeScript JSX |         28 |          0 |          4 |         32 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\login\LoginTitle.tsx                                        | TypeScript JSX |         29 |          1 |          4 |         34 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\login\LoginView.tsx                                         | TypeScript JSX |         22 |          0 |          4 |         26 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\components\util\Spacer.tsx                                             | TypeScript JSX |         15 |          0 |          6 |         21 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\context\CourseDaoContext.js                                            | JavaScript     |         90 |          0 |         12 |        102 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\context\InscriptionDaoContext.js                                       | JavaScript     |         83 |          0 |         11 |         94 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\context\TranslationContext.js                                          | JavaScript     |          0 |          0 |          1 |          1 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\context\UserDaoContext.js                                              | JavaScript     |         68 |          0 |          9 |         77 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\context\ValorationDaoContext.js                                        | JavaScript     |         90 |          0 |         12 |        102 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\context\createDataContext.js                                           | JavaScript     |         21 |          2 |          6 |         29 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\core\dao\CourseDAO.tsx                                                 | TypeScript JSX |        126 |          1 |         14 |        141 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\core\dao\IDefaultDAO.tsx                                               | TypeScript JSX |          8 |          1 |          2 |         11 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\core\dao\InscriptionDAO.tsx                                            | TypeScript JSX |         67 |          2 |         10 |         79 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\core\dao\UserDAO.tsx                                                   | TypeScript JSX |         46 |          1 |          7 |         54 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\core\dao\ValorationDAO.tsx                                             | TypeScript JSX |        127 |          2 |         10 |        139 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\core\initManager.tsx                                                   | TypeScript JSX |         35 |          0 |          6 |         41 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\core\supabaseActions.tsx                                               | TypeScript JSX |         31 |          0 |          7 |         38 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\lib\supabase.ts                                                        | TypeScript     |         23 |          0 |          5 |         28 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\manager\AuthManager.tsx                                                | TypeScript JSX |         24 |          0 |          4 |         28 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\manager\TranslationManager.tsx                                         | TypeScript JSX |          6 |          0 |          3 |          9 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\navigationRef.tsx                                                      | TypeScript JSX |         12 |          0 |          4 |         16 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\screens\app\adminCourseCreationScreen.tsx                              | TypeScript JSX |         42 |          0 |          5 |         47 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\screens\app\adminCourseEditScreen.tsx                                  | TypeScript JSX |         59 |          0 |          7 |         66 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\screens\app\adminScreen.tsx                                            | TypeScript JSX |         43 |          1 |          8 |         52 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\screens\app\adminStatsScreen.tsx                                       | TypeScript JSX |         34 |          1 |          6 |         41 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\screens\app\courseDetailScreen.tsx                                     | TypeScript JSX |         63 |          0 |         10 |         73 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\screens\app\courseListScreen.tsx                                       | TypeScript JSX |         30 |          0 |          6 |         36 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\screens\app\suscribedCoursesScreen.tsx                                 | TypeScript JSX |         38 |          0 |          7 |         45 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\screens\app\userProfileScreen.tsx                                      | TypeScript JSX |         45 |          0 |          6 |         51 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\screens\login\signinScreen.tsx                                         | TypeScript JSX |         16 |          0 |          3 |         19 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\screens\login\signupScreen.tsx                                         | TypeScript JSX |         16 |          0 |          3 |         19 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\styles\CommonStyles.tsx                                                | TypeScript JSX |          8 |          0 |          3 |         11 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\translation\language\en.json                                           | JSON           |         37 |          0 |          1 |         38 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\translation\language\es.json                                           | JSON           |         37 |          0 |          1 |         38 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\translation\translation.js                                             | JavaScript     |         26 |          0 |          6 |         32 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\types\Course.tsx                                                       | TypeScript JSX |         27 |          0 |          9 |         36 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\types\Inscription.tsx                                                  | TypeScript JSX |          9 |          0 |          4 |         13 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\types\User.tsx                                                         | TypeScript JSX |         13 |          0 |          6 |         19 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\types\Valoration.tsx                                                   | TypeScript JSX |         18 |          0 |          6 |         24 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\types\ValorationComment.tsx                                            | TypeScript JSX |         11 |          0 |          5 |         16 |
+| c:\Users\SaulBasconcillosCorr\Practicas\Proyectos\managementApp\src\util\globalColors.tsx                                                  | TypeScript JSX |         10 |          0 |          2 |         12 |
+| Total                                                                                                                                      |                |      3,219 |         30 |        414 |      3,663 |
++--------------------------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+

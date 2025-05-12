@@ -1,17 +1,15 @@
-import React, { useContext, useEffect } from 'react';
-import { navigate } from '../../navigationRef';
-import { Context as CourseContext } from '../../context/CourseDaoContext';
-import { Context as UserContext } from '../../context/UserDaoContext';
-import CourseListComponent from '../../components/app/courses/CourseListComponent';
-import { GetID } from '../../core/supabaseActions';
+import React, { useContext, useEffect } from "react";
+import { navigate } from "../../navigationRef";
+import { Context as CourseContext } from "../../context/CourseDaoContext";
+import { Context as UserContext } from "../../context/UserDaoContext";
+import CourseListComponent from "../../components/app/courses/CourseListComponent";
+import { GetID } from "../../core/supabaseActions";
 
 function CourseListScreen() {
-  const { state: courseState, selectAll: courseSelectAll } = useContext(CourseContext);
+  const { state: courseState, selectAll: courseSelectAll } =
+    useContext(CourseContext);
 
-  const {
-    state: userState,
-    select: userSelect,
-  } = useContext(UserContext);
+  const { state: userState, select: userSelect } = useContext(UserContext);
 
   useEffect(() => {
     const GetUSerID = async () => {
@@ -28,7 +26,7 @@ function CourseListScreen() {
     <CourseListComponent
       courses={courseState.courses}
       onPressCourse={async (course: any) => {
-        navigate('CourseDetail', { course, user: userState.user });
+        navigate("CourseDetail", { course, user: userState.user });
       }}
     />
   );

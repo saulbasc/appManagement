@@ -23,11 +23,11 @@ class Course {
     startDate?: Date,
   ) {
     this.id = id;
-    this.title = title ?? '';
-    this.description = description ?? '';
-    this.category = category ?? '';
+    this.title = title ?? "";
+    this.description = description ?? "";
+    this.category = category ?? "";
     this.duration = duration ?? 0;
-    this.instructor = instructor ?? '';
+    this.instructor = instructor ?? "";
     this.startDate = startDate ? new Date(startDate) : new Date();
   }
 }

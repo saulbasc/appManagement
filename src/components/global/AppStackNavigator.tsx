@@ -1,16 +1,16 @@
-import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import BottomTabNavigator from './BottomTabNavigator';
-import SignInScreen from '../../screens/login/signinScreen';
-import SignupScreen from '../../screens/login/signupScreen';
-import CourseListScreen from '../../screens/app/courseListScreen';
-import CourseDetailScreen from '../../screens/app/courseDetailScreen';
-import UserProfileScreen from '../../screens/app/userProfileScreen';
-import AdminScreen from '../../screens/app/adminScreen';
-import SuscribedCoursesScreen from '../../screens/app/suscribedCoursesScreen';
-import AdminStatsScreen from '../../screens/app/adminStatsScreen';
-import AdminCourseEditScreen from '../../screens/app/adminCourseEditScreen';
-import AdminCourseCreationScreen from '../../screens/app/adminCourseCreationScreen';
+import React from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import BottomTabNavigator from "./BottomTabNavigator";
+import SignInScreen from "../../screens/login/signinScreen";
+import SignupScreen from "../../screens/login/signupScreen";
+import CourseListScreen from "../../screens/app/courseListScreen";
+import CourseDetailScreen from "../../screens/app/courseDetailScreen";
+import UserProfileScreen from "../../screens/app/userProfileScreen";
+import AdminScreen from "../../screens/app/adminScreen";
+import SuscribedCoursesScreen from "../../screens/app/suscribedCoursesScreen";
+import AdminStatsScreen from "../../screens/app/adminStatsScreen";
+import AdminCourseEditScreen from "../../screens/app/adminCourseEditScreen";
+import AdminCourseCreationScreen from "../../screens/app/adminCourseCreationScreen";
 
 const Stack = createNativeStackNavigator();
 

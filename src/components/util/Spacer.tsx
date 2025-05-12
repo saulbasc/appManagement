@@ -1,5 +1,5 @@
-import React from 'react';
-import { View } from 'react-native';
+import React from "react";
+import { View } from "react-native";
 
 function BaseSpacer({ space }: any) {
   return <View style={{ marginVertical: space }} />;

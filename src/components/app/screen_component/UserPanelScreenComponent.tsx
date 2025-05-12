@@ -1,8 +1,8 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { MediumSpacer } from '../../util/Spacer';
-import SuscribedCoursesPanel from '../user/SuscribedCoursesPanel';
-import UserPanel from '../user/UserPanel';
+import React from "react";
+import { StyleSheet, View } from "react-native";
+import { MediumSpacer } from "../../util/Spacer";
+import SuscribedCoursesPanel from "../user/SuscribedCoursesPanel";
+import UserPanel from "../user/UserPanel";
 
 const styles = StyleSheet.create({
   container: {
@@ -25,9 +25,7 @@ function UserPanelScreenComponent({
         onPressSaveButton={onPressSaveButton}
       />
       <MediumSpacer />
-      <SuscribedCoursesPanel
-        onPress={onPressSuscribedCourses}
-      />
+      <SuscribedCoursesPanel onPress={onPressSuscribedCourses} />
     </View>
   );
 }

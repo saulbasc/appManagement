@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { View, FlatList, StyleSheet } from 'react-native';
-import SearchBar from '../../bar/SearchBar';
-import { Context as CourseContext } from '../../../context/CourseDaoContext';
-import AppColors from '../../../util/globalColors';
-import AdminCourseListPanel from './AdminCourseListPanel';
-import LoadingIndicator from '../common/LoadingIndicator';
-import Course from '../../../types/Course';
+import React, { useContext, useEffect, useState } from "react";
+import { View, FlatList, StyleSheet } from "react-native";
+import SearchBar from "../../bar/SearchBar";
+import { Context as CourseContext } from "../../../context/CourseDaoContext";
+import AppColors from "../../../util/globalColors";
+import AdminCourseListPanel from "./AdminCourseListPanel";
+import LoadingIndicator from "../common/LoadingIndicator";
+import Course from "../../../types/Course";
 
 const styles = StyleSheet.create({
   view: {
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 
 function AdminCourseListComponent({ courses, onPress }: any) {
   const { selectAll } = useContext(CourseContext);
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -29,10 +29,12 @@ function AdminCourseListComponent({ courses, onPress }: any) {
     GetCourses();
   }, []);
 
-  const filteredCourses = courses?.filter((course: Course) => course
-    .title.toLowerCase().includes(text.toLocaleLowerCase()) || course
-    .instructor.toLowerCase().includes(text.toLocaleLowerCase()) || course
-    .category.toLowerCase().includes(text.toLocaleLowerCase()));
+  const filteredCourses = courses?.filter(
+    (course: Course) =>
+      course.title.toLowerCase().includes(text.toLocaleLowerCase()) ||
+      course.instructor.toLowerCase().includes(text.toLocaleLowerCase()) ||
+      course.category.toLowerCase().includes(text.toLocaleLowerCase()),
+  );
 
   if (!loaded) {
     return <LoadingIndicator />;
@@ -40,18 +42,12 @@ function AdminCourseListComponent({ courses, onPress }: any) {
 
   return (
     <View style={styles.view}>
-      <SearchBar
-        value={text}
-        onChangeText={setText}
-      />
+      <SearchBar value={text} onChangeText={setText} />
       <FlatList
         showsVerticalScrollIndicator={false}
         data={filteredCourses ?? []}
         renderItem={({ item }) => (
-          <AdminCourseListPanel
-            onPress={() => onPress(item)}
-            item={item}
-          />
+          <AdminCourseListPanel onPress={() => onPress(item)} item={item} />
         )}
       />
     </View>

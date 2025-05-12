@@ -1,8 +1,8 @@
-import React from 'react';
-import { Button } from '@rneui/base';
-import { StyleSheet } from 'react-native';
-import useTr from '../../../manager/TranslationManager';
-import AppColors from '../../../util/globalColors';
+import React from "react";
+import { Button } from "@rneui/base";
+import { StyleSheet } from "react-native";
+import useTr from "../../../manager/TranslationManager";
+import AppColors from "../../../util/globalColors";
 
 const styles = StyleSheet.create({
   button: {
@@ -13,13 +13,13 @@ const styles = StyleSheet.create({
   },
 });
 
-function CourseSuscribeButton({
-  suscribed, onSuscribe, onUnsuscribe,
-}: any) {
+function CourseSuscribeButton({ suscribed, onSuscribe, onUnsuscribe }: any) {
   const tr = useTr();
   return (
     <Button
-      title={suscribed ? tr('unsuscribeCourseButton') : tr('suscribeCourseButton')}
+      title={
+        suscribed ? tr("unsuscribeCourseButton") : tr("suscribeCourseButton")
+      }
       buttonStyle={styles.button}
       onPress={async () => {
         if (suscribed) {

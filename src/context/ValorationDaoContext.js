@@ -1,27 +1,27 @@
-import ValorationDAO from '../core/dao/ValorationDAO';
-import createDataContext from './createDataContext';
+import ValorationDAO from "../core/dao/ValorationDAO";
+import createDataContext from "./createDataContext";
 
 const valorationDao = new ValorationDAO();
 
 const valorationReducer = (state, action) => {
   switch (action.type) {
-    case 'clear':
+    case "clear":
       return { ...state, valoration: null, valorations: [] };
-    case 'insert':
+    case "insert":
       return { ...state, error: null };
-    case 'update':
+    case "update":
       return { ...state, error: null };
-    case 'delete':
+    case "delete":
       return { ...state, error: null };
-    case 'select':
+    case "select":
       return { ...state, valoration: action.payload, error: null };
-    case 'selectAll':
+    case "selectAll":
       return { ...state, valorations: action.payload, error: null };
-    case 'valorationsForUsers':
+    case "valorationsForUsers":
       return { ...state, valorationsForUsers: action.payload };
-    case 'valorationsOfCourse':
+    case "valorationsOfCourse":
       return { ...state, valorationsOfCourse: action.payload };
-    case 'error':
+    case "error":
       return { ...state, error: action.payload };
     default:
       return state;
@@ -29,54 +29,54 @@ const valorationReducer = (state, action) => {
 };
 
 const clearValoration = (dispatch) => () => {
-  dispatch({ type: 'clear' });
+  dispatch({ type: "clear" });
 };
 
 const insert = (dispatch) => async (valoration) => {
   const error = await valorationDao.insert(valoration);
   if (error) {
-    dispatch({ type: 'error', payload: error });
+    dispatch({ type: "error", payload: error });
   } else {
-    dispatch({ type: 'insert', payload: error });
+    dispatch({ type: "insert", payload: error });
   }
 };
 
 const select = (dispatch) => async (userId, courseId) => {
   const valoration = await valorationDao.select([courseId, userId]);
-  dispatch({ type: 'select', payload: valoration });
+  dispatch({ type: "select", payload: valoration });
 };
 
 const selectAll = (dispatch) => async () => {
   const valorations = await valorationDao.selectAll();
-  dispatch({ type: 'selectAll', payload: valorations });
+  dispatch({ type: "selectAll", payload: valorations });
 };
 
 const update = (dispatch) => async (valoration) => {
   const error = await valorationDao.update(valoration);
   if (error) {
-    dispatch({ type: 'error', payload: error });
+    dispatch({ type: "error", payload: error });
   } else {
-    dispatch({ type: 'update', payload: error });
+    dispatch({ type: "update", payload: error });
   }
 };
 
 const deleted = (dispatch) => async (id) => {
   const error = await valorationDao.delete(id);
   if (error) {
-    dispatch({ type: 'error', payload: error });
+    dispatch({ type: "error", payload: error });
   } else {
-    dispatch({ type: 'delete', payload: error });
+    dispatch({ type: "delete", payload: error });
   }
 };
 
 const valorationsForUsers = (dispatch) => async () => {
   const data = await valorationDao.valorationsForUsers();
-  dispatch({ type: 'valorationsForUsers', payload: data });
+  dispatch({ type: "valorationsForUsers", payload: data });
 };
 
 const valorationsOfCourse = (dispatch) => async (courseId) => {
   const data = await valorationDao.valorationsOfCourse(courseId);
-  dispatch({ type: 'valorationsOfCourse', payload: data });
+  dispatch({ type: "valorationsOfCourse", payload: data });
 };
 
 export const { Provider, Context } = createDataContext(

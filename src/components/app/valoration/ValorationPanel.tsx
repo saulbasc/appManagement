@@ -1,8 +1,8 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { AirbnbRating } from '@rn-vui/ratings';
-import AppColors from '../../../util/globalColors';
-import { MediumSpacer, SmallSpacer } from '../../util/Spacer';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { AirbnbRating } from "@rn-vui/ratings";
+import AppColors from "../../../util/globalColors";
+import { MediumSpacer, SmallSpacer } from "../../util/Spacer";
 
 const styles = StyleSheet.create({
   content: {
@@ -12,14 +12,14 @@ const styles = StyleSheet.create({
   },
   user: {
     fontSize: 30,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   text: {
     fontSize: 20,
     marginRight: 20,
   },
   rating: {
-    position: 'absolute',
+    position: "absolute",
     right: 10,
     top: 5,
   },

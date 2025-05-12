@@ -1,10 +1,10 @@
-import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
-import { Button } from '@rneui/base';
-import CourseForm from '../courses/CourseForm';
-import { MediumSpacer, SmallSpacer } from '../../util/Spacer';
-import AppColors from '../../../util/globalColors';
-import useTr from '../../../manager/TranslationManager';
+import React from "react";
+import { ScrollView, StyleSheet } from "react-native";
+import { Button } from "@rneui/base";
+import CourseForm from "../courses/CourseForm";
+import { MediumSpacer, SmallSpacer } from "../../util/Spacer";
+import AppColors from "../../../util/globalColors";
+import useTr from "../../../manager/TranslationManager";
 
 const styles = StyleSheet.create({
   content: {
@@ -50,13 +50,13 @@ function AdminCourseEditScreenComponent({
       <MediumSpacer />
       <Button
         buttonStyle={styles.button}
-        title={tr('editCourse')}
+        title={tr("editCourse")}
         onPress={onEditPress}
       />
       <SmallSpacer />
       <Button
         buttonStyle={styles.button}
-        title={tr('deleteCourse')}
+        title={tr("deleteCourse")}
         onPress={onDeletePress}
       />
       <MediumSpacer />

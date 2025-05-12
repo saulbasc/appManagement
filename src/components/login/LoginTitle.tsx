@@ -1,10 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { MediumSpacer, SmallSpacer } from '../util/Spacer';
-import commonStyles from '../../styles/CommonStyles';
-import AppColors from '../../util/globalColors';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { MediumSpacer, SmallSpacer } from "../util/Spacer";
+import commonStyles from "../../styles/CommonStyles";
+import AppColors from "../../util/globalColors";
 
 const styles = StyleSheet.create({
   loginTitle: {
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   },
   loginText: {
     fontSize: 20,
-    alignSelf: 'flex-start',
+    alignSelf: "flex-start",
     marginLeft: 10,
   },
 });

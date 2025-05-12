@@ -1,12 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Input, Button } from '@rneui/base';
-import Feather from '@expo/vector-icons/Feather';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import useTr from '../../manager/TranslationManager';
-import AppColors from '../../util/globalColors';
-import { MediumSpacer } from '../util/Spacer';
+import React, { useState } from "react";
+import { View, StyleSheet } from "react-native";
+import { Input, Button } from "@rneui/base";
+import Feather from "@expo/vector-icons/Feather";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import useTr from "../../manager/TranslationManager";
+import AppColors from "../../util/globalColors";
+import { MediumSpacer } from "../util/Spacer";
 
 const styles = StyleSheet.create({
   content: {
@@ -37,28 +37,36 @@ const styles = StyleSheet.create({
   },
 });
 
-function AuthForm({ onSubmit } : any) {
+function AuthForm({ onSubmit }: any) {
   const tr = useTr();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <View style={styles.content}>
       <View style={styles.inputContent}>
         <Input
-          placeholder={tr('loginUser')}
+          placeholder={tr("loginUser")}
           style={styles.loginInput}
           onChangeText={setEmail}
-          leftIcon={<Feather name="user" size={40} color={AppColors.quaternary} />}
+          leftIcon={
+            <Feather name="user" size={40} color={AppColors.quaternary} />
+          }
           inputContainerStyle={{ borderBottomWidth: 0 }}
           leftIconContainerStyle={{ marginRight: 15 }}
         />
         <Input
-          placeholder={tr('loginPass')}
+          placeholder={tr("loginPass")}
           style={styles.loginInput}
           onChangeText={setPassword}
-          leftIcon={<MaterialIcons name="password" size={40} color={AppColors.quaternary} />}
+          leftIcon={
+            <MaterialIcons
+              name="password"
+              size={40}
+              color={AppColors.quaternary}
+            />
+          }
           inputContainerStyle={{ borderBottomWidth: 0 }}
           leftIconContainerStyle={{ marginRight: 15 }}
           secureTextEntry
@@ -67,7 +75,7 @@ function AuthForm({ onSubmit } : any) {
       <MediumSpacer />
       <Button
         onPress={() => onSubmit({ email, password })}
-        title={tr('loginButton')}
+        title={tr("loginButton")}
         type="clear"
         titleStyle={styles.buttonTitle}
         buttonStyle={styles.button}

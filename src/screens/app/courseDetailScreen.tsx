@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Context as InscriptionContext } from '../../context/InscriptionDaoContext';
-import { Context as ValorationContext } from '../../context/ValorationDaoContext';
-import { Context as CourseContext } from '../../context/CourseDaoContext';
-import Valoration from '../../types/Valoration';
-import Inscription from '../../types/Inscription';
-import LoadingIndicator from '../../components/app/common/LoadingIndicator';
-import CourseDetailScreenComponent from '../../components/app/screen_component/CourseDetailScreenComponent';
+import React, { useContext, useEffect, useState } from "react";
+import { Context as InscriptionContext } from "../../context/InscriptionDaoContext";
+import { Context as ValorationContext } from "../../context/ValorationDaoContext";
+import { Context as CourseContext } from "../../context/CourseDaoContext";
+import Valoration from "../../types/Valoration";
+import Inscription from "../../types/Inscription";
+import LoadingIndicator from "../../components/app/common/LoadingIndicator";
+import CourseDetailScreenComponent from "../../components/app/screen_component/CourseDetailScreenComponent";
 
 function CourseDetailScreen(props: any) {
   const prop = props;
@@ -17,7 +17,8 @@ function CourseDetailScreen(props: any) {
   const {
     state: inscriptionState,
     insert: inscriptionInsert,
-    remove, isSuscribed,
+    remove,
+    isSuscribed,
   } = useContext(InscriptionContext);
 
   const {
@@ -27,9 +28,7 @@ function CourseDetailScreen(props: any) {
     valorationsOfCourse,
   } = useContext(ValorationContext);
 
-  const {
-    selectAllWithID: selectAllCoursesWithID,
-  } = useContext(CourseContext);
+  const { selectAllWithID: selectAllCoursesWithID } = useContext(CourseContext);
 
   useEffect(() => {
     const Actions = async () => {
@@ -61,7 +60,9 @@ function CourseDetailScreen(props: any) {
       }}
       valoration={valorationState.valoration}
       onSubmitValoration={async (comment: string, rating: number) => {
-        await valorationInsert(new Valoration(course.id, user.id, comment, rating));
+        await valorationInsert(
+          new Valoration(course.id, user.id, comment, rating),
+        );
         await valorationsOfCourse(course.id);
       }}
     />

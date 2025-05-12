@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
-import { Input } from '@rneui/base';
-import React, { useState } from 'react';
-import { StyleSheet } from 'react-native';
-import AppColors from '../../../util/globalColors';
+import { Input } from "@rneui/base";
+import React, { useState } from "react";
+import { StyleSheet } from "react-native";
+import AppColors from "../../../util/globalColors";
 
 const styles = StyleSheet.create({
   inputsContent: {
@@ -19,11 +19,11 @@ const styles = StyleSheet.create({
 });
 
 type DefaultInputProps = {
-  value: string,
-  onChangeText: (text: string) => void,
-  multiline: boolean,
-  label: string,
-}
+  value: string;
+  onChangeText: (text: string) => void;
+  multiline: boolean;
+  label: string;
+};
 
 function DefaultTextInput({
   value,

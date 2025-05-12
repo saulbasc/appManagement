@@ -1,9 +1,9 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
 const commonStyles = StyleSheet.create({
   centerTotal: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 

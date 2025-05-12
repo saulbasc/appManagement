@@ -1,11 +1,11 @@
 {
-  "translation":{
+  "translation": {
     "loginUser": "Usuario",
     "loginPass": "Contraseña",
-    "loginButton":"Confirmar",
-    "signinTitle":"Iniciar sesión",        
-    "signinRedirect":"Todavía no tienes una cuenta? Regístrate ahora",
-    "signupTitle":"Registrarse",
+    "loginButton": "Confirmar",
+    "signinTitle": "Iniciar sesión",
+    "signinRedirect": "Todavía no tienes una cuenta? Regístrate ahora",
+    "signupTitle": "Registrarse",
     "signupRedirect": "Ya tienes una cuenta? Inicia sesión ahora",
     "suscribeCourseButton": "Suscribirse al curso",
     "unsuscribeCourseButton": "Desuscribirse",

@@ -1,12 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React, { useEffect, useState } from 'react';
-import AntDesign from '@expo/vector-icons/AntDesign';
-import SelectDropdown from 'react-native-select-dropdown';
-import { StyleSheet, Text, View } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import useTr from '../../manager/TranslationManager';
-import AppColors from '../../util/globalColors';
-import translation from '../../translation/translation';
+import React, { useEffect, useState } from "react";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import SelectDropdown from "react-native-select-dropdown";
+import { StyleSheet, Text, View } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import useTr from "../../manager/TranslationManager";
+import AppColors from "../../util/globalColors";
+import translation from "../../translation/translation";
 
 const styles = StyleSheet.create({
   dropdownButtonStyle: {
@@ -14,9 +14,9 @@ const styles = StyleSheet.create({
     height: 50,
     backgroundColor: AppColors.white,
     borderRadius: 10,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
     paddingLeft: 20,
     paddingRight: 10,
     borderWidth: 2,
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   dropdownButtonTxtStyle: {
     flex: 1,
     fontSize: 18,
-    fontWeight: '500',
+    fontWeight: "500",
   },
   dropdownButtonArrowStyle: {
     fontSize: 28,
@@ -40,34 +40,34 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   dropdownItemStyle: {
-    width: '100%',
-    flexDirection: 'row',
+    width: "100%",
+    flexDirection: "row",
     paddingHorizontal: 12,
-    justifyContent: 'center',
+    justifyContent: "center",
     borderRadius: 10,
-    alignItems: 'center',
+    alignItems: "center",
     paddingVertical: 12,
   },
   dropdownSelectedItemStyle: {
-    width: '100%',
-    flexDirection: 'row',
+    width: "100%",
+    flexDirection: "row",
     paddingHorizontal: 12,
-    justifyContent: 'center',
+    justifyContent: "center",
     borderRadius: 10,
-    alignItems: 'center',
+    alignItems: "center",
     paddingVertical: 12,
     backgroundColor: AppColors.primary,
   },
   dropdownItemTxtStyle: {
     flex: 1,
     fontSize: 18,
-    fontWeight: '500',
-    color: '#151E26',
+    fontWeight: "500",
+    color: "#151E26",
   },
   dropdownSelectedItemTxtStyle: {
     flex: 1,
     fontSize: 18,
-    fontWeight: '500',
+    fontWeight: "500",
     color: AppColors.white,
   },
 });
@@ -75,22 +75,19 @@ const styles = StyleSheet.create({
 function BarDropDown() {
   const tr = useTr();
 
-  const spanish = tr('spanish');
-  const english = tr('english');
+  const spanish = tr("spanish");
+  const english = tr("english");
 
-  const [defaultLang, setDefaultLang] = useState('');
+  const [defaultLang, setDefaultLang] = useState("");
 
-  const idioms = [
-    { title: spanish },
-    { title: english },
-  ];
+  const idioms = [{ title: spanish }, { title: english }];
 
   useEffect(() => {
     const GetLang = async () => {
-      const receiveLang = await AsyncStorage.getItem('lang');
-      if (receiveLang === 'es') {
+      const receiveLang = await AsyncStorage.getItem("lang");
+      if (receiveLang === "es") {
         setDefaultLang(spanish);
-      } else if (receiveLang === 'en') {
+      } else if (receiveLang === "en") {
         setDefaultLang(english);
       } else {
         setDefaultLang(spanish);
@@ -101,12 +98,12 @@ function BarDropDown() {
 
   const handleSelect = async (selectedItem: any) => {
     if (selectedItem.title === spanish) {
-      await AsyncStorage.setItem('lang', 'es');
-      translation.changeLanguage('es');
+      await AsyncStorage.setItem("lang", "es");
+      translation.changeLanguage("es");
       setDefaultLang(spanish);
     } else if (selectedItem.title === english) {
-      await AsyncStorage.setItem('lang', 'en');
-      translation.changeLanguage('en');
+      await AsyncStorage.setItem("lang", "en");
+      translation.changeLanguage("en");
       setDefaultLang(english);
     }
   };
@@ -117,9 +114,7 @@ function BarDropDown() {
       onSelect={handleSelect}
       renderButton={() => (
         <View style={styles.dropdownButtonStyle}>
-          <Text style={styles.dropdownButtonTxtStyle}>
-            {defaultLang}
-          </Text>
+          <Text style={styles.dropdownButtonTxtStyle}>{defaultLang}</Text>
           <AntDesign name="caretdown" size={24} color={AppColors.tertiary} />
         </View>
       )}
@@ -130,10 +125,11 @@ function BarDropDown() {
             ...(isSelected && styles.dropdownSelectedItemStyle),
           }}
         >
-          <Text style={{
-            ...styles.dropdownItemTxtStyle,
-            ...(isSelected && styles.dropdownSelectedItemTxtStyle),
-          }}
+          <Text
+            style={{
+              ...styles.dropdownItemTxtStyle,
+              ...(isSelected && styles.dropdownSelectedItemTxtStyle),
+            }}
           >
             {item.title}
           </Text>

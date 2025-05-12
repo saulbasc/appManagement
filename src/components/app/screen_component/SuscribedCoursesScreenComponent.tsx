@@ -1,23 +1,23 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
-import { StyleSheet, Text } from 'react-native';
-import CourseListComponent from '../courses/CourseListComponent';
-import Course from '../../../types/Course';
-import useTr from '../../../manager/TranslationManager';
+import React from "react";
+import { StyleSheet, Text } from "react-native";
+import CourseListComponent from "../courses/CourseListComponent";
+import Course from "../../../types/Course";
+import useTr from "../../../manager/TranslationManager";
 
 const styles = StyleSheet.create({
   notFoundText: {
-    textAlign: 'center',
+    textAlign: "center",
     marginTop: 20,
     fontSize: 17,
   },
 });
 
 type SuscribedCoursesProps = {
-  areCourses: boolean,
-  selectedCourses: Course[],
-  onPressCourse: (course: Course) => void,
-}
+  areCourses: boolean;
+  selectedCourses: Course[];
+  onPressCourse: (course: Course) => void;
+};
 
 function SuscribedCoursesScreenComponent({
   areCourses,
@@ -33,7 +33,7 @@ function SuscribedCoursesScreenComponent({
       />
     );
   }
-  return <Text style={styles.notFoundText}>{tr('notSuscribedInCourses')}</Text>;
+  return <Text style={styles.notFoundText}>{tr("notSuscribedInCourses")}</Text>;
 }
 
 export default SuscribedCoursesScreenComponent;

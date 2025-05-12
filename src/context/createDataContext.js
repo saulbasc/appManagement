@@ -1,6 +1,6 @@
-import React, { useReducer } from 'react';
+import React, { useReducer } from "react";
 // eslint-disable-next-line import/no-extraneous-dependencies
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 export default (reducer, actions, defaultValue) => {
   const Context = React.createContext();

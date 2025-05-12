@@ -1,10 +1,10 @@
-import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
-import { MediumSpacer } from '../../util/Spacer';
-import ValorationList from '../valoration/ValorationList';
-import CourseDetailInfo from '../courses/CourseDetailInfo';
-import CourseValorationPanel from '../courses/CourseValorationPanel';
-import CourseSuscribeButton from '../courses/CourseSuscribeButton';
+import React from "react";
+import { ScrollView, StyleSheet } from "react-native";
+import { MediumSpacer } from "../../util/Spacer";
+import ValorationList from "../valoration/ValorationList";
+import CourseDetailInfo from "../courses/CourseDetailInfo";
+import CourseValorationPanel from "../courses/CourseValorationPanel";
+import CourseSuscribeButton from "../courses/CourseSuscribeButton";
 
 const styles = StyleSheet.create({
   view: {
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingHorizontal: 10,
     borderRadius: 10,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
   },
 });
 
@@ -25,13 +25,8 @@ function CourseDetailScreenComponent({
   onSubmitValoration,
 }: any) {
   return (
-    <ScrollView
-      style={styles.view}
-      showsVerticalScrollIndicator={false}
-    >
-      <CourseDetailInfo
-        course={course}
-      />
+    <ScrollView style={styles.view} showsVerticalScrollIndicator={false}>
+      <CourseDetailInfo course={course} />
       <MediumSpacer />
       <CourseSuscribeButton
         suscribed={suscribed}
@@ -46,9 +41,7 @@ function CourseDetailScreenComponent({
         />
       )}
       <MediumSpacer />
-      <ValorationList
-        course={course}
-      />
+      <ValorationList course={course} />
       <MediumSpacer />
     </ScrollView>
   );
