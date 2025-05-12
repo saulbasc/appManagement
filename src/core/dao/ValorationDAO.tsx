@@ -115,7 +115,13 @@ export default class ValorationDAO implements IDefaultDAO<[number, string], Valo
             val.calificacion,
           );
         }));
+        valorations.sort((a, b) => {
+          if (a.userName === '(Yo)') return -1;
+          if (b.userName === '(Yo)') return 1;
+          return 0;
+        });
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.log(`Error valorations => ${error}`);
       }
       return valorations;

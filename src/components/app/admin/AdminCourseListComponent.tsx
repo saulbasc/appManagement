@@ -5,6 +5,7 @@ import { Context as CourseContext } from '../../../context/CourseDaoContext';
 import AppColors from '../../../util/globalColors';
 import AdminCourseListPanel from './AdminCourseListPanel';
 import LoadingIndicator from '../common/LoadingIndicator';
+import Course from '../../../types/Course';
 
 const styles = StyleSheet.create({
   view: {
@@ -28,8 +29,10 @@ function AdminCourseListComponent({ courses, onPress }: any) {
     GetCourses();
   }, []);
 
-  const filteredCourses = courses?.filter((course: any) => course
-    .title.toLowerCase().includes(text.toLocaleLowerCase()));
+  const filteredCourses = courses?.filter((course: Course) => course
+    .title.toLowerCase().includes(text.toLocaleLowerCase()) || course
+    .instructor.toLowerCase().includes(text.toLocaleLowerCase()) || course
+    .category.toLowerCase().includes(text.toLocaleLowerCase()));
 
   if (!loaded) {
     return <LoadingIndicator />;

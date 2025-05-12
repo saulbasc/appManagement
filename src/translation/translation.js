@@ -7,7 +7,6 @@ import es from './language/es.json';
 
 async function GetLang() {
   const lang = await AsyncStorage.getItem('lang');
-  console.log(`Recoged Async => ${lang}`);
   return lang != null ? lang : 'en';
 }
 

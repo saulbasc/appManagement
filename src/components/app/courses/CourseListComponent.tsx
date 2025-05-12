@@ -4,6 +4,7 @@ import SearchBar from '../../bar/SearchBar';
 import CourseListPanel from './CourseListPanel';
 import { Context as CourseContext } from '../../../context/CourseDaoContext';
 import AppColors from '../../../util/globalColors';
+import Course from '../../../types/Course';
 
 const styles = StyleSheet.create({
   view: {
@@ -22,8 +23,10 @@ function CourseListComponent({ courses, onPressCourse }: any) {
     resetCourse();
   }, []);
 
-  const filteredCourses = courses?.filter((course: any) => course
-    .title.toLowerCase().includes(text.toLocaleLowerCase()));
+  const filteredCourses = courses?.filter((course: Course) => course
+    .title.toLowerCase().includes(text.toLocaleLowerCase()) || course
+    .instructor.toLowerCase().includes(text.toLocaleLowerCase()) || course
+    .category.toLowerCase().includes(text.toLocaleLowerCase()));
 
   return (
     <View style={styles.view}>
