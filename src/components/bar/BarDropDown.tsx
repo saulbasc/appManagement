@@ -11,15 +11,17 @@ import translation from "../../translation/translation";
 const styles = StyleSheet.create({
   dropdownButtonStyle: {
     width: 150,
-    height: 50,
+    height: 40,
+    marginVertical: 5,
     backgroundColor: AppColors.white,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     paddingLeft: 20,
     paddingRight: 10,
-    borderBottomWidth: 2,
+    borderRadius: 45,
     borderColor: AppColors.tertiary,
+    elevation: 5
   },
   dropdownButtonTxtStyle: {
     flex: 1,

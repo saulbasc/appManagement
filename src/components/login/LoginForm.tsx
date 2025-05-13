@@ -18,16 +18,17 @@ const styles = StyleSheet.create({
     paddingTop: 35,
     paddingBottom: 15,
     paddingHorizontal: 5,
+    elevation: 5
   },
   loginInput: {
     height: 45,
-    borderRadius: 12,
+    borderRadius: 20,
     backgroundColor: AppColors.white,
     paddingHorizontal: 15,
     fontSize: 20,
   },
   button: {
-    borderRadius: 7,
+    borderRadius: 20,
     backgroundColor: AppColors.primary,
     height: 50,
   },

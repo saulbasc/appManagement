@@ -36,9 +36,7 @@ function BottomTabNavigator() {
         tabBarActiveTintColor: AppColors.white,
         tabBarInactiveTintColor: AppColors.quaternary,
         tabBarStyle: {
-          backgroundColor: AppColors.primary,
-          borderTopWidth: 2,
-          borderColor: AppColors.quaternary,
+          backgroundColor: AppColors.light,
         },
       }}
     >

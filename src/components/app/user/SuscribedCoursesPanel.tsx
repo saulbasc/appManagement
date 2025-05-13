@@ -10,13 +10,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     borderRadius: 20,
     padding: 10,
-    backgroundColor: AppColors.quaternary,
+    backgroundColor: AppColors.secondary,
     alignItems: "center",
     justifyContent: "center",
+    elevation: 5
   },
   text: {
     fontSize: 20,
-    color: AppColors.white,
+    color: AppColors.black,
     marginRight: 20,
   },
 });
@@ -30,7 +31,7 @@ function SuscribedCoursesPanel({ onPress }: any) {
     >
       <View style={styles.content}>
         <Text style={styles.text}>{tr("profileListButton")}</Text>
-        <Feather name="arrow-right" size={35} color={AppColors.white} />
+        <Feather name="arrow-right" size={35} color={AppColors.black} />
       </View>
     </TouchableOpacity>
   );

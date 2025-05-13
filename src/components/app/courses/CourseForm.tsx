@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     borderWidth: 1,
     borderColor: AppColors.quaternary,
+    elevation: 5,
   },
   input: {
     height: 50,

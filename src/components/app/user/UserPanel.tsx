@@ -17,10 +17,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderColor: AppColors.quaternary,
     backgroundColor: AppColors.secondary,
+    borderWidth: 1,
     borderRadius: 20,
     paddingHorizontal: 5,
     paddingVertical: 20,
-    elevation: 8
+    elevation: 5
   },
   input: {
     borderRadius: 20,
@@ -56,7 +57,7 @@ function UserPanel({ user, onPressAdminButton, onPressSaveButton }: any) {
 
   return (
     <LinearGradient 
-      colors={[AppColors.light, AppColors.secondary]}
+      colors={[AppColors.secondary, AppColors.secondary]}
       style={styles.container}
     >
       <FontAwesome5 name="user-edit" size={100} color={AppColors.quaternary} />

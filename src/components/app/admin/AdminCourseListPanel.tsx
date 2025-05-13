@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     marginVertical: 15,
     padding: 15,
-    elevation: 8
+    elevation: 5
   },
   rowView: {
     flexDirection: "row",

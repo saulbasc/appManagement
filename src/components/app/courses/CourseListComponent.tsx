@@ -9,13 +9,12 @@ import Course from "../../../types/Course";
 const styles = StyleSheet.create({
   view: {
     flex: 1,
-    paddingTop: 10,
     paddingHorizontal: 5,
     backgroundColor: AppColors.white,
   },
     contentContainer: {
-    paddingBottom: 100,
-    paddingTop: 30
+    paddingBottom: 40,
+    paddingTop: 80
   }
 });
 
