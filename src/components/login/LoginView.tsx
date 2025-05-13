@@ -8,7 +8,7 @@ import AppColors from "../../util/globalColors";
 const styles = StyleSheet.create({
   content: {
     height: "100%",
-    backgroundColor: AppColors.white,
+    backgroundColor: AppColors.secondary,
   },
 });
 

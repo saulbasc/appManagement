@@ -8,7 +8,7 @@ import AppColors from "../../util/globalColors";
 
 const styles = StyleSheet.create({
   loginTitle: {
-    color: AppColors.quaternary,
+    color: AppColors.black,
     fontSize: 40,
   },
   loginText: {

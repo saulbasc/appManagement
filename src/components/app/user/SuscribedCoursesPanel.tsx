@@ -10,10 +10,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     borderRadius: 20,
     padding: 10,
-    backgroundColor: AppColors.secondary,
+    backgroundColor: AppColors.white,
     alignItems: "center",
     justifyContent: "center",
-    elevation: 5
+    elevation: 3
   },
   text: {
     fontSize: 20,
@@ -31,7 +31,7 @@ function SuscribedCoursesPanel({ onPress }: any) {
     >
       <View style={styles.content}>
         <Text style={styles.text}>{tr("profileListButton")}</Text>
-        <Feather name="arrow-right" size={35} color={AppColors.black} />
+        <Feather name="arrow-right" size={35} color={AppColors.black} style={{ position: "absolute", right: 5}} />
       </View>
     </TouchableOpacity>
   );

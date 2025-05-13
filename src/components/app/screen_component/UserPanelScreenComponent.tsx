@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: 20,
     paddingHorizontal: 10,
-    backgroundColor: AppColors.white
+    backgroundColor: AppColors.secondary
   },
 });
 

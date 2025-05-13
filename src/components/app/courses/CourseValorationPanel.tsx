@@ -14,22 +14,19 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderColor: AppColors.quaternary,
     padding: 15,
-    elevation: 8
-  },
-  title: {
-    fontSize: 40,
   },
   input: {
-    fontSize: 20,
+    fontSize: 15,
     backgroundColor: AppColors.white,
     paddingHorizontal: 15,
     borderRadius: 20,
+    elevation: 15
   },
   button: {
-    backgroundColor: AppColors.primary,
+    backgroundColor: AppColors.black,
     borderRadius: 20,
     padding: 10,
-    height: 50,
+    height: 45,
   },
 });
 
@@ -53,8 +50,10 @@ function CourseValorationPanel({ valoration, onSubmit }: any) {
         defaultRating={rating}
         onFinishRating={setRating}
         selectedColor={AppColors.black}
-        unSelectedColor={AppColors.gray}
-        starStyle={{ height: 35, width: 35 }}
+        unSelectedColor={AppColors.light}
+        starStyle={{ height: 30, width: 30 }}
+        starContainerStyle={{ borderBottomWidth: 2 }}
+        reviewSize={20}
       />
       <MediumSpacer />
       <TextInput

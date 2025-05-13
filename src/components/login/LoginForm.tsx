@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   inputContent: {
-    backgroundColor: AppColors.secondary,
+    backgroundColor: AppColors.secondaryComplement,
     borderRadius: 20,
     paddingTop: 35,
     paddingBottom: 15,

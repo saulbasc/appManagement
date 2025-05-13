@@ -6,16 +6,17 @@ import AppColors from "../../util/globalColors";
 const styles = StyleSheet.create({
   wrapper: {
     padding: 0,
+    paddingHorizontal: 10,
     margin: 0,
     left: 5,
     right: 5,
-    top: 5,
-    backgroundColor: AppColors.white,
-    borderWidth: 1,
+    top: 10,
+    backgroundColor: AppColors.ultraLight,
     position: "absolute",
     overflow: "hidden",
     borderRadius: 45,
     zIndex: 3,
+    elevation: 10
   },
   inputContainer: {
     borderBottomWidth: 0,
@@ -27,7 +28,6 @@ const styles = StyleSheet.create({
     zIndex: 2,
     borderRadius: 45,
     borderColor: AppColors.quaternary,
-    backgroundColor: AppColors.white,
     paddingHorizontal: 10,
     fontSize: 20,
     height: "100%", 
@@ -43,7 +43,7 @@ function SearchBar({ value, onChangeText }: any) {
   return (
     <View style={styles.wrapper}>
       <Input
-        leftIcon={<Icon name="search" size={40} color={AppColors.quaternary} />}
+        leftIcon={<Icon name="search" size={35} color={AppColors.quaternary} />}
         onChangeText={onChangeText}
         value={value}
         inputContainerStyle={styles.inputContainer}

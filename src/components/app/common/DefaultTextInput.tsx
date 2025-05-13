@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Input } from "@rneui/base";
+import { Input, IconNode } from "@rneui/base";
 import React, { useState } from "react";
 import { StyleSheet } from "react-native";
 import AppColors from "../../../util/globalColors";
@@ -24,6 +24,7 @@ type DefaultInputProps = {
   onChangeText: (text: string) => void;
   multiline: boolean;
   label: string;
+  rightIcon?: IconNode;
 };
 
 function DefaultTextInput({
@@ -31,16 +32,18 @@ function DefaultTextInput({
   onChangeText,
   multiline,
   label,
+  rightIcon,
 }: Readonly<DefaultInputProps>) {
   const [inputHeight, setInputHeight] = useState(0);
 
   return (
     <Input
-      inputContainerStyle={{ borderBottomWidth: 0 }}
+      inputContainerStyle={{ borderBottomWidth: 1 }}
       leftIconContainerStyle={{ marginRight: 15 }}
-      style={[styles.input, { height: inputHeight }]}
+      rightIcon={rightIcon}
+      style={[styles.input, { height: inputHeight, fontSize: 15 }]}
       label={label}
-      labelStyle={{ marginBottom: 10 }}
+      labelStyle={{ marginBottom: 10, color: AppColors.black }}
       onChangeText={(text: string) => onChangeText(text)}
       value={value}
       multiline={multiline}

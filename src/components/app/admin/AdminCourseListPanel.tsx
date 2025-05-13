@@ -1,33 +1,34 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from "react";
 import { Text } from "@rneui/base";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import { LinearGradient } from "expo-linear-gradient";
 import { SmallSpacer } from "../../util/Spacer";
 import AppColors from "../../../util/globalColors";
+import PressAnimation from "../../../animations/PressAnimation";
 
 const styles = StyleSheet.create({
   content: {
     flexDirection: "row",
   },
   courseContent: {
-    backgroundColor: AppColors.secondary,
-    borderRadius: 20,
+    backgroundColor: AppColors.white,
+    borderRadius: 10,
     marginVertical: 15,
     padding: 15,
-    elevation: 5
+    elevation: 4
   },
   rowView: {
     flexDirection: "row",
   },
   title: {
-    fontSize: 22,
+    fontSize: 20,
     fontStyle: "italic",
     fontWeight: "bold",
-    borderBottomColor: AppColors.quaternary,
+    borderBottomColor: AppColors.black,
     borderBottomWidth: 0,
-    color: AppColors.quaternary,
+    color: AppColors.black,
   },
   category: {
     fontSize: 15,
@@ -35,33 +36,22 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 15,
     marginLeft: 10,
-    color: AppColors.quaternary,
+    color: AppColors.black,
   },
   delete: {
     position: "absolute",
     right: 10,
     top: 10,
   },
-  right: {
-    position: "absolute",
-    right: 0,
-    top: -1,
-    bottom: -1,
-    width: 15,
-    borderTopRightRadius: 20,
-    borderBottomRightRadius: 20,
-    backgroundColor: AppColors.tertiary,
-  }
 });
 
 function AdminCourseListPanel({ item, onPress }: any) {
   return (
-    <TouchableOpacity 
+    <PressAnimation 
       onPress={onPress} 
-      activeOpacity={0.8}
     >
       <LinearGradient
-       colors={[AppColors.secondary, AppColors.white]}
+       colors={[AppColors.white, AppColors.white]}
        style={styles.courseContent}
        end={{ x: 1, y:0}}
       >
@@ -70,14 +60,13 @@ function AdminCourseListPanel({ item, onPress }: any) {
         <View style={styles.rowView}>
           <FontAwesome5
             name="chalkboard-teacher"
-            size={24}
+            size={20}
             color={AppColors.quaternary}
           />
           <Text style={styles.text}>{item.instructor}</Text>
         </View>
-        <View style={styles.right} />
       </LinearGradient>
-    </TouchableOpacity>
+    </PressAnimation>
   );
 }
 

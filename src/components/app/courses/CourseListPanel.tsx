@@ -1,33 +1,34 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from "react";
 import { Text } from "@rneui/base";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { LinearGradient } from "expo-linear-gradient";
-import { MediumSpacer, SmallSpacer } from "../../util/Spacer";
+import { SmallSpacer } from "../../util/Spacer";
 import AppColors from "../../../util/globalColors";
+import PressAnimation from "../../../animations/PressAnimation";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: AppColors.secondary,
+    backgroundColor: AppColors.white,
     borderColor: AppColors.primary,
     borderRightWidth: 0,
-    borderRadius: 20,
+    borderRadius: 15,
     marginVertical: 15,
     padding: 15,
-    elevation: 5,
+    elevation: 4,
   },
   rowView: {
     flexDirection: "row",
   },
   title: {
-    fontSize: 22,
+    fontSize: 20,
     fontStyle: "italic",
     fontWeight: "bold",
-    borderBottomColor: AppColors.quaternary,
-    borderBottomWidth: 1,
-    color: AppColors.quaternary,
+    borderBottomColor: AppColors.black,
+    color: AppColors.black,
+    marginBottom: 20,
   },
   category: {
     fontSize: 15,
@@ -35,38 +36,37 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 15,
     marginLeft: 10,
-    color: AppColors.quaternary,
+    color: AppColors.black,
   },
   right: {
     position: "absolute",
     right: 0,
     top: 0,
     bottom: 0,
-    width: 10,
+    width: 20,
     borderTopRightRadius: 20,
     borderBottomRightRadius: 20,
-    backgroundColor: AppColors.tertiary,
+    backgroundColor: AppColors.black,
   }
 });
 
 function CourseListPanel({ item, onPressCourse }: any) {
-  return (
-    <TouchableOpacity 
-      onPress={onPressCourse} 
-      activeOpacity={0.8}
+
+   return (
+    <PressAnimation
+      onPress={onPressCourse}
     >
       <LinearGradient
-       colors={[AppColors.secondary, AppColors.white]}
-       style={styles.container}
-       end={{ x: 1, y:0}}
+        colors={[AppColors.white, AppColors.white]}
+        style={styles.container}
+        end={{ x: 1, y: 0 }}
       >
         <Text style={styles.title}>{item.title}</Text>
-        <MediumSpacer />
         <View style={styles.rowView}>
           <MaterialCommunityIcons
             name="google-classroom"
-            size={30}
-            color={AppColors.quaternary}
+            size={25}
+            color={AppColors.black}
           />
           <Text style={[styles.category, styles.text]}>{item.category}</Text>
         </View>
@@ -74,14 +74,13 @@ function CourseListPanel({ item, onPressCourse }: any) {
         <View style={styles.rowView}>
           <FontAwesome5
             name="chalkboard-teacher"
-            size={24}
-            color={AppColors.quaternary}
+            size={20}
+            color={AppColors.black}
           />
           <Text style={styles.text}>{item.instructor}</Text>
         </View>
-        <View style={styles.right} />
       </LinearGradient>
-    </TouchableOpacity>
+    </PressAnimation>
   );
 }
 

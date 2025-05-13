@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     paddingRight: 10,
     borderRadius: 45,
     borderColor: AppColors.tertiary,
-    elevation: 5
+    elevation: 6
   },
   dropdownButtonTxtStyle: {
     flex: 1,
@@ -109,7 +109,7 @@ function BarDropDown() {
       renderButton={() => (
         <View style={styles.dropdownButtonStyle}>
           <Text style={styles.dropdownButtonTxtStyle}>{defaultLang}</Text>
-          <AntDesign name="caretdown" size={20} color={AppColors.tertiary} />
+          <AntDesign name="caretdown" size={15} color={AppColors.black} />
         </View>
       )}
       renderItem={(item, index, isSelected) => (

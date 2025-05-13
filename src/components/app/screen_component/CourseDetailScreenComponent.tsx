@@ -5,6 +5,7 @@ import ValorationList from "../valoration/ValorationList";
 import CourseDetailInfo from "../courses/CourseDetailInfo";
 import CourseValorationPanel from "../courses/CourseValorationPanel";
 import CourseSuscribeButton from "../courses/CourseSuscribeButton";
+import AppColors from "../../../util/globalColors";
 
 const styles = StyleSheet.create({
   view: {
@@ -12,7 +13,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingHorizontal: 10,
     borderRadius: 10,
-    backgroundColor: "#fff",
+    backgroundColor: AppColors.secondary,
   },
 });
 

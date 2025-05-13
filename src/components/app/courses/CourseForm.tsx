@@ -1,16 +1,19 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from "react";
 import { View, StyleSheet } from "react-native";
+import AntDesign from '@expo/vector-icons/AntDesign';
 import AppColors from "../../../util/globalColors";
 import useTr from "../../../manager/TranslationManager";
-import { MediumSpacer } from "../../util/Spacer";
+import { SmallSpacer } from "../../util/Spacer";
 import DefaultTextInput from "../common/DefaultTextInput";
 import DefaultNumberInput from "../common/DefaultNumberInput";
 
 const styles = StyleSheet.create({
   inputsContent: {
-    backgroundColor: AppColors.secondary,
+    backgroundColor: AppColors.white,
     borderRadius: 15,
     paddingVertical: 20,
+    paddingLeft: 5,
     borderColor: AppColors.quaternary,
     elevation: 5,
   },
@@ -46,31 +49,36 @@ function CourseForm({
         onChangeText={setTitle}
         multiline={false}
         label={tr("title")}
+        rightIcon={<AntDesign name="edit" size={24} color="black" />}
       />
       <DefaultTextInput
         value={categoryValue}
         onChangeText={setCategory}
         multiline={false}
         label={tr("category")}
+        rightIcon={<AntDesign name="edit" size={24} color="black" />}
       />
       <DefaultTextInput
         value={descriptionValue}
         onChangeText={setDescription}
         multiline
         label={tr("description")}
+        rightIcon={<AntDesign name="edit" size={24} color="black" />}
       />
       <DefaultNumberInput
         value={durationValue.toString()}
         onChangeText={setDuration}
         label={tr("duration")}
+        rightIcon={<AntDesign name="edit" size={24} color="black" />}
       />
       <DefaultTextInput
         value={instructorValue}
         onChangeText={setInstructor}
         multiline={false}
         label={tr("instructor")}
+        rightIcon={<AntDesign name="edit" size={24} color="black" />}
       />
-      <MediumSpacer />
+      <SmallSpacer />
     </View>
   );
 }

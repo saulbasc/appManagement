@@ -20,7 +20,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     paddingHorizontal: 5,
     paddingVertical: 20,
-    elevation: 5
   },
   input: {
     borderRadius: 20,
@@ -30,14 +29,14 @@ const styles = StyleSheet.create({
   enabledInput: {
     borderRadius: 20,
     backgroundColor: AppColors.white,
-    borderWidth: 1,
     paddingLeft: 15,
+    elevation: 15
   },
   button: {
     height: 50,
     width: 340,
     borderRadius: 20,
-    backgroundColor: AppColors.primary,
+    backgroundColor: AppColors.black,
   },
 });
 
@@ -59,12 +58,12 @@ function UserPanel({ user, onPressAdminButton, onPressSaveButton }: any) {
       colors={[AppColors.secondary, AppColors.secondary]}
       style={styles.container}
     >
-      <FontAwesome5 name="user-edit" size={100} color={AppColors.quaternary} />
+      <FontAwesome5 name="user-edit" size={100} color={AppColors.black} />
       <MediumSpacer />
       <Input
         style={styles.enabledInput}
         leftIcon={
-          <Feather name="user" size={30} color={AppColors.quaternary} />
+          <Feather name="user" size={30} color={AppColors.black} />
         }
         leftIconContainerStyle={{ marginRight: 15 }}
         value={nameInput}
@@ -78,7 +77,7 @@ function UserPanel({ user, onPressAdminButton, onPressSaveButton }: any) {
       <Input
         style={styles.input}
         leftIcon={
-          <Fontisto name="email" size={30} color={AppColors.quaternary} />
+          <Fontisto name="email" size={30} color={AppColors.black} />
         }
         inputStyle={{ color: AppColors.darkGray }}
         editable={false}
@@ -94,7 +93,7 @@ function UserPanel({ user, onPressAdminButton, onPressSaveButton }: any) {
           <MaterialIcons
             name="security"
             size={30}
-            color={AppColors.quaternary}
+            color={AppColors.black}
           />
         }
         inputStyle={{ color: AppColors.darkGray }}

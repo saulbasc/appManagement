@@ -8,11 +8,10 @@ import { MediumSpacer } from "../../util/Spacer";
 
 const styles = StyleSheet.create({
   content: {
-    marginHorizontal: 10,
     marginVertical: 20,
   },
   button: {
-    backgroundColor: AppColors.primary,
+    backgroundColor: AppColors.black,
     height: 50,
     borderRadius: 20,
   },

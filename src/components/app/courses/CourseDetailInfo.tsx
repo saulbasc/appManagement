@@ -12,23 +12,16 @@ import useTr from "../../../manager/TranslationManager";
 const styles = StyleSheet.create({
   view: {
     paddingTop: 10,
-    borderRadius: 20,
-    backgroundColor: AppColors.secondary,
+    borderRadius: 10,
+    backgroundColor: AppColors.white,
     padding: 20,
     elevation: 5
   },
   title: {
-    fontSize: 45,
-    borderBottomWidth: 1,
-  },
-  category: {
     fontSize: 30,
   },
-  defaultFont: {
-    fontSize: 20,
-  },
   text: {
-    fontSize: 20,
+    fontSize: 15,
     marginLeft: 10,
   },
 });
@@ -66,9 +59,9 @@ function CourseDetailInfo({ course }: any) {
         }
       />
       <MediumSpacer />
-      <Text style={styles.defaultFont}>{course?.description}</Text>
+      <Text style={styles.text}>{course?.description}</Text>
       <SmallSpacer />
-      <MediumSpacer />
+      <SmallSpacer />
     </View>
   );
 }

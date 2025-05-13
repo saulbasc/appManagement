@@ -10,12 +10,12 @@ import Course from "../../../types/Course";
 const styles = StyleSheet.create({
   view: {
     flex: 1,
-    paddingHorizontal: 5,
-    backgroundColor: AppColors.white,
+    paddingHorizontal: 10,
+    backgroundColor: AppColors.secondary,
   },
   contentContainer: {
     paddingBottom: 30,
-    paddingTop: 70
+    paddingTop: 85
   }
 });
 

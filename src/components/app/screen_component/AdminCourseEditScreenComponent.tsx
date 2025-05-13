@@ -8,11 +8,11 @@ import useTr from "../../../manager/TranslationManager";
 
 const styles = StyleSheet.create({
   content: {
-    marginHorizontal: 10,
     marginVertical: 20,
+    marginHorizontal: 10
   },
   button: {
-    backgroundColor: AppColors.primary,
+    backgroundColor: AppColors.black,
     height: 50,
     borderRadius: 20,
   },

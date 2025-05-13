@@ -12,11 +12,11 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   user: {
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: "bold",
   },
   text: {
-    fontSize: 20,
+    fontSize: 15,
     marginRight: 20,
   },
   rating: {
@@ -37,7 +37,7 @@ function ValorationPanel({ item }: any) {
         isDisabled
         showRating={false}
         ratingContainerStyle={styles.rating}
-        starStyle={{ height: 20, width: 20 }}
+        starStyle={{ height: 15, width: 15 }}
       />
       <MediumSpacer />
       <Text style={styles.text}>{item.comment}</Text>
