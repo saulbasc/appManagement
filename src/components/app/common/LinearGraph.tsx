@@ -4,7 +4,7 @@ import { Dimensions, StyleSheet, View } from "react-native";
 import { LineChart } from "react-native-chart-kit";
 import AppColors from "../../../util/globalColors";
 
-const screenWidth = Dimensions.get("window").width - 20;
+const screenWidth = Dimensions.get("window").width - 50;
 
 const styles = StyleSheet.create({
   view: {
@@ -15,9 +15,9 @@ const styles = StyleSheet.create({
 function LinearGraph({ graphDataX, graphDataY }: any) {
   const chartConfig = {
     backgroundGradientFrom: AppColors.primary,
-    backgroundGradientTo: AppColors.primary,
+    backgroundGradientTo: AppColors.light,
     color: () => AppColors.primary,
-    labelColor: () => "white",
+    labelColor: () => AppColors.white,
     strokeWidth: 2,
     barPercentage: 0.5,
     useShadowColorFromDataset: true,
@@ -32,7 +32,7 @@ function LinearGraph({ graphDataX, graphDataY }: any) {
         strokeWidth: 2,
       },
     ],
-    legend: ["Valoraciones"],
+    legend: [""],
   };
 
   return (
@@ -43,6 +43,12 @@ function LinearGraph({ graphDataX, graphDataY }: any) {
         width={screenWidth}
         height={220}
         chartConfig={chartConfig}
+        xAxisLabel="⭐"
+        yAxisLabel="👤"
+        formatYLabel={(yValue) => parseInt(yValue, 10).toString()}
+        withDots={false}
+        withHorizontalLines={false}
+        withVerticalLines={false}
       />
     </View>
   );

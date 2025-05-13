@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
   input: {
     height: 50,
     backgroundColor: AppColors.white,
+    paddingHorizontal: 10,
     borderRadius: 20,
   },
   inputContainer: {

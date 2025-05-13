@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: AppColors.white,
+    paddingHorizontal: 10,
     borderRadius: 20,
   },
 });

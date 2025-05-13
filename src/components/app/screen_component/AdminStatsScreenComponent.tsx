@@ -4,6 +4,7 @@ import { MediumSpacer, SmallSpacer } from "../../util/Spacer";
 import ContributionGraphComponent from "../common/ContributionGraphComponent";
 import LinearGraph from "../common/LinearGraph";
 import useTr from "../../../manager/TranslationManager";
+import AppColors from "../../../util/globalColors";
 
 const styles = StyleSheet.create({
   content: {
@@ -15,9 +16,16 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     justifyContent: "center",
     paddingVertical: 10,
+    borderRadius: 20,
     flexDirection: "row",
-    borderColor: "#a84444",
-    borderBottomWidth: 2,
+    backgroundColor: AppColors.white,
+    elevation: 5
+  },
+  graphView: {
+    borderRadius: 20,
+    backgroundColor: AppColors.white,
+    padding: 15,
+    elevation: 5
   },
   totalText: {
     fontSize: 25,
@@ -50,16 +58,20 @@ function AdminStatsScreenComponent({
         <Text style={styles.totalText}>{totalInscriptions}</Text>
       </View>
       <MediumSpacer />
-      <Text style={styles.contentText}>{tr("usersForRating")}</Text>
-      <SmallSpacer />
-      <LinearGraph
-        graphDataY={valorationsForUsers}
-        graphDataX={["1", "2", "3", "4", "5"]}
-      />
+      <View style={styles.graphView}>
+        <Text style={styles.contentText}>{tr("usersForRating")}</Text>
+        <SmallSpacer />
+        <LinearGraph
+          graphDataY={valorationsForUsers}
+          graphDataX={["1", "2", "3", "4", "5"]}
+        />
+      </View>
       <MediumSpacer />
-      <Text style={styles.contentText}>{tr("courseCreationDates")}</Text>
-      <SmallSpacer />
-      <ContributionGraphComponent data={dates} />
+      <View style={styles.graphView}>
+        <Text style={styles.contentText}>{tr("courseCreationDates")}</Text>
+        <SmallSpacer />
+        <ContributionGraphComponent data={dates} />
+      </View>
     </ScrollView>
   );
 }

@@ -8,7 +8,7 @@ function ContributionGraphComponent({ data }: any) {
   const chartConfig = {
     backgroundColor: AppColors.primary,
     backgroundGradientFrom: AppColors.primary,
-    backgroundGradientTo: AppColors.primary,
+    backgroundGradientTo: AppColors.light,
     color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
     style: {
       borderRadius: 16,
@@ -20,7 +20,7 @@ function ContributionGraphComponent({ data }: any) {
       values={data}
       endDate={new Date()}
       numDays={105}
-      width={Dimensions.get("window").width - 20}
+      width={Dimensions.get("window").width - 50}
       height={220}
       chartConfig={chartConfig}
       tooltipDataAttrs={() => ({})}

@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
     backgroundColor: AppColors.secondary,
     borderRadius: 15,
     paddingVertical: 20,
-    borderWidth: 1,
     borderColor: AppColors.quaternary,
     elevation: 5,
   },

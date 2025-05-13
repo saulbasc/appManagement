@@ -7,8 +7,9 @@ import { MediumSpacer, SmallSpacer } from "../../util/Spacer";
 const styles = StyleSheet.create({
   content: {
     backgroundColor: AppColors.white,
-    borderBottomWidth: 2,
-    borderBottomColor: AppColors.tertiary,
+    borderRadius: 10,
+    padding: 10,
+    elevation: 5,
   },
   user: {
     fontSize: 30,
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
   rating: {
     position: "absolute",
     right: 10,
-    top: 5,
+    top: 10,
   },
 });
 
@@ -32,7 +33,7 @@ function ValorationPanel({ item }: any) {
       <AirbnbRating
         defaultRating={item.rating}
         selectedColor={AppColors.black}
-        unSelectedColor={AppColors.gray}
+        unSelectedColor={AppColors.lightGray}
         isDisabled
         showRating={false}
         ratingContainerStyle={styles.rating}

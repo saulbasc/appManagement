@@ -6,6 +6,7 @@ const AppColors = {
   light: "#eeb7b7",
   white: "white",
   black: "black",
+  lightGray: "#dfdfdf",
   gray: "#bababa",
   darkGray: "#787878"
 };

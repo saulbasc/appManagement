@@ -7,6 +7,7 @@ import AppColors from "../../../util/globalColors";
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     paddingVertical: 20,
     paddingHorizontal: 10,
     backgroundColor: AppColors.white
