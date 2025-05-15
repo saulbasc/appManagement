@@ -14,7 +14,7 @@
     "profileDowngradeButton": "Unsubscribe from administrator",
     "profileListButton": "View subscribed courses",
     "totalInscriptionsText": "Total subscriptions: ",
-    "courseCreationDates": "Course creation",
+    "courseCreationDates": "Courses creation date",
     "usersForRating": "Users for rating",
     "title": "TITLE",
     "category": "CATEGORY",
@@ -32,6 +32,7 @@
     "english": "English",
     "tabCoursesSection": "Courses",
     "tabUserSection": "User",
-    "tabAdminSection": "Admin"
+    "tabAdminSection": "Admin",
+    "user": " Users"
   }
 }

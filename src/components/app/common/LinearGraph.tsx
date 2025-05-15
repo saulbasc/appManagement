@@ -3,6 +3,7 @@ import React from "react";
 import { Dimensions, StyleSheet, View } from "react-native";
 import { LineChart } from "react-native-chart-kit";
 import AppColors from "../../../util/globalColors";
+import useTr from "../../../manager/TranslationManager";
 
 const screenWidth = Dimensions.get("window").width - 50;
 
@@ -13,11 +14,13 @@ const styles = StyleSheet.create({
 });
 
 function LinearGraph({ graphDataX, graphDataY }: any) {
+  const tr = useTr();
+
   const chartConfig = {
-    backgroundGradientFrom: AppColors.primary,
-    backgroundGradientTo: AppColors.light,
+    backgroundGradientFrom: AppColors.white,
+    backgroundGradientTo: AppColors.white,
     color: () => AppColors.primary,
-    labelColor: () => AppColors.white,
+    labelColor: () => AppColors.black,
     strokeWidth: 2,
     barPercentage: 0.5,
     useShadowColorFromDataset: true,
@@ -28,8 +31,8 @@ function LinearGraph({ graphDataX, graphDataY }: any) {
     datasets: [
       {
         data: graphDataY,
-        color: () => "white",
-        strokeWidth: 2,
+        color: () => AppColors.primary,
+        strokeWidth: 3,
       },
     ],
     legend: [""],
@@ -44,7 +47,7 @@ function LinearGraph({ graphDataX, graphDataY }: any) {
         height={220}
         chartConfig={chartConfig}
         xAxisLabel="⭐"
-        yAxisLabel="👤"
+        yAxisSuffix={tr('user')}
         formatYLabel={(yValue) => parseInt(yValue, 10).toString()}
         withDots={false}
         withHorizontalLines={false}

@@ -6,10 +6,10 @@ import AppColors from "../../../util/globalColors";
 
 function ContributionGraphComponent({ data }: any) {
   const chartConfig = {
-    backgroundColor: AppColors.primary,
-    backgroundGradientFrom: AppColors.primary,
-    backgroundGradientTo: AppColors.light,
-    color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+    backgroundColor: AppColors.white,
+    backgroundGradientFrom: AppColors.white,
+    backgroundGradientTo: AppColors.white,
+    color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
     style: {
       borderRadius: 16,
     },

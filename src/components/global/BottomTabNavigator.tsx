@@ -33,7 +33,7 @@ function BottomTabNavigator() {
       screenOptions={{
         headerShown: false,
         tabBarLabelPosition: "below-icon",
-        tabBarActiveTintColor: AppColors.darkGray,
+        tabBarActiveTintColor: AppColors.primary,
         tabBarInactiveTintColor: AppColors.black,
         tabBarStyle: {
           backgroundColor: AppColors.white,
