@@ -5,6 +5,7 @@ import { StyleSheet, TextInput, View } from "react-native";
 import { AirbnbRating } from "@rn-vui/ratings";
 import { MediumSpacer } from "../../util/Spacer";
 import AppColors from "../../../util/globalColors";
+import useTr from "../../../manager/TranslationManager";
 
 const styles = StyleSheet.create({
   container: {
@@ -31,6 +32,7 @@ const styles = StyleSheet.create({
 });
 
 function CourseValorationPanel({ valoration, onSubmit }: any) {
+  const tr = useTr();
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
 
@@ -45,7 +47,7 @@ function CourseValorationPanel({ valoration, onSubmit }: any) {
     <View style={styles.container}>
       <AirbnbRating
         count={5}
-        reviews={["Horrible", "Malo", "Regular", "Bien", "Muy bueno"]}
+        reviews={[tr('oneStar'), tr('twoStar'), tr('threeStar'), tr('fourStar'), tr('fiveStar')]}
         reviewColor={AppColors.black}
         defaultRating={rating}
         onFinishRating={setRating}
@@ -64,7 +66,7 @@ function CourseValorationPanel({ valoration, onSubmit }: any) {
       />
       <MediumSpacer />
       <Button
-        title="VALORAR!"
+        title={tr('rate')}
         buttonStyle={styles.button}
         onPress={() => onSubmit(comment, rating)}
       />

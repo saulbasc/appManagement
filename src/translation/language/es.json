@@ -9,6 +9,7 @@
     "signupRedirect": "Ya tienes una cuenta? Inicia sesión ahora",
     "suscribeCourseButton": "Suscribirse al curso",
     "unsuscribeCourseButton": "Desuscribirse",
+    "rate": "Valorar!",
     "profileSaveButton": "Guardar",
     "profileUpgradeButton": "Convertirse en administrador",
     "profileDowngradeButton": "Desuscribirse de administrador",
@@ -33,6 +34,12 @@
     "tabCoursesSection": "Cursos",
     "tabUserSection": "Usuario",
     "tabAdminSection": "Administrador",
-    "user": " Usuario"
+    "user": " Usuario",
+    "oneStar": "Horrible",
+    "twoStar": "Malo",
+    "threeStar": "Regular",
+    "fourStar": "Bueno",
+    "fiveStar": "Excelente",
+    "invalidUser": "Usuario o contraseña inválidos"
   }
 }

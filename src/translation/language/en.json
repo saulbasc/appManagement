@@ -8,7 +8,8 @@
     "signupTitle": "Sign Up",
     "signupRedirect": "Already have an account? Log in now",
     "suscribeCourseButton": "Subscribe to the course",
-    "unsuscribeCourseButton": "Unsubscribe",
+    "unsuscribeCourseButton": "Unsubscribe",  
+    "rate": "Rate!",
     "profileSaveButton": "Save",
     "profileUpgradeButton": "Become an administrator",
     "profileDowngradeButton": "Unsubscribe from administrator",
@@ -33,6 +34,12 @@
     "tabCoursesSection": "Courses",
     "tabUserSection": "User",
     "tabAdminSection": "Admin",
-    "user": " Users"
+    "user": " Users",
+    "oneStar": "Horrible",
+    "twoStar": "Bad",
+    "threeStar": "Regular",
+    "fourStar": "Good",
+    "fiveStar": "Excelent",
+    "invalidUser": "Invalid user or password"
   }
 }
